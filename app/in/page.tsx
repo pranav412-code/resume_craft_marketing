@@ -43,7 +43,7 @@ const faq: QA[] = [
   {
     question: "Why does INR pricing matter?",
     answer:
-      "Most resume tools bill India in converted dollars, which prices out many job seekers. ResumeCraft bills natively in INR through Razorpay — UPI, cards, netbanking — at prices set for the Indian market.",
+      "ResumeCraft bills natively in INR through Razorpay — UPI, cards, netbanking — at prices set for the Indian market, with GST handled per Indian tax rules.",
   },
 ];
 

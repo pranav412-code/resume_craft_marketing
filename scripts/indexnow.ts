@@ -16,7 +16,6 @@ import { siteConfig } from "../lib/site";
 import { guides } from "../lib/guides";
 import { publishedRoles } from "../data/roles";
 import { templateStyles } from "../data/templates";
-import { competitors } from "../data/competitors";
 
 const KEY = process.env.INDEXNOW_KEY ?? "ac6d2a52ebfd33cb75367c527e0fc4a9";
 const ENDPOINT = "https://api.indexnow.org/indexnow";
@@ -40,7 +39,6 @@ function buildUrlList(): string[] {
     ...guides.map((g) => `${u}/guides/${g.slug}`),
     ...publishedRoles().map((r) => `${u}/resume-examples/${r.slug}`),
     ...templateStyles.map((t) => `${u}/resume-templates/${t.slug}`),
-    ...competitors.map((c) => `${u}/compare/${c.slug}`),
   ];
 }
 

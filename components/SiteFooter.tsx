@@ -34,12 +34,6 @@ export function SiteFooter() {
           <Link href="/contact">Contact</Link>
           <Link href="/feedback">Feedback</Link>
           <p className="footer-head" style={{ marginTop: "0.8rem" }}>
-            Compare
-          </p>
-          <Link href="/compare/zety-alternative">vs Zety</Link>
-          <Link href="/compare/jobscan-alternative">vs Jobscan</Link>
-          <Link href="/compare/rezi-alternative">vs Rezi</Link>
-          <p className="footer-head" style={{ marginTop: "0.8rem" }}>
             Legal
           </p>
           <Link href="/privacy">Privacy Policy</Link>

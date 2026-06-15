@@ -35,7 +35,7 @@ const faq: QA[] = [
   {
     question: "Why is there separate INR pricing?",
     answer:
-      "Most resume tools charge India dollar-converted prices. ResumeCraft bills natively in INR through Razorpay (UPI, cards, netbanking) at a price set for the Indian market — not a currency conversion.",
+      "ResumeCraft bills natively in INR through Razorpay (UPI, cards, netbanking) at prices set for the Indian market — UPI, cards, and netbanking are all supported.",
   },
   {
     question: "What is Career Sprint?",

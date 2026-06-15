@@ -40,7 +40,7 @@ const faq: QA[] = [
   {
     question: "Can I export my resume to LaTeX?",
     answer:
-      "Yes. Alongside PDF, ResumeCraft exports clean LaTeX source — a typeset-quality format popular with developers, researchers, and academics. Few resume builders offer LaTeX export.",
+      "Yes. Alongside PDF, ResumeCraft exports clean LaTeX source — a typeset-quality format popular with developers, researchers, and academics, ideal for version control and pixel-precise typography.",
   },
 ];
 
@@ -114,16 +114,17 @@ export default function HomePage() {
             <li className="card">
               <h3>Tailoring + scoring in one flow</h3>
               <p>
-                Most builders format; most checkers only score. ResumeCraft
-                rewrites your resume against a specific job description and
-                scores it in the same pass.
+                ResumeCraft rewrites your resume against a specific job
+                description and scores it for ATS compatibility in the same
+                pass — no copy-pasting between a builder and a separate
+                checker.
               </p>
             </li>
             <li className="card">
               <h3>LaTeX export</h3>
               <p>
-                Clean LaTeX output for developers, researchers, and academics —
-                nearly unique among resume builders.
+                Clean LaTeX output for developers, researchers, and academics
+                — version-control friendly and typeset-quality.
               </p>
             </li>
             <li className="card">

@@ -80,8 +80,8 @@ export default function PrivacyPage() {
             <li>
               <strong>Account data.</strong> Email address, name (optional),
               authentication identifiers, and OAuth tokens (Google) handled by
-              our authentication provider Supabase. Passwords are stored as
-              salted hashes, never plaintext.
+              our authentication provider. Passwords are stored as salted
+              hashes, never plaintext.
             </li>
             <li>
               <strong>Resume content you upload or create.</strong> PDF/DOCX
@@ -143,15 +143,13 @@ export default function PrivacyPage() {
           <p>
             To tailor and score your resume, the text of your resume and any
             job description you paste are transmitted to third-party
-            large-language-model (LLM) providers acting as our processors
-            (currently including NVIDIA NIM and Cerebras inference endpoints).
+            large-language-model (LLM) providers acting as our processors.
             We transmit only the minimum content needed for the optimization,
-            over TLS, and instruct providers not to use submitted content for
-            training their public models where that contractual option is
-            available. We do <strong>not</strong> train our own foundation
-            models on your content. If you do not want a particular piece of
-            information processed by an LLM, do not include it in the resume or
-            job description you submit.
+            over TLS, and rely on provider terms that prohibit training on
+            submitted content where available. We do <strong>not</strong>{" "}
+            train our own foundation models on your content. If you do not
+            want a particular piece of information processed by an LLM, do
+            not include it in the resume or job description you submit.
           </p>
 
           <h2>4. Sharing and disclosure</h2>
@@ -161,14 +159,12 @@ export default function PrivacyPage() {
             written contracts that require equivalent protection:
           </p>
           <ul>
-            <li><strong>Supabase</strong> — authentication, Postgres database, file storage.</li>
-            <li><strong>Razorpay</strong> — payment processing and reconciliation.</li>
-            <li><strong>LLM/AI providers</strong> (NVIDIA, Cerebras) — resume optimization and scoring.</li>
-            <li><strong>Hosting / infrastructure</strong> — Render (backend), Netlify (frontend), with CDN delivery.</li>
+            <li><strong>Authentication and database provider</strong> — for sign-in, account storage, and resume storage.</li>
+            <li><strong>Razorpay</strong> — payment processing (regulated by the Reserve Bank of India).</li>
+            <li><strong>LLM/AI providers</strong> — third-party inference endpoints for resume optimization and scoring.</li>
+            <li><strong>Hosting and CDN providers</strong> — to run and deliver the application.</li>
             <li><strong>Email and customer-support tooling</strong> — for transactional and support emails.</li>
-            <li><strong>Auditors, legal, tax, and professional advisors</strong> — under confidentiality.</li>
             <li><strong>Government and law-enforcement authorities</strong> — only when required by valid order under Indian law, including §69 of the IT Act, 2000 or directions under the DPDP Act.</li>
-            <li><strong>Successors in interest</strong> — in a merger, acquisition, or asset sale, with notice.</li>
           </ul>
 
           <h2>5. Cross-border transfers</h2>

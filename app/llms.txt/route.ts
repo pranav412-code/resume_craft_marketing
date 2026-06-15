@@ -2,7 +2,6 @@ import { siteConfig } from "@/lib/site";
 import { guides } from "@/lib/guides";
 import { publishedRoles } from "@/data/roles";
 import { templateStyles } from "@/data/templates";
-import { competitors } from "@/data/competitors";
 
 /**
  * /llms.txt — emerging convention (llmstxt.org): a curated, plain-text map of
@@ -47,11 +46,6 @@ ${publishedRoles()
 ## Template families
 ${templateStyles
   .map((t) => `- [${t.name} template](${u}/resume-templates/${t.slug}): ${t.description}`)
-  .join("\n")}
-
-## Comparisons
-${competitors
-  .map((c) => `- [ResumeCraft vs ${c.name}](${u}/compare/${c.slug})`)
   .join("\n")}
 
 ## Regional

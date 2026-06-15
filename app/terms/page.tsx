@@ -95,7 +95,7 @@ export default function TermsPage() {
           <h2>3. Account and authentication</h2>
           <p>
             Authentication is provided via email/password or Google OAuth
-            through our processor Supabase. You are responsible for
+            through our authentication processor. You are responsible for
             maintaining the confidentiality of your credentials and for all
             activity under your account. Notify us at {SUPPORT_EMAIL}{" "}
             immediately on any unauthorized access. We may suspend or

@@ -36,7 +36,3 @@ export function templateTitle(name: string): string {
   return `${name} Resume Template`;
 }
 
-/** /compare/{slug} — keeps the "{name} alternative" target keyword. */
-export function compareTitle(name: string): string {
-  return withOptionalYear(`${name} Alternative — ${siteConfig.name}`);
-}

@@ -3,7 +3,6 @@ import { siteConfig } from "@/lib/site";
 import { guides } from "@/lib/guides";
 import { publishedRoles } from "@/data/roles";
 import { templateStyles } from "@/data/templates";
-import { competitors } from "@/data/competitors";
 
 /**
  * XML sitemap — served at /sitemap.xml.
@@ -66,18 +65,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const compareEntries = competitors.map((c) => ({
-    url: `${siteConfig.url}/compare/${c.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
   return [
     ...statics,
     ...guideEntries,
     ...roleEntries,
     ...templateEntries,
-    ...compareEntries,
   ];
 }
