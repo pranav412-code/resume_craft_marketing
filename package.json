@@ -1,0 +1,27 @@
+{
+  "name": "resumecraft-marketing",
+  "version": "0.2.0",
+  "private": true,
+  "description": "ResumeCraft marketing + SEO/GEO site (Next.js App Router, SSG). Strategy v2 — content-led, no free tools.",
+  "scripts": {
+    "dev": "next dev -p 5173",
+    "prebuild": "tsx scripts/check-titles.ts",
+    "build": "next build",
+    "start": "next start -p 5173",
+    "lint": "next lint",
+    "check:titles": "tsx scripts/check-titles.ts",
+    "indexnow": "tsx scripts/indexnow.ts"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
