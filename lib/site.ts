@@ -39,13 +39,71 @@ export const siteConfig = {
     "https://www.producthunt.com/products/resumecraft",
     "https://github.com/resumecraft",
   ],
-  // Plans surfaced in SoftwareApplication schema AND on /pricing.
-  // PLACEHOLDER prices — update with the real Razorpay plans before launch.
+  // Plans surfaced in SoftwareApplication/Product schema AND on /pricing.
+  // Source of truth: backend/app/api/credits.py packs endpoint.
   offers: [
-    { name: "Free", price: "0", priceCurrency: "USD", blurb: "3 credits to try the full flow" },
-    { name: "Pro", price: "9", priceCurrency: "USD", blurb: "Monthly credits + all templates" },
-    { name: "Pro (India)", price: "499", priceCurrency: "INR", blurb: "Same Pro, INR-native via Razorpay" },
+    {
+      id: "free",
+      name: "Free",
+      planType: "free",
+      priceINR: 0,
+      priceUSD: 0,
+      credits: 10,
+      slots: 1,
+      blurb: "10 credits to try the full flow",
+    },
+    {
+      id: "job_seeker",
+      name: "Job Seeker",
+      planType: "recurring",
+      priceINR: 149,
+      priceUSD: 4.99,
+      credits: 60,
+      slots: 8,
+      blurb: "60 credits/month + priority processing",
+    },
+    {
+      id: "career_sprint",
+      name: "Career Sprint",
+      planType: "commitment",
+      priceINR: 399,
+      priceUSD: 12.99,
+      credits: 60,
+      slots: 10,
+      cyclesIfCommitment: 3,
+      popular: true,
+      blurb: "3-month sprint · 60 credits/month · best value",
+    },
+    {
+      id: "refill_starter",
+      name: "Refill Starter",
+      planType: "one_time",
+      priceINR: 99,
+      priceUSD: 2.99,
+      credits: 20,
+      slots: 0,
+      blurb: "20 credits, top up anytime",
+    },
+    {
+      id: "refill_pro",
+      name: "Refill Pro",
+      planType: "one_time",
+      priceINR: 249,
+      priceUSD: 7.99,
+      credits: 60,
+      slots: 0,
+      blurb: "60 credits, top up anytime",
+    },
   ],
+  // Credit cost per optimization mode (source: backend/app/api/optimize.py).
+  modeCredits: { quick: 5, balanced: 8, deep: 12 } as const,
+  modeExplainer: {
+    quick: "Fast pass — keyword + heading fixes.",
+    balanced: "Default — rewrites bullets + reorders for the JD.",
+    deep: "Full rewrite + multi-pass ATS audit.",
+  },
 } as const;
+
+export type Offer = (typeof siteConfig.offers)[number];
 
 export type SiteConfig = typeof siteConfig;

@@ -39,8 +39,45 @@ export function websiteSchema() {
   };
 }
 
+/** Build the cross-currency Offer list once; reused by SoftwareApplication + Product. */
+function buildOffers() {
+  const categoryFor = (planType: string) =>
+    planType === "free"
+      ? "free"
+      : planType === "one_time"
+      ? "one-time"
+      : "subscription";
+
+  const offers: Array<Record<string, unknown>> = [];
+  for (const o of siteConfig.offers) {
+    // USD offer
+    offers.push({
+      "@type": "Offer",
+      name: o.name,
+      price: o.priceUSD.toFixed(2),
+      priceCurrency: "USD",
+      category: categoryFor(o.planType),
+    });
+    // INR offer (skip the duplicate Free row to avoid noise — Free is global)
+    if (o.priceINR > 0) {
+      offers.push({
+        "@type": "Offer",
+        name: `${o.name} (India)`,
+        price: o.priceINR.toString(),
+        priceCurrency: "INR",
+        category: categoryFor(o.planType),
+        eligibleRegion: { "@type": "Country", name: "IN" },
+      });
+    }
+  }
+  return offers;
+}
+
+const HIGH_PRICE_USD = "12.99";
+
 /** The product. Home + product pages. */
 export function softwareApplicationSchema() {
+  const offerList = buildOffers();
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -52,16 +89,30 @@ export function softwareApplicationSchema() {
     publisher: { "@id": ORG_ID },
     offers: {
       "@type": "AggregateOffer",
-      offerCount: siteConfig.offers.length,
+      offerCount: offerList.length,
       lowPrice: "0",
+      highPrice: HIGH_PRICE_USD,
       priceCurrency: "USD",
-      offers: siteConfig.offers.map((o) => ({
-        "@type": "Offer",
-        name: o.name,
-        price: o.price,
-        priceCurrency: o.priceCurrency,
-        category: o.price === "0" ? "free" : "subscription",
-      })),
+      offers: offerList,
+    },
+  };
+}
+
+/** Product + Offer list for /pricing rich results (distinct from SoftwareApplication). */
+export function productSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${siteConfig.name} — AI Resume Builder`,
+    description: siteConfig.description,
+    brand: { "@id": ORG_ID },
+    offers: {
+      "@type": "AggregateOffer",
+      offerCount: buildOffers().length,
+      lowPrice: "0",
+      highPrice: HIGH_PRICE_USD,
+      priceCurrency: "USD",
+      offers: buildOffers(),
     },
   };
 }

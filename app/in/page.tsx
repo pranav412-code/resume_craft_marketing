@@ -94,8 +94,9 @@ export default function IndiaPage() {
             <li className="card">
               <h3>INR-native billing</h3>
               <p>
-                Razorpay checkout with UPI, cards, and netbanking at
-                INR-market prices. See <Link href="/pricing">pricing</Link>.
+                Razorpay checkout with UPI, cards, and netbanking. Job Seeker
+                ₹149/month or Career Sprint ₹399 for 3 months (most popular).
+                See <Link href="/pricing">pricing</Link>.
               </p>
             </li>
             <li className="card">
@@ -111,7 +112,7 @@ export default function IndiaPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>From campus to offer letter</h2>
-            <p>Free credits to start — no card needed.</p>
+            <p>10 free credits to start — no card needed.</p>
             <CTA page={PAGE} template="fresher" label="Start free" />
           </div>
           <FaqBlock items={faq} />
