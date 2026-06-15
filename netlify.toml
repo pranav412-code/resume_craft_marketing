@@ -2,5 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  # NEXT_PUBLIC_* vars are public by design — exclude from Netlify secrets scanner.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_API_URL,NEXT_PUBLIC_APP_URL"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
