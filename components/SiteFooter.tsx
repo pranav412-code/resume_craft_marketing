@@ -31,6 +31,8 @@ export function SiteFooter() {
           <p className="footer-head">Company</p>
           <Link href="/about">About</Link>
           <Link href="/in">ResumeCraft for India</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/feedback">Feedback</Link>
           <p className="footer-head" style={{ marginTop: "0.8rem" }}>
             Compare
           </p>
