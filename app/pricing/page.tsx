@@ -17,7 +17,7 @@ const PAGE = "/pricing";
 export const metadata: Metadata = createMetadata({
   title: "Pricing — Free to Start, INR & USD Plans",
   description:
-    "ResumeCraft pricing: 10 free credits, then Job Seeker at ₹149/$4.99 per month or Career Sprint at ₹399/$12.99 for 3 months. Refill packs from ₹99/$2.99. INR via Razorpay.",
+    "ResumeCraft pricing: 25 free credits, then Job Seeker at ₹149/$4.99 per month or Career Sprint at ₹399/$12.99 for 3 months. Refill packs from ₹99/$2.99. INR via Razorpay.",
   path: PAGE,
 });
 
@@ -25,7 +25,7 @@ const faq: QA[] = [
   {
     question: "Is there a real free plan?",
     answer:
-      "Yes. You get 10 credits on signup — enough for two Balanced optimizations or one Deep run — and run the full flow (upload, AI tailoring, ATS scoring, PDF export). No card required.",
+      "Yes. You get 25 credits on signup — enough for three Balanced optimizations or two Deep runs — and run the full flow (upload, AI tailoring, ATS scoring, PDF export). No card required.",
   },
   {
     question: "What is a credit?",
@@ -158,7 +158,7 @@ export default function PricingPage() {
         <section className="hero container">
           <h1>Simple pricing, in your currency</h1>
           <p className="lede">
-            Start with 10 free credits. Upgrade when you need more — in USD or
+            Start with 25 free credits. Upgrade when you need more — in USD or
             native INR via Razorpay.
           </p>
         </section>
@@ -210,7 +210,7 @@ export default function PricingPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>Try the whole product before paying anything</h2>
-            <p>10 free credits, no card required.</p>
+            <p>25 free credits, no card required.</p>
             <CTA page={PAGE} label="Start free" />
           </div>
           <FaqBlock items={faq} />

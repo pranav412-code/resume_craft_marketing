@@ -31,7 +31,7 @@ const faq: QA[] = [
   {
     question: "Is ResumeCraft free?",
     answer:
-      "Yes to start. You get 10 free credits on signup — enough for two Balanced optimizations — and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. Paid plans start at ₹149 / $4.99 per month for Job Seeker; Career Sprint covers 3 months at ₹399 / $12.99 total.",
+      "Yes to start. You get 25 free credits on signup — enough for three Balanced optimizations or two Deep runs — and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. Paid plans start at ₹149 / $4.99 per month for Job Seeker; Career Sprint covers 3 months at ₹399 / $12.99 total.",
   },
   {
     question: "What is an ATS score?",

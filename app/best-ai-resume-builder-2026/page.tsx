@@ -34,7 +34,7 @@ const tools: Tool[] = [
     name: "ResumeCraft",
     url: "/",
     bestFor: "Tailoring + ATS scoring in one flow, LaTeX export, INR pricing",
-    pricing: "Free 10 credits · ₹149 / $4.99 mo · ₹399 / $12.99 for 3-month sprint",
+    pricing: "Free 25 credits · ₹149 / $4.99 mo · ₹399 / $12.99 for 3-month sprint",
     ats: "Yes — scored every export",
     latex: "Yes — clean .tex source",
     jdTailor: "Yes — rewrites bullets to the JD",
@@ -126,7 +126,7 @@ const faq: QA[] = [
   {
     question: "Is a free AI resume builder good enough?",
     answer:
-      "For one or two applications, yes. ResumeCraft's free 10 credits cover two Balanced optimizations end-to-end including PDF export. Most paid tiers only become necessary once you are applying to ten or more roles a month or need ongoing tailoring per application.",
+      "For one or two applications, yes. ResumeCraft's free 25 credits cover three Balanced optimizations or two Deep runs end-to-end including PDF export. Most paid tiers only become necessary once you are applying to ten or more roles a month or need ongoing tailoring per application.",
   },
   {
     question: "Do AI resume builders pass ATS systems?",
@@ -269,7 +269,7 @@ export default function BestAiResumeBuilder2026Page() {
         <div className="container">
           <div className="cta-banner">
             <h2>Skip the comparison fatigue</h2>
-            <p>Try ResumeCraft free. 10 credits. No card. Full flow.</p>
+            <p>Try ResumeCraft free. 25 credits. No card. Full flow.</p>
             <CTA page={PAGE} label="Build my resume now" />
           </div>
           <FaqBlock items={faq} />

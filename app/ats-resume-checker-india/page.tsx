@@ -22,7 +22,7 @@ const faq: QA[] = [
   {
     question: "Is the ATS checker really free?",
     answer:
-      "Yes. Sign up gives 10 free credits — enough to upload your resume, run a Balanced ATS check, see your score, and export. No card required. Paid plans start at ₹149/month for Job Seeker and ₹399 for a 3-month Career Sprint.",
+      "Yes. Sign up gives 25 free credits — enough to run three Balanced ATS checks end-to-end (upload, score, export). No card required. Paid plans start at ₹149/month for Job Seeker and ₹399 for a 3-month Career Sprint.",
   },
   {
     question: "Which ATS systems does it test against?",

@@ -117,7 +117,7 @@ export default function TermsPage() {
           <h2>5. Credits, subscriptions, and payments</h2>
           <ul>
             <li>
-              <strong>Free credits:</strong> 10 credits are granted on signup
+              <strong>Free credits:</strong> 25 credits are granted on signup
               for evaluation; they expire on account deletion only.
             </li>
             <li>

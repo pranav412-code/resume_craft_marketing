@@ -48,9 +48,9 @@ export const siteConfig = {
       planType: "free",
       priceINR: 0,
       priceUSD: 0,
-      credits: 10,
+      credits: 25,
       slots: 1,
-      blurb: "10 credits to try the full flow",
+      blurb: "25 credits to try the full flow",
     },
     {
       id: "job_seeker",

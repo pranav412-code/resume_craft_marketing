@@ -112,7 +112,7 @@ export default function IndiaPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>From campus to offer letter</h2>
-            <p>10 free credits to start — no card needed.</p>
+            <p>25 free credits to start — no card needed.</p>
             <CTA page={PAGE} template="fresher" label="Start free" />
           </div>
           <FaqBlock items={faq} />
