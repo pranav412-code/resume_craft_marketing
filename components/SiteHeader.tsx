@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { CTA } from "@/components/CTA";
 
@@ -7,7 +8,8 @@ export function SiteHeader({ page }: { page: string }) {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
+          <Image src="/logo.png" alt={`${siteConfig.name} logo`} width={32} height={32} priority />
           {siteConfig.name}
         </Link>
         <nav className="main-nav" aria-label="Main">

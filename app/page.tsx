@@ -13,9 +13,10 @@ import { guides, guideUrl } from "@/lib/guides";
 const PAGE = "/";
 
 export const metadata: Metadata = createMetadata({
-  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  title: `AI Resume Builder & ATS Optimizer — Free | ${siteConfig.name}`,
   absoluteTitle: true,
-  description: siteConfig.description,
+  description:
+    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start — no credit card.",
   path: PAGE,
   // Reciprocal hreflang with the India page.
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },

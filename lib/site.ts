@@ -28,7 +28,7 @@ export const siteConfig = {
   apiUrl: API_URL,
   locale: "en_US",
   description:
-    "Build an ATS-ready resume with AI. Upload your resume, tailor it to any job description, see your ATS score, and export to PDF or LaTeX. Free to start.",
+    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start — no credit card.",
   tagline: "AI Resume Builder & ATS Optimizer",
   twitter: "@resumecraft",
   // Brand entity links — strengthens the GEO entity graph (schema sameAs).
