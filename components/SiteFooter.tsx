@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { guides, guideUrl } from "@/lib/guides";
+import { ProductHuntBadge } from "@/components/ProductHuntBadge";
 
 /** Sitewide footer: pillar + guide links (internal-link mesh) + entity info. */
 export function SiteFooter() {
@@ -10,6 +11,9 @@ export function SiteFooter() {
         <div>
           <p className="brand">{siteConfig.name}</p>
           <p className="muted">{siteConfig.tagline}</p>
+          <div style={{ marginTop: "1.5rem" }}>
+            <ProductHuntBadge />
+          </div>
         </div>
         <nav aria-label="Product">
           <p className="footer-head">Product</p>

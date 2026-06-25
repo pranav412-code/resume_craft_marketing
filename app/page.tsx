@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CTA } from "@/components/CTA";
+import { ProductHuntBadge } from "@/components/ProductHuntBadge";
 import { FaqBlock, type QA } from "@/components/FaqBlock";
 import { guides, guideUrl } from "@/lib/guides";
 
@@ -70,6 +71,9 @@ export default function HomePage() {
             <Link href="/resume-templates" className="btn btn-ghost">
               Browse templates
             </Link>
+          </div>
+          <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+            <ProductHuntBadge />
           </div>
         </section>
 

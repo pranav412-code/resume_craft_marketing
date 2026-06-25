@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 import { CTA } from "@/components/CTA";
+import { ProductHuntBadge } from "@/components/ProductHuntBadge";
 
 /** Sitewide header: brand + pillar nav + persistent CTA. Server component. */
 export function SiteHeader({ page }: { page: string }) {
@@ -25,7 +26,12 @@ export function SiteHeader({ page }: { page: string }) {
           <Link href="/guides">Guides</Link>
           <Link href="/pricing">Pricing</Link>
         </nav>
-        <CTA page={page} label="Start free" />
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <div style={{ transform: "scale(0.8)", transformOrigin: "right center" }}>
+            <ProductHuntBadge />
+          </div>
+          <CTA page={page} label="Start free" />
+        </div>
       </div>
     </header>
   );
