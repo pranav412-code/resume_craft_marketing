@@ -66,7 +66,7 @@ export function NetlifyForm({
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={onSubmit}
-      style={{ display: "grid", gap: "1rem", maxWidth: 560 }}
+      className="form-grid"
     >
       <input type="hidden" name="form-name" value={name} />
       <p hidden>

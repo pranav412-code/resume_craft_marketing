@@ -101,18 +101,9 @@ function PlanCard({ o }: { o: Offer }) {
         </span>
       )}
       <h3>{o.name}</h3>
-      <p
-        style={{
-          fontSize: "1.6rem",
-          fontWeight: 800,
-          color: "var(--navy)",
-          margin: "0.25rem 0 0.1rem",
-        }}
-      >
+      <p className="plan-price">
         {formatINR(o.priceINR)}{" "}
-        <span style={{ fontSize: "0.95rem", fontWeight: 500, color: "var(--muted)" }}>
-          / {formatUSD(o.priceUSD)}
-        </span>
+        <span className="plan-price-alt">/ {formatUSD(o.priceUSD)}</span>
       </p>
       <p className="muted" style={{ fontSize: "0.85rem", marginTop: 0 }}>
         {periodLabel(o.planType, cycles)}

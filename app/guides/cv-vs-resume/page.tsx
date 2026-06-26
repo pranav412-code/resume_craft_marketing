@@ -77,6 +77,7 @@ export default function Page() {
 
           {/* AEO table-snippet target. */}
           <h2>CV vs resume at a glance</h2>
+          <div className="table-wrap">
           <table>
             <thead>
               <tr>
@@ -113,6 +114,7 @@ export default function Page() {
               </tr>
             </tbody>
           </table>
+          </div>
 
           <h2>What does &quot;CV&quot; mean by region?</h2>
           <ul>

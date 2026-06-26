@@ -72,7 +72,7 @@ export default function HomePage() {
               Browse templates
             </Link>
           </div>
-          <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
+          <div className="hero-badge">
             <ProductHuntBadge />
           </div>
         </section>
