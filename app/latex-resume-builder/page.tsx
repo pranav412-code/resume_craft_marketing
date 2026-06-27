@@ -177,7 +177,7 @@ export default function LatexResumeBuilderPage() {
           <div className="cta-banner">
             <h2>Ship a LaTeX resume in under ten minutes</h2>
             <p>Free to start. Clean .tex source. ATS-scored.</p>
-            <CTA page={PAGE} label="Try it free" />
+            <CTA page={PAGE} label="Export LaTeX resume — free" />
           </div>
           <FaqBlock items={faq} />
         </div>

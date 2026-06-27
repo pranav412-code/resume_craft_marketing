@@ -78,7 +78,7 @@ export default function ExamplesPage() {
           <div className="cta-banner">
             <h2>The best example is your own resume, tailored</h2>
             <p>Upload it and see the difference in minutes.</p>
-            <CTA page={PAGE} label="Try free" />
+            <CTA page={PAGE} label="Upload and tailor — free" />
           </div>
         </div>
       </main>

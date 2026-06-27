@@ -60,7 +60,7 @@ export default function ResumeBuilderPage() {
             the exact job description — then proves it with an ATS score.
           </p>
           <div className="actions">
-            <CTA page={PAGE} />
+            <CTA page={PAGE} label="Launch AI resume builder" />
             <Link href="/tailor-resume-to-job-description" className="btn btn-ghost">
               See how tailoring works
             </Link>
@@ -105,7 +105,7 @@ export default function ResumeBuilderPage() {
           <div className="cta-banner">
             <h2>Stop sending the same resume everywhere</h2>
             <p>Upload once, tailor for every application.</p>
-            <CTA page={PAGE} label="Try it free" />
+            <CTA page={PAGE} label="Open the AI builder — free" />
           </div>
           <FaqBlock items={faq} />
         </div>

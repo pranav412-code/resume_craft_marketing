@@ -202,7 +202,7 @@ export default function PricingPage() {
           <div className="cta-banner">
             <h2>Try the whole product before paying anything</h2>
             <p>25 free credits, no card required.</p>
-            <CTA page={PAGE} label="Start free" />
+            <CTA page={PAGE} label="Create free account" />
           </div>
           <FaqBlock items={faq} />
         </div>

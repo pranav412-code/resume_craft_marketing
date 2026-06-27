@@ -62,9 +62,9 @@ export default function HomePage() {
             <em>resume with AI</em>
           </h1>
           <p className="lede">
-            Upload your resume, paste the job description, and let AI tailor
-            your content to the role — with an ATS score to prove it and
-            pixel-perfect PDF or LaTeX export.
+            Build an ATS-optimized resume with AI — upload your current CV,
+            paste the job description, and get a tailored draft with an ATS
+            score to prove it, plus pixel-perfect PDF or LaTeX export.
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Build my resume — free" />

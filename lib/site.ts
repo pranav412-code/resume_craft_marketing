@@ -3,14 +3,14 @@
  * sitemap, llms.txt, and the CTA component so everything stays consistent.
  *
  * IMPORTANT: set NEXT_PUBLIC_SITE_URL / NEXT_PUBLIC_APP_URL in the env before
- * deploy. The fallbacks below are placeholders — replace once domains exist.
+ * deploy. Primary marketing domain: https://resumecraft.site
  */
 function stripTrailingSlash(u: string): string {
   return u.replace(/\/+$/, "");
 }
 
 const SITE_URL = stripTrailingSlash(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://resumecraft.app",
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://resumecraft.site",
 );
 const APP_URL = stripTrailingSlash(
   process.env.NEXT_PUBLIC_APP_URL ?? "https://app.resumecraft.site",

@@ -1,10 +1,36 @@
+# ResumeCraft marketing site (Next.js) — https://resumecraft.site
+# Set Netlify "Primary domain" to resumecraft.site; resumecraft.app aliases here.
+
 [build]
   command = "npm run build"
   publish = ".next"
 
 [build.environment]
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_SITE_URL = "https://resumecraft.site"
+  NEXT_PUBLIC_APP_URL = "https://app.resumecraft.site"
+  NEXT_PUBLIC_API_URL = "https://resume-craft-backend-1r57.onrender.com"
   # NEXT_PUBLIC_* vars are public by design — exclude from Netlify secrets scanner.
   SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SITE_URL,NEXT_PUBLIC_API_URL,NEXT_PUBLIC_APP_URL"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Non-primary hostnames → canonical domain (fixes SEO canonical/hreflang mismatch).
+[[redirects]]
+  from = "https://resumecraft.app/*"
+  to = "https://resumecraft.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.resumecraft.app/*"
+  to = "https://resumecraft.site/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.resumecraft.site/*"
+  to = "https://resumecraft.site/:splat"
+  status = 301
+  force = true

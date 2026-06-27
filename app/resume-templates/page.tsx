@@ -83,7 +83,7 @@ export default function TemplatesPage() {
           <div className="cta-banner">
             <h2>Templates don&apos;t get jobs — tailored content does</h2>
             <p>Pick a template, then let the AI match it to the role.</p>
-            <CTA page={PAGE} label="Build free" />
+            <CTA page={PAGE} label="Tailor a template — free" />
           </div>
           <FaqBlock items={faq} />
         </div>
