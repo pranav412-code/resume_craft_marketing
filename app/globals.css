@@ -1,37 +1,28 @@
 /*
- * ResumeCraft marketing theme — mirrors the product app (ats_frontend_v2):
- * zinc neutrals on zinc-50, sharp corners (no radius), serif display type
- * with italic accents, mono-uppercase labels/buttons, zinc-900 filled CTAs,
- * emerald as the positive accent, zinc-950 footer. Dark mode mirrors the
- * app's dark: variants via prefers-color-scheme.
+ * ResumeCraft design tokens - shared with ats_frontend_v2/src/index.css.
+ * Sans for body/headings, mono for labels/CTAs. No serif, no italic.
+ * Dark mode via prefers-color-scheme.
  */
 :root {
-  /* zinc scale */
-  --bg: #fafafa; /* zinc-50  — app page background */
-  --surface: #ffffff; /* cards / alternating bands */
-  --fg: #18181b; /* zinc-900 */
-  --ink: #09090b; /* zinc-950 — filled buttons, footer */
-  --muted: #71717a; /* zinc-500 */
-  --border: #e4e4e7; /* zinc-200 */
-  --border-strong: #d4d4d8; /* zinc-300 */
-  --bg-soft: #f4f4f5; /* zinc-100 */
-
-  /* emerald accent (app's positive/trust color) */
-  --accent: #059669; /* emerald-600 */
-  --accent-bright: #10b981; /* emerald-500 */
-  --accent-tint: #ecfdf5; /* emerald-50 */
-
-  /* legacy aliases still referenced by pages */
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --fg: #18181b;
+  --ink: #09090b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+  --bg-soft: #f4f4f5;
+  --accent: #059669;
+  --accent-bright: #10b981;
+  --accent-tint: #ecfdf5;
+  --danger: #e11d48;
   --navy: #18181b;
   --bg-tint: #ecfdf5;
   --radius: 0;
-
-  /* type — app: Tailwind font-serif/font-mono default stacks + Inter sans */
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
     monospace;
-
-  /* inverse pair for filled controls (flips in dark mode like the app) */
   --btn-bg: #18181b;
   --btn-bg-hover: #27272a;
   --btn-fg: #fafafa;
@@ -39,19 +30,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #09090b; /* zinc-950 */
-    --surface: #18181b; /* zinc-900 */
+    --bg: #09090b;
+    --surface: #18181b;
     --fg: #fafafa;
     --ink: #09090b;
-    --muted: #a1a1aa; /* zinc-400 */
-    --border: #27272a; /* zinc-800 */
-    --border-strong: #3f3f46; /* zinc-700 */
+    --muted: #a1a1aa;
+    --border: #27272a;
+    --border-strong: #3f3f46;
     --bg-soft: #18181b;
-    --accent: #34d399; /* emerald-400 — app's dark-mode emerald */
+    --accent: #34d399;
+    --accent-bright: #34d399;
     --accent-tint: #022c22;
+    --danger: #fb7185;
     --navy: #fafafa;
     --bg-tint: #022c22;
-    --btn-bg: #f4f4f5; /* app dark mode: bg-zinc-100 text-zinc-900 */
+    --btn-bg: #f4f4f5;
     --btn-bg-hover: #ffffff;
     --btn-fg: #18181b;
   }
@@ -70,8 +63,7 @@ body {
   margin: 0;
   color: var(--fg);
   background: var(--bg);
-  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.65;
 }
 
@@ -93,10 +85,15 @@ img {
 h1,
 h2,
 h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--fg);
+}
+
+em,
+i {
+  font-style: normal;
 }
 
 .container {
@@ -177,7 +174,7 @@ h3 {
   display: inline-block;
 }
 
-/* ── header (app navbar: sticky, blur, bottom border, serif brand) ── */
+/* ── header (app navbar: sticky, blur, bottom border, sans brand) ── */
 .site-header {
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -196,7 +193,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
@@ -312,7 +309,7 @@ h3 {
   padding: 0.55rem 1.1rem;
 }
 
-/* ── hero (app landing: serif display, italic accent, centered) ── */
+/* ── hero (app landing: sans display, centered) ── */
 .hero {
   padding: 5rem 0 4rem;
   text-align: center;
@@ -324,12 +321,12 @@ h3 {
 }
 .hero h1 em,
 .hero h1 i {
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   color: var(--muted);
 }
 .hero .lede {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   color: var(--muted);
   max-width: 640px;
@@ -413,7 +410,7 @@ h3 {
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent-bright);
   padding: 1.1rem 1.3rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -466,7 +463,7 @@ h3 {
 }
 .faq summary {
   cursor: pointer;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.02rem;
 }
@@ -476,7 +473,7 @@ h3 {
   line-height: 1.65;
 }
 
-/* ── CTA banner (app dark band: zinc-950, serif, inverse button) ── */
+/* ── CTA banner (app dark band: zinc-950, sans, inverse button) ── */
 .cta-banner {
   background: var(--ink);
   border: 1px solid var(--border);
@@ -491,7 +488,7 @@ h3 {
   font-size: 1.8rem;
 }
 .cta-banner p {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   color: #a1a1aa;
   margin-bottom: 1.6rem;
 }

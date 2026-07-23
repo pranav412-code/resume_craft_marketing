@@ -28,10 +28,10 @@ export const siteConfig = {
   apiUrl: API_URL,
   locale: "en_US",
   description:
-    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start — no credit card.",
+    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start - no credit card.",
   tagline: "AI Resume Builder & ATS Optimizer",
   twitter: "@resumecraft",
-  // Brand entity links — strengthens the GEO entity graph (schema sameAs).
+  // Brand entity links - strengthens the GEO entity graph (schema sameAs).
   // Replace with real profiles; remove any that don't exist.
   sameAs: [
     "https://twitter.com/resumecraft",
@@ -98,8 +98,8 @@ export const siteConfig = {
   // Credit cost per optimization mode (source: backend/app/api/optimize.py).
   modeCredits: { quick: 5, balanced: 8, deep: 12 } as const,
   modeExplainer: {
-    quick: "Fast pass — keyword + heading fixes.",
-    balanced: "Default — rewrites bullets + reorders for the JD.",
+    quick: "Fast pass - keyword + heading fixes.",
+    balanced: "Default - rewrites bullets + reorders for the JD.",
     deep: "Full rewrite + multi-pass ATS audit.",
   },
 } as const;

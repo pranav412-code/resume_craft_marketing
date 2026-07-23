@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 
-/** Web app manifest — served at /manifest.webmanifest. */
+/** Web app manifest - served at /manifest.webmanifest. */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${siteConfig.name} — ${siteConfig.tagline}`,
+    name: `${siteConfig.name} - ${siteConfig.tagline}`,
     short_name: siteConfig.name,
     description: siteConfig.description,
     start_url: "/",

@@ -14,14 +14,14 @@ import { validateRoles } from "@/lib/validateRole";
 
 /**
  * Programmatic P2 engine: one statically generated page per published role.
- * The QA gate runs here — a thin role FAILS the build (strategy §8).
+ * The QA gate runs here - a thin role FAILS the build (strategy §8).
  * Only registry slugs build; anything else 404s (no doorway-page sprawl).
  */
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   const roles = publishedRoles();
-  validateRoles(roles); // QA gate — throws on thin content, failing the build.
+  validateRoles(roles); // QA gate - throws on thin content, failing the build.
   return roles.map((r) => ({ job: r.slug }));
 }
 
@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!role) return {};
   return createMetadata({
     title: roleTitle(role.title),
-    description: `A recruiter-aware ${role.title.toLowerCase()} resume example: the skills, ATS keywords, and quantified bullet points that pass screening — plus what recruiters actually scan for.`,
+    description: `A recruiter-aware ${role.title.toLowerCase()} resume example: the skills, ATS keywords, and quantified bullet points that pass screening - plus what recruiters actually scan for.`,
     path: `/resume-examples/${role.slug}`,
     type: "article",
   });
@@ -84,12 +84,12 @@ export default async function RoleExamplePage({
             {role.category} · Updated {today}
           </p>
 
-          {/* AEO answer block — validated 35–75 words by the QA gate. */}
+          {/* AEO answer block - validated 35–75 words by the QA gate. */}
           <p className="answer">{role.answer}</p>
 
           <h2>What skills should a {role.title.toLowerCase()} resume include?</h2>
           <p>
-            <strong>Hard skills</strong> (the keyword layer — mirror the
+            <strong>Hard skills</strong> (the keyword layer - mirror the
             posting&apos;s exact wording where true of you):
           </p>
           <ul>
@@ -98,7 +98,7 @@ export default async function RoleExamplePage({
             ))}
           </ul>
           <p>
-            <strong>Soft skills</strong> — shown through bullets, not listed as
+            <strong>Soft skills</strong> - shown through bullets, not listed as
             adjectives:
           </p>
           <ul>
@@ -110,7 +110,7 @@ export default async function RoleExamplePage({
           <h2>ATS keywords for {role.title.toLowerCase()} roles</h2>
           <p>
             Terms recruiters search and applicant tracking systems rank on for
-            this title — work the true ones into your bullets and skills
+            this title - work the true ones into your bullets and skills
             section (see{" "}
             <Link href="/guides/ats-friendly-resume">how ATS screening works</Link>
             ):
@@ -123,7 +123,7 @@ export default async function RoleExamplePage({
 
           <h2>Example resume bullet points</h2>
           <p>
-            Quantified patterns to adapt to your own numbers — never copy
+            Quantified patterns to adapt to your own numbers - never copy
             claims that aren&apos;t yours:
           </p>
           <ul>
@@ -147,7 +147,7 @@ export default async function RoleExamplePage({
           <div className="cta-banner">
             <h2>Build your {role.title.toLowerCase()} resume from this blueprint</h2>
             <p>
-              Upload what you have — the AI tailors it to the exact posting and
+              Upload what you have - the AI tailors it to the exact posting and
               scores it.
             </p>
             <CTA

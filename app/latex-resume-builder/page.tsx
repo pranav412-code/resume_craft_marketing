@@ -11,7 +11,7 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/latex-resume-builder";
 
 export const metadata: Metadata = createMetadata({
-  title: "LaTeX Resume Builder — AI Tailored, ATS Scored, Clean .tex Export",
+  title: "LaTeX Resume Builder - AI Tailored, ATS Scored, Clean .tex Export",
   description:
     "Generate a typeset-quality LaTeX resume with AI. Tailored to any job description, ATS-scored, exports clean .tex source and PDF. Free to start.",
   path: PAGE,
@@ -21,7 +21,7 @@ const faq: QA[] = [
   {
     question: "Why use LaTeX for a resume?",
     answer:
-      "LaTeX produces consistent, typeset-quality output that PDF builders cannot match — precise spacing, ligatures, microtype kerning, and reproducible builds. The source is plain text, so it version-controls cleanly in git and survives across operating systems and years.",
+      "LaTeX produces consistent, typeset-quality output that PDF builders cannot match - precise spacing, ligatures, microtype kerning, and reproducible builds. The source is plain text, so it version-controls cleanly in git and survives across operating systems and years.",
   },
   {
     question: "Do I need to know LaTeX to use this?",
@@ -36,7 +36,7 @@ const faq: QA[] = [
   {
     question: "Which LaTeX classes do you use?",
     answer:
-      "ResumeCraft templates are built on lightweight custom classes derived from moderncv and altacv principles — minimal package dependencies, fast compile, and parseable by every major ATS we have tested.",
+      "ResumeCraft templates are built on lightweight custom classes derived from moderncv and altacv principles - minimal package dependencies, fast compile, and parseable by every major ATS we have tested.",
   },
   {
     question: "Can I edit the .tex after export?",
@@ -63,7 +63,7 @@ export default function LatexResumeBuilderPage() {
         <section className="hero container">
           <p className="eyebrow">LaTeX · AI tailored · ATS scored</p>
           <h1>
-            LaTeX resume builder — <em>typeset quality, AI-tailored</em>
+            LaTeX resume builder: typeset quality, AI-tailored
           </h1>
           <p className="lede">
             Generate a clean .tex source and recruiter-ready PDF in one pass.
@@ -71,7 +71,7 @@ export default function LatexResumeBuilderPage() {
             Overleaf or any editor.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Build my LaTeX resume — free" />
+            <CTA page={PAGE} label="Build my LaTeX resume - free" />
             <Link href="/resume-templates" className="btn btn-ghost">
               Browse templates
             </Link>
@@ -92,7 +92,7 @@ export default function LatexResumeBuilderPage() {
               <h3>Version control friendly</h3>
               <p>
                 Git diffs every change line-by-line. Branch for each
-                application. No more <em>resume_final_v7_REAL.pdf</em>.
+                application. No more resume_final_v7_REAL.pdf.
               </p>
             </li>
             <li className="card">
@@ -177,7 +177,7 @@ export default function LatexResumeBuilderPage() {
           <div className="cta-banner">
             <h2>Ship a LaTeX resume in under ten minutes</h2>
             <p>Free to start. Clean .tex source. ATS-scored.</p>
-            <CTA page={PAGE} label="Export LaTeX resume — free" />
+            <CTA page={PAGE} label="Export LaTeX resume - free" />
           </div>
           <FaqBlock items={faq} />
         </div>

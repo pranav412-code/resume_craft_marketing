@@ -4,7 +4,7 @@ import { publishedRoles } from "@/data/roles";
 import { templateStyles } from "@/data/templates";
 
 /**
- * /llms.txt — emerging convention (llmstxt.org): a curated, plain-text map of
+ * /llms.txt - emerging convention (llmstxt.org): a curated, plain-text map of
  * the site for AI engines. Cheap GEO hygiene; complements robots + schema.
  */
 export const dynamic = "force-static";

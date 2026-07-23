@@ -1,5 +1,5 @@
 /**
- * Injects JSON-LD structured data. Server component — raw
+ * Injects JSON-LD structured data. Server component - raw
  * <script type="application/ld+json">, zero client JS.
  * Pass one schema object or an array.
  */

@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 /**
- * ⚠️ TEMPLATE — not legal advice. Drafted to align with:
+ * ⚠️ TEMPLATE - not legal advice. Drafted to align with:
  *  - Indian Contract Act, 1872 (offer/acceptance, capacity, lawful object)
  *  - Information Technology Act, 2000 + Intermediary Rules, 2021
  *  - Consumer Protection Act, 2019 + Consumer Protection (E-Commerce) Rules, 2020
@@ -32,7 +32,7 @@ const PAGE = "/terms";
 
 export const metadata: Metadata = createMetadata({
   title: "Terms of Service",
-  description: `Terms governing your use of ${siteConfig.name} — accounts, credits, payments, refunds, acceptable use, AI output, and liability, drafted under Indian law.`,
+  description: `Terms governing your use of ${siteConfig.name} - accounts, credits, payments, refunds, acceptable use, AI output, and liability, drafted under Indian law.`,
   path: PAGE,
 });
 
@@ -196,7 +196,7 @@ export default function TermsPage() {
             You retain ownership of resumes, files, and text you submit
             (&quot;Your Content&quot;). You grant us a worldwide, royalty-free,
             non-exclusive licence to host, store, reproduce, modify, transmit,
-            and process Your Content solely to provide the service —
+            and process Your Content solely to provide the service -
             including transmitting necessary portions to third-party LLM
             processors for optimization and scoring, as described in the
             Privacy Policy. You represent that you have all rights necessary
@@ -246,7 +246,7 @@ export default function TermsPage() {
             prescribed by the IT (Intermediary) Rules, 2021.
           </p>
 
-          <h2>10. AI output — no guarantee</h2>
+          <h2>10. AI output - no guarantee</h2>
           <p>
             The service uses third-party AI models to suggest edits and
             estimate ATS compatibility. AI output and ATS scores are{" "}
@@ -271,7 +271,7 @@ export default function TermsPage() {
           <p>
             To the maximum extent permitted by law, the service is provided
             &quot;as is&quot; and &quot;as available&quot; without warranties
-            of any kind, express or implied — including merchantability,
+            of any kind, express or implied - including merchantability,
             fitness for a particular purpose, non-infringement, accuracy,
             uninterrupted availability, or that defects will be corrected.
           </p>

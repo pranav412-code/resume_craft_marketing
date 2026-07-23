@@ -11,9 +11,9 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/best-ai-resume-builder-2026";
 
 export const metadata: Metadata = createMetadata({
-  title: "Best AI Resume Builder 2026 — Honest Comparison (Top 7)",
+  title: "Best AI Resume Builder 2026 - Honest Comparison (Top 7)",
   description:
-    "Independent 2026 comparison of the top AI resume builders. ResumeCraft, Teal, Rezi, Jobscan, Enhancv, Kickresume, Resume Worded — features, pricing, ATS scoring.",
+    "Independent 2026 comparison of the top AI resume builders. ResumeCraft, Teal, Rezi, Jobscan, Enhancv, Kickresume, Resume Worded - features, pricing, ATS scoring.",
   path: PAGE,
 });
 
@@ -35,9 +35,9 @@ const tools: Tool[] = [
     url: "/",
     bestFor: "Tailoring + ATS scoring in one flow, LaTeX export, INR pricing",
     pricing: "Free 25 credits · ₹149 / $4.99 mo · ₹399 / $12.99 for 3-month sprint",
-    ats: "Yes — scored every export",
-    latex: "Yes — clean .tex source",
-    jdTailor: "Yes — rewrites bullets to the JD",
+    ats: "Yes - scored every export",
+    latex: "Yes - clean .tex source",
+    jdTailor: "Yes - rewrites bullets to the JD",
     pros: [
       "Tailoring and ATS scoring in the same pass",
       "Native LaTeX export",
@@ -56,7 +56,7 @@ const tools: Tool[] = [
     pricing: "Free tier · $29 mo · $9 weekly trial",
     ats: "Match score (lighter than dedicated ATS)",
     latex: "No",
-    jdTailor: "Yes — AI rewrites with job tracker",
+    jdTailor: "Yes - AI rewrites with job tracker",
     pros: ["Strong job tracker", "Polished UI", "Generous free tier features"],
     cons: ["Expensive monthly tier", "No LaTeX", "Match score ≠ true ATS scan"],
   },
@@ -65,9 +65,9 @@ const tools: Tool[] = [
     url: "https://www.rezi.ai",
     bestFor: "Real-time ATS feedback while writing",
     pricing: "Free tier · $29 mo · $149 lifetime",
-    ats: "Yes — inline ATS check",
+    ats: "Yes - inline ATS check",
     latex: "No",
-    jdTailor: "Limited — bullet AI assist",
+    jdTailor: "Limited - bullet AI assist",
     pros: ["Inline ATS feedback", "Lifetime deal available", "Clean templates"],
     cons: ["Weaker JD tailoring", "No LaTeX", "Limited template variety"],
   },
@@ -76,11 +76,11 @@ const tools: Tool[] = [
     url: "https://www.jobscan.co",
     bestFor: "Pure ATS scanning against a JD",
     pricing: "Free 5 scans / mo · $49.95 mo",
-    ats: "Yes — the original ATS scanner",
+    ats: "Yes - the original ATS scanner",
     latex: "No",
     jdTailor: "Suggestions only, no rewrite",
     pros: ["Industry-standard ATS scoring", "Detailed keyword reports"],
-    cons: ["No resume builder — just a checker", "Pricey", "No tailoring AI"],
+    cons: ["No resume builder - just a checker", "Pricey", "No tailoring AI"],
   },
   {
     name: "Enhancv",
@@ -109,11 +109,11 @@ const tools: Tool[] = [
     url: "https://resumeworded.com",
     bestFor: "Line-by-line bullet scoring",
     pricing: "Free 2 scans · $39 mo",
-    ats: "Yes — content + ATS score",
+    ats: "Yes - content + ATS score",
     latex: "No",
     jdTailor: "Targeted resume feature",
     pros: ["Strong bullet-level feedback", "LinkedIn review tool"],
-    cons: ["No builder UI — uploads only", "Expensive monthly"],
+    cons: ["No builder UI - uploads only", "Expensive monthly"],
   },
 ];
 
@@ -131,12 +131,12 @@ const faq: QA[] = [
   {
     question: "Do AI resume builders pass ATS systems?",
     answer:
-      "Tools that explicitly score for ATS (ResumeCraft, Rezi, Jobscan, Resume Worded) generally do — provided you pick a parseable template. Visual builders like Enhancv and Kickresume produce templates that can hurt ATS parsing despite looking great.",
+      "Tools that explicitly score for ATS (ResumeCraft, Rezi, Jobscan, Resume Worded) generally do - provided you pick a parseable template. Visual builders like Enhancv and Kickresume produce templates that can hurt ATS parsing despite looking great.",
   },
   {
     question: "Why is ResumeCraft listed first?",
     answer:
-      "We built ResumeCraft, so this is our own roundup. The comparison data above is current as of 2026 and the strengths and weaknesses of each tool are stated honestly — pick whichever fits your workflow. If you want JD-tailored bullets, ATS scoring, and LaTeX export together, ResumeCraft is the only tool on this list that does all three.",
+      "We built ResumeCraft, so this is our own roundup. The comparison data above is current as of 2026 and the strengths and weaknesses of each tool are stated honestly - pick whichever fits your workflow. If you want JD-tailored bullets, ATS scoring, and LaTeX export together, ResumeCraft is the only tool on this list that does all three.",
   },
 ];
 
@@ -155,15 +155,15 @@ export default function BestAiResumeBuilder2026Page() {
         <section className="hero container">
           <p className="eyebrow">2026 comparison · 7 tools tested</p>
           <h1>
-            Best AI resume builder of <em>2026</em>
+            Best AI resume builder of 2026
           </h1>
           <p className="lede">
             Honest comparison of the seven AI resume builders worth using
-            in 2026 — features, pricing, ATS scoring, LaTeX support, JD
+            in 2026 - features, pricing, ATS scoring, LaTeX support, JD
             tailoring. Disclosure: we make ResumeCraft.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Try ResumeCraft — free" />
+            <CTA page={PAGE} label="Try ResumeCraft - free" />
             <Link href="/resume-builder" className="btn btn-ghost">
               See ResumeCraft features
             </Link>
@@ -191,7 +191,7 @@ export default function BestAiResumeBuilder2026Page() {
             <li className="card">
               <h3>Best pure ATS scan: Jobscan</h3>
               <p>
-                Industry standard scanner. Not a builder — pair with another
+                Industry standard scanner. Not a builder - pair with another
                 tool to actually write the resume.
               </p>
             </li>

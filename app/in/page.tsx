@@ -12,14 +12,14 @@ const PAGE = "/in";
 
 /**
  * P6 India page. Content genuinely differs from the global home (formats,
- * fresher expectations, INR billing) — which is what justifies a separate URL
+ * fresher expectations, INR billing) - which is what justifies a separate URL
  * + hreflang instead of geo-IP currency switching alone (strategy §6).
  * hreflang map is reciprocal with the home page.
  */
 export const metadata: Metadata = createMetadata({
-  title: "Resume Format for India — Freshers & Professionals",
+  title: "Resume Format for India - Freshers & Professionals",
   description:
-    "The resume format Indian employers and campus placements expect: education-first fresher layouts, ATS-safe structure, biodata vs resume explained — with INR pricing via Razorpay.",
+    "The resume format Indian employers and campus placements expect: education-first fresher layouts, ATS-safe structure, biodata vs resume explained - with INR pricing via Razorpay.",
   path: PAGE,
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
 });
@@ -33,17 +33,17 @@ const faq: QA[] = [
   {
     question: "Is biodata the same as a resume?",
     answer:
-      "No. Biodata is an older format carrying personal details — date of birth, marital status, family information — still used in some government and traditional contexts. Corporate and campus hiring expects a resume without those fields. Send biodata only where it is explicitly requested.",
+      "No. Biodata is an older format carrying personal details - date of birth, marital status, family information - still used in some government and traditional contexts. Corporate and campus hiring expects a resume without those fields. Send biodata only where it is explicitly requested.",
   },
   {
     question: "Should freshers put education before experience?",
     answer:
-      "Yes. With limited work history, education, projects, and internships are the evidence — they lead the page. CGPA goes in when it clears stated cutoffs. ResumeCraft's Fresher template handles this ordering automatically.",
+      "Yes. With limited work history, education, projects, and internships are the evidence - they lead the page. CGPA goes in when it clears stated cutoffs. ResumeCraft's Fresher template handles this ordering automatically.",
   },
   {
     question: "Why does INR pricing matter?",
     answer:
-      "ResumeCraft bills natively in INR through Razorpay — UPI, cards, netbanking — at prices set for the Indian market, with GST handled per Indian tax rules.",
+      "ResumeCraft bills natively in INR through Razorpay - UPI, cards, netbanking - at prices set for the Indian market, with GST handled per Indian tax rules.",
   },
 ];
 
@@ -63,11 +63,11 @@ export default function IndiaPage() {
           <h1>The resume format Indian employers actually screen for</h1>
           <p className="lede">
             Education-first fresher layouts, ATS-safe structure, and AI
-            tailoring to the job description — with pricing in rupees, not
+            tailoring to the job description - with pricing in rupees, not
             converted dollars.
           </p>
           <div className="actions">
-            <CTA page={PAGE} template="fresher" label="Build my resume — free" />
+            <CTA page={PAGE} template="fresher" label="Build my resume - free" />
             <Link href="/resume-templates/fresher" className="btn btn-ghost">
               See the fresher template
             </Link>
@@ -88,7 +88,7 @@ export default function IndiaPage() {
               <h3>ATS screening is here too</h3>
               <p>
                 Naukri-era keyword screening and global ATS portals both rank
-                on job-description match — tailoring applies fully in India.
+                on job-description match - tailoring applies fully in India.
               </p>
             </li>
             <li className="card">
@@ -103,7 +103,7 @@ export default function IndiaPage() {
               <h3>Same AI engine</h3>
               <p>
                 Upload, paste the posting, get a tailored draft with an ATS
-                score — in minutes, in your context.
+                score - in minutes, in your context.
               </p>
             </li>
           </ul>
@@ -112,8 +112,8 @@ export default function IndiaPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>From campus to offer letter</h2>
-            <p>25 free credits to start — no card needed.</p>
-            <CTA page={PAGE} template="fresher" label="Build fresher resume — free" />
+            <p>25 free credits to start - no card needed.</p>
+            <CTA page={PAGE} template="fresher" label="Build fresher resume - free" />
           </div>
           <FaqBlock items={faq} />
         </div>

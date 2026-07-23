@@ -3,7 +3,7 @@
  *
  * Rules:
  *  - Only emit schema for content actually visible on the page.
- *  - NEVER fabricate aggregateRating/review — manual-penalty risk.
+ *  - NEVER fabricate aggregateRating/review - manual-penalty risk.
  *    Add ratings only once real, earned reviews exist.
  */
 import { siteConfig } from "@/lib/site";
@@ -58,7 +58,7 @@ function buildOffers() {
       priceCurrency: "USD",
       category: categoryFor(o.planType),
     });
-    // INR offer (skip the duplicate Free row to avoid noise — Free is global)
+    // INR offer (skip the duplicate Free row to avoid noise - Free is global)
     if (o.priceINR > 0) {
       offers.push({
         "@type": "Offer",
@@ -103,7 +103,7 @@ export function productSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: `${siteConfig.name} — AI Resume Builder`,
+    name: `${siteConfig.name} - AI Resume Builder`,
     description: siteConfig.description,
     brand: { "@id": ORG_ID },
     offers: {
@@ -117,7 +117,7 @@ export function productSchema() {
   };
 }
 
-/** Breadcrumbs — ordered [{name, url}]. */
+/** Breadcrumbs - ordered [{name, url}]. */
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -131,7 +131,7 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-/** FAQ — PAA + voice (AEO). Only where the Q&As are visible on-page. */
+/** FAQ - PAA + voice (AEO). Only where the Q&As are visible on-page. */
 export function faqSchema(qa: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -172,7 +172,7 @@ export function articleSchema(a: {
   };
 }
 
-/** HowTo — step content. AEO list snippets. */
+/** HowTo - step content. AEO list snippets. */
 export function howToSchema(h: {
   name: string;
   description: string;

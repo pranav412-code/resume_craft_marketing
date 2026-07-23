@@ -40,7 +40,7 @@ export function validateRole(role: Role): void {
 
   if (errors.length) {
     throw new Error(
-      `[QA gate] /resume-examples/${role.slug} fails content thresholds — fix or set status:"draft":\n  - ${errors.join("\n  - ")}`,
+      `[QA gate] /resume-examples/${role.slug} fails content thresholds - fix or set status:"draft":\n  - ${errors.join("\n  - ")}`,
     );
   }
 }

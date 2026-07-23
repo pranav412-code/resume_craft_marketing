@@ -7,7 +7,7 @@
  * non-absolute title, so the budget below is for the FINAL rendered title.
  *
  * Why 60: Google truncates titles past ~60 chars in the SERP. Keeping the
- * suffix in the math is the mistake the strategy post calls out — a 46-char
+ * suffix in the math is the mistake the strategy post calls out - a 46-char
  * title becomes 60 after " | ResumeCraft".
  */
 import { siteConfig } from "./site";

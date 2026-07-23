@@ -4,7 +4,7 @@ import { faqSchema } from "@/lib/schema";
 export type QA = { question: string; answer: string };
 
 /**
- * Visible FAQ section + matching FAQPage schema from the SAME array —
+ * Visible FAQ section + matching FAQPage schema from the SAME array -
  * guarantees the markup never drifts from on-page content (schema rule #1).
  * AEO: drives People-Also-Ask + voice answers.
  */

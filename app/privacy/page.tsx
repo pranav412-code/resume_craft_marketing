@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 /**
- * ⚠️ TEMPLATE — not legal advice. Drafted to align with:
+ * ⚠️ TEMPLATE - not legal advice. Drafted to align with:
  *  - Digital Personal Data Protection Act, 2023 (DPDP Act)
  *  - Information Technology Act, 2000 + SPDI Rules, 2011
  *  - IT (Intermediary Guidelines & Digital Media Ethics Code) Rules, 2021
@@ -30,7 +30,7 @@ const PAGE = "/privacy";
 
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
-  description: `How ${siteConfig.name} collects, uses, shares, and protects your personal data — drafted to comply with India's DPDP Act 2023, the IT Act 2000, and applicable global privacy law.`,
+  description: `How ${siteConfig.name} collects, uses, shares, and protects your personal data - drafted to comply with India's DPDP Act 2023, the IT Act 2000, and applicable global privacy law.`,
   path: PAGE,
 });
 
@@ -61,9 +61,9 @@ export default function PrivacyPage() {
             drafted with the Digital Personal Data Protection Act, 2023
             (&quot;DPDP Act&quot;) in mind for India, and the EU/UK GDPR for
             users in those jurisdictions. It explains how {ENTITY} (&quot;{siteConfig.name}&quot;,
-            &quot;we&quot;, &quot;us&quot;) — a SaaS service operated as a
+            &quot;we&quot;, &quot;us&quot;) - a SaaS service operated as a
             sole proprietorship by {PROPRIETOR} from {REGISTERED_ADDRESS},
-            India, and acting as a Data Fiduciary under the DPDP Act —
+            India, and acting as a Data Fiduciary under the DPDP Act -
             collects, uses, shares, and protects personal data when you use
             our website at {siteConfig.url} and the {siteConfig.name}{" "}
             application.
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
               you paste, optimized drafts, and ATS scores. This typically
               includes your name, contact details, work history, education, and
               skills. Some resumes may contain sensitive personal information
-              (e.g., disability disclosure, identity documents) — please do not
+              (e.g., disability disclosure, identity documents) - please do not
               include data you do not want processed by AI providers.
             </li>
             <li>
@@ -159,12 +159,12 @@ export default function PrivacyPage() {
             written contracts that require equivalent protection:
           </p>
           <ul>
-            <li><strong>Authentication and database provider</strong> — for sign-in, account storage, and resume storage.</li>
-            <li><strong>Razorpay</strong> — payment processing (regulated by the Reserve Bank of India).</li>
-            <li><strong>LLM/AI providers</strong> — third-party inference endpoints for resume optimization and scoring.</li>
-            <li><strong>Hosting and CDN providers</strong> — to run and deliver the application.</li>
-            <li><strong>Email and customer-support tooling</strong> — for transactional and support emails.</li>
-            <li><strong>Government and law-enforcement authorities</strong> — only when required by valid order under Indian law, including §69 of the IT Act, 2000 or directions under the DPDP Act.</li>
+            <li><strong>Authentication and database provider</strong> - for sign-in, account storage, and resume storage.</li>
+            <li><strong>Razorpay</strong> - payment processing (regulated by the Reserve Bank of India).</li>
+            <li><strong>LLM/AI providers</strong> - third-party inference endpoints for resume optimization and scoring.</li>
+            <li><strong>Hosting and CDN providers</strong> - to run and deliver the application.</li>
+            <li><strong>Email and customer-support tooling</strong> - for transactional and support emails.</li>
+            <li><strong>Government and law-enforcement authorities</strong> - only when required by valid order under Indian law, including §69 of the IT Act, 2000 or directions under the DPDP Act.</li>
           </ul>
 
           <h2>5. Cross-border transfers</h2>

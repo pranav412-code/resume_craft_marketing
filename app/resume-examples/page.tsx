@@ -13,14 +13,14 @@ const PAGE = "/resume-examples";
 export const metadata: Metadata = createMetadata({
   title: "Resume Examples by Job Title",
   description:
-    "Role-by-role resume examples with the skills, keywords, and bullet points that pass ATS screening — written to be copied, customized, and built on free.",
+    "Role-by-role resume examples with the skills, keywords, and bullet points that pass ATS screening - written to be copied, customized, and built on free.",
   path: PAGE,
 });
 
 /**
  * Hub page (P2). The programmatic /resume-examples/{job} pages are the volume
  * engine and ship in QA'd batches (top 100 roles first). Until they exist,
- * this hub explains the category and funnels to the builder — it must NOT
+ * this hub explains the category and funnels to the builder - it must NOT
  * link to per-role URLs that would 404.
  */
 export default function ExamplesPage() {
@@ -38,7 +38,7 @@ export default function ExamplesPage() {
         <section className="hero container">
           <h1>Resume examples that match how employers actually screen</h1>
           <p className="lede">
-            Role-specific examples — the skills, ATS keywords, and quantified
+            Role-specific examples - the skills, ATS keywords, and quantified
             bullet points that work for each job title. Built from real
             job-description data, reviewed by humans.
           </p>
@@ -56,7 +56,7 @@ export default function ExamplesPage() {
                   <Link href={`/resume-examples/${r.slug}`}>{r.title}</Link>
                 </h3>
                 <p>
-                  {r.category} — skills, ATS keywords, and quantified bullets
+                  {r.category} - skills, ATS keywords, and quantified bullets
                   for {r.title.toLowerCase()} applications.
                 </p>
               </li>
@@ -64,8 +64,8 @@ export default function ExamplesPage() {
           </ul>
           <p style={{ marginTop: "1.2rem" }}>
             More roles ship in reviewed batches. If yours isn&apos;t live yet,
-            the builder produces a tailored example from <em>your</em>{" "}
-            experience — which beats copying anyone else&apos;s. Not sure what
+            the builder produces a tailored example from your{" "}
+            experience - which beats copying anyone else&apos;s. Not sure what
             to include? Start with{" "}
             <Link href="/guides/how-to-write-a-resume">
               how to write a resume
@@ -78,7 +78,7 @@ export default function ExamplesPage() {
           <div className="cta-banner">
             <h2>The best example is your own resume, tailored</h2>
             <p>Upload it and see the difference in minutes.</p>
-            <CTA page={PAGE} label="Upload and tailor — free" />
+            <CTA page={PAGE} label="Upload and tailor - free" />
           </div>
         </div>
       </main>

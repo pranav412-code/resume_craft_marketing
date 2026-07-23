@@ -20,7 +20,7 @@ export function NetlifyForm({
   name,
   children,
   submitLabel = "Send",
-  successMessage = "Thanks — we got it. We'll reply within 1–2 working days.",
+  successMessage = "Thanks - we got it. We'll reply within 1–2 working days.",
 }: Props) {
   const [state, setState] = useState<"idle" | "submitting" | "done" | "error">(
     "idle",

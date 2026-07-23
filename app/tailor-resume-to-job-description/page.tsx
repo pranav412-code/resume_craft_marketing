@@ -13,7 +13,7 @@ const PAGE = "/tailor-resume-to-job-description";
 export const metadata: Metadata = createMetadata({
   title: "Tailor Your Resume to a Job Description",
   description:
-    "How to tailor a resume to a job description — what to change, which keywords matter, and how ResumeCraft's AI does it for you in minutes with an ATS score.",
+    "How to tailor a resume to a job description - what to change, which keywords matter, and how ResumeCraft's AI does it for you in minutes with an ATS score.",
   path: PAGE,
 });
 
@@ -49,12 +49,12 @@ const faq: QA[] = [
   {
     question: "Is mirroring job-description keywords the same as keyword stuffing?",
     answer:
-      "No. Mirroring means describing your real experience in the employer's vocabulary. Stuffing means inserting keywords you cannot back up — which fails the moment a human reads the resume or asks about it in an interview.",
+      "No. Mirroring means describing your real experience in the employer's vocabulary. Stuffing means inserting keywords you cannot back up - which fails the moment a human reads the resume or asks about it in an interview.",
   },
   {
     question: "How does ResumeCraft tailor a resume automatically?",
     answer:
-      "You upload your resume and paste the job description. The AI extracts the posting's requirements, maps them to your parsed experience, rewrites and reorders bullets to close the gaps, and shows an ATS score plus the keywords still missing — all before you export.",
+      "You upload your resume and paste the job description. The AI extracts the posting's requirements, maps them to your parsed experience, rewrites and reorders bullets to close the gaps, and shows an ATS score plus the keywords still missing - all before you export.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function TailorPage() {
           {/* AEO answer block: 40–60 words, directly under the H1. */}
           <p className="answer">
             Tailoring a resume means rewriting and reordering your content to
-            match one specific job posting — mirroring its keywords where they
+            match one specific job posting - mirroring its keywords where they
             are true of you, leading with the most relevant experience, and
             proving each major requirement with a quantified bullet. It is the
             single highest-impact edit before applying.
@@ -105,7 +105,7 @@ export default function TailorPage() {
             applicant tracking system before a person reads them. The ATS
             ranks resumes partly on how closely their language matches the
             posting. A polished generic resume loses to a rougher tailored one
-            on that comparison — every time the keywords differ.
+            on that comparison - every time the keywords differ.
           </p>
           <p>
             Tailoring also changes the human read. Recruiters skim for

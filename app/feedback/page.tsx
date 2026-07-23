@@ -12,7 +12,7 @@ const PAGE = "/feedback";
 
 export const metadata: Metadata = createMetadata({
   title: "Feedback",
-  description: `Share product feedback with ${siteConfig.name} — bug reports, feature requests, or general impressions. We read every submission.`,
+  description: `Share product feedback with ${siteConfig.name} - bug reports, feature requests, or general impressions. We read every submission.`,
   path: PAGE,
 });
 
@@ -41,7 +41,7 @@ export default function FeedbackPage() {
           <NetlifyForm
             name="feedback"
             submitLabel="Send feedback"
-            successMessage="Thanks — feedback received. If you left an email we'll get back to you."
+            successMessage="Thanks - feedback received. If you left an email we'll get back to you."
           >
             <label>
               Type
@@ -63,12 +63,12 @@ export default function FeedbackPage() {
                 defaultValue=""
                 style={{ display: "block", width: "100%", padding: "0.5rem" }}
               >
-                <option value="">— Optional —</option>
-                <option value="5">5 — Love it</option>
-                <option value="4">4 — Good</option>
-                <option value="3">3 — Okay</option>
-                <option value="2">2 — Needs work</option>
-                <option value="1">1 — Frustrating</option>
+                <option value="">- Optional -</option>
+                <option value="5">5 - Love it</option>
+                <option value="4">4 - Good</option>
+                <option value="3">3 - Okay</option>
+                <option value="2">2 - Needs work</option>
+                <option value="1">1 - Frustrating</option>
               </select>
             </label>
             <label>

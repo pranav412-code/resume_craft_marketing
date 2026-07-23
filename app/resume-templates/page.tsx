@@ -12,7 +12,7 @@ import { templateStyles } from "@/data/templates";
 const PAGE = "/resume-templates";
 
 export const metadata: Metadata = createMetadata({
-  title: "Resume Templates — ATS-Friendly & LaTeX",
+  title: "Resume Templates - ATS-Friendly & LaTeX",
   description:
     "ATS-friendly resume templates that parse cleanly in applicant tracking systems, plus LaTeX templates for developers and academics. Pick one and build free.",
   path: PAGE,
@@ -22,12 +22,12 @@ const faq: QA[] = [
   {
     question: "What makes a resume template ATS-friendly?",
     answer:
-      "An ATS-friendly template uses a single-column layout, standard section headings, real text instead of graphics, and common fonts. It avoids tables, text boxes, images, and headers/footers that applicant tracking systems mis-parse — so your content survives intact for the human reader.",
+      "An ATS-friendly template uses a single-column layout, standard section headings, real text instead of graphics, and common fonts. It avoids tables, text boxes, images, and headers/footers that applicant tracking systems mis-parse - so your content survives intact for the human reader.",
   },
   {
     question: "Why would I want a LaTeX resume template?",
     answer:
-      "LaTeX produces precise, consistent typography that ordinary editors can't match, and the source file is plain text you can version-control. It is the standard in academia and popular with software engineers. ResumeCraft exports LaTeX directly — no manual typesetting needed.",
+      "LaTeX produces precise, consistent typography that ordinary editors can't match, and the source file is plain text you can version-control. It is the standard in academia and popular with software engineers. ResumeCraft exports LaTeX directly - no manual typesetting needed.",
   },
   {
     question: "Are creative templates bad for ATS?",
@@ -38,7 +38,7 @@ const faq: QA[] = [
 
 /**
  * Hub page (P3). The per-style/per-role programmatic template pages plug in
- * under /resume-templates/{slug} in the next phase — keep this page's links in
+ * under /resume-templates/{slug} in the next phase - keep this page's links in
  * sync with what actually exists (sitemap rule: never link a page that 404s).
  */
 export default function TemplatesPage() {
@@ -54,7 +54,7 @@ export default function TemplatesPage() {
         />
 
         <section className="hero container">
-          <h1>Resume templates built to pass ATS — including LaTeX</h1>
+          <h1>Resume templates built to pass ATS - including LaTeX</h1>
           <p className="lede">
             Every ResumeCraft template parses cleanly in applicant tracking
             systems. Pick a style; the AI fills it with content tailored to
@@ -81,9 +81,9 @@ export default function TemplatesPage() {
 
         <div className="container">
           <div className="cta-banner">
-            <h2>Templates don&apos;t get jobs — tailored content does</h2>
+            <h2>Templates don&apos;t get jobs - tailored content does</h2>
             <p>Pick a template, then let the AI match it to the role.</p>
-            <CTA page={PAGE} label="Tailor a template — free" />
+            <CTA page={PAGE} label="Tailor a template - free" />
           </div>
           <FaqBlock items={faq} />
         </div>

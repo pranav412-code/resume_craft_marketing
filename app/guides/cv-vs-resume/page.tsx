@@ -29,12 +29,12 @@ const faq: QA[] = [
   {
     question: "Which one do employers in India expect?",
     answer:
-      "Indian employers say 'CV' and 'resume' interchangeably, but expect the same artifact: a concise 1–2 page document. Freshers commonly lead with education and projects. 'Biodata' is an older format including personal details — only use it where explicitly requested.",
+      "Indian employers say 'CV' and 'resume' interchangeably, but expect the same artifact: a concise 1–2 page document. Freshers commonly lead with education and projects. 'Biodata' is an older format including personal details - only use it where explicitly requested.",
   },
   {
     question: "Can I send a resume when a job asks for a CV?",
     answer:
-      "Outside academia, yes — in the UK, Europe, India, and most of the world, the posting's 'CV' means a concise professional document, i.e. a resume. For academic, research, or medical positions, send a full academic CV with publications instead.",
+      "Outside academia, yes - in the UK, Europe, India, and most of the world, the posting's 'CV' means a concise professional document, i.e. a resume. For academic, research, or medical positions, send a full academic CV with publications instead.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Page() {
           <p className="answer">
             A resume is a 1–2 page document tailored to a specific job; a CV
             (curriculum vitae) in the US/academic sense is a complete,
-            untailored record of a career — publications, research, teaching —
+            untailored record of a career - publications, research, teaching -
             that grows with time. Outside the US, &quot;CV&quot; usually just
             means resume.
           </p>
@@ -119,7 +119,7 @@ export default function Page() {
           <h2>What does &quot;CV&quot; mean by region?</h2>
           <ul>
             <li><strong>United States &amp; Canada:</strong> &quot;resume&quot; for industry; &quot;CV&quot; reserved for academia/research/medicine.</li>
-            <li><strong>UK, Ireland, Europe:</strong> &quot;CV&quot; is the standard word for the concise 1–2 page document — a resume by another name.</li>
+            <li><strong>UK, Ireland, Europe:</strong> &quot;CV&quot; is the standard word for the concise 1–2 page document - a resume by another name.</li>
             <li><strong>India:</strong> both words used loosely; employers expect a concise resume. &quot;Biodata&quot; survives in some government/matrimonial contexts only.</li>
             <li><strong>Australia &amp; NZ:</strong> &quot;CV&quot; and &quot;resume&quot; interchangeable; 2–3 pages tolerated.</li>
           </ul>
@@ -136,7 +136,7 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Need the concise kind?</h2>
-            <p>Build a tailored, ATS-scored resume in minutes — LaTeX export included for academics.</p>
+            <p>Build a tailored, ATS-scored resume in minutes - LaTeX export included for academics.</p>
             <CTA page={PAGE} label="Build it free" />
           </div>
 

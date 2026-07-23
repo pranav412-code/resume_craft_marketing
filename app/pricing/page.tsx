@@ -15,7 +15,7 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/pricing";
 
 export const metadata: Metadata = createMetadata({
-  title: "Pricing — Free to Start, INR & USD Plans",
+  title: "Pricing - Free to Start, INR & USD Plans",
   description:
     "ResumeCraft pricing: 25 free credits, then Job Seeker at ₹149/$4.99 per month or Career Sprint at ₹399/$12.99 for 3 months. Refill packs from ₹99/$2.99. INR via Razorpay.",
   path: PAGE,
@@ -25,7 +25,7 @@ const faq: QA[] = [
   {
     question: "Is there a real free plan?",
     answer:
-      "Yes. You get 25 credits on signup — enough for three Balanced optimizations or two Deep runs — and run the full flow (upload, AI tailoring, ATS scoring, PDF export). No card required.",
+      "Yes. You get 25 credits on signup - enough for three Balanced optimizations or two Deep runs - and run the full flow (upload, AI tailoring, ATS scoring, PDF export). No card required.",
   },
   {
     question: "What is a credit?",
@@ -35,7 +35,7 @@ const faq: QA[] = [
   {
     question: "Why is there separate INR pricing?",
     answer:
-      "ResumeCraft bills natively in INR through Razorpay (UPI, cards, netbanking) at prices set for the Indian market — UPI, cards, and netbanking are all supported.",
+      "ResumeCraft bills natively in INR through Razorpay (UPI, cards, netbanking) at prices set for the Indian market - UPI, cards, and netbanking are all supported.",
   },
   {
     question: "What is Career Sprint?",
@@ -149,7 +149,7 @@ export default function PricingPage() {
         <section className="hero container">
           <h1>Simple pricing, in your currency</h1>
           <p className="lede">
-            Start with 25 free credits. Upgrade when you need more — in USD or
+            Start with 25 free credits. Upgrade when you need more - in USD or
             native INR via Razorpay.
           </p>
         </section>

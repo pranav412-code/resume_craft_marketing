@@ -24,7 +24,7 @@ const faq: QA[] = [
   {
     question: "Is a two-page resume ever acceptable?",
     answer:
-      "Yes — when ten-plus years of relevant scope genuinely fill it. Senior engineers, managers, and specialists routinely run two pages. The rule is earned length: every line must compete for the target role; padding to look senior reads as the opposite.",
+      "Yes - when ten-plus years of relevant scope genuinely fill it. Senior engineers, managers, and specialists routinely run two pages. The rule is earned length: every line must compete for the target role; padding to look senior reads as the opposite.",
   },
   {
     question: "Can a resume be one and a half pages?",
@@ -34,7 +34,7 @@ const faq: QA[] = [
   {
     question: "Does resume length matter to ATS software?",
     answer:
-      "Parsers don't penalize length — recruiters do. The ATS stores everything; the human skims the first screen. Length is a human-attention decision: front-load the most relevant material regardless of page count.",
+      "Parsers don't penalize length - recruiters do. The ATS stores everything; the human skims the first screen. Length is a human-attention decision: front-load the most relevant material regardless of page count.",
   },
   {
     question: "How long should a fresher's resume be?",
@@ -76,7 +76,7 @@ export default function Page() {
             One page for most candidates with under ten years of experience;
             two pages when senior scope genuinely fills them. Recruiters skim
             for seconds, so the first half-page must carry your strongest,
-            most role-relevant material — length is earned by relevance, never
+            most role-relevant material - length is earned by relevance, never
             by padding.
           </p>
 
@@ -86,7 +86,7 @@ export default function Page() {
             <li><strong>1–9 years:</strong> one page, dense. Cut early roles to make room for recent impact.</li>
             <li><strong>10+ years / senior IC &amp; management:</strong> one or two pages. Compress roles older than ~15 years into one-liners.</li>
             <li><strong>Executive:</strong> two pages, achievement-led; detail lives in the interview, not the resume.</li>
-            <li><strong>Academic/research (CV):</strong> no limit — that&apos;s a different document; see <Link href="/guides/cv-vs-resume">CV vs resume</Link>.</li>
+            <li><strong>Academic/research (CV):</strong> no limit - that&apos;s a different document; see <Link href="/guides/cv-vs-resume">CV vs resume</Link>.</li>
           </ul>
 
           <h2>What do recruiters actually read?</h2>
@@ -94,7 +94,7 @@ export default function Page() {
             Initial screens average seconds, not minutes, and attention
             concentrates on the top third of page one: title, summary, current
             role, first bullets. That is the real constraint behind the
-            one-page rule — not printing costs. Whatever your total length,
+            one-page rule - not printing costs. Whatever your total length,
             engineer that first screen: summary matched to the posting,
             strongest quantified achievement first, keywords visible without
             scrolling.
@@ -102,16 +102,16 @@ export default function Page() {
 
           <h2>How to cut a resume that runs long</h2>
           <ul>
-            <li>Drop bullets that don&apos;t support <em>this</em> application — the tailoring discipline in <Link href="/tailor-resume-to-job-description">tailor your resume</Link> usually frees half a page alone.</li>
+            <li>Drop bullets that don&apos;t support this application - the tailoring discipline in <Link href="/tailor-resume-to-job-description">tailor your resume</Link> usually frees half a page alone.</li>
             <li>Compress roles older than ten years to title + employer + one line.</li>
-            <li>Delete &quot;references available on request&quot;, objectives, and address lines — dead weight.</li>
+            <li>Delete &quot;references available on request&quot;, objectives, and address lines - dead weight.</li>
             <li>Merge overlapping bullets; keep the one with the number in it.</li>
-            <li>Tighten formatting (margins 0.5–1in, 10–11pt body) before cutting content — but never below readable.</li>
+            <li>Tighten formatting (margins 0.5–1in, 10–11pt body) before cutting content - but never below readable.</li>
           </ul>
 
           <div className="cta-banner">
             <h2>Let relevance decide the length</h2>
-            <p>ResumeCraft trims to what the job description rewards — and shows the score.</p>
+            <p>ResumeCraft trims to what the job description rewards - and shows the score.</p>
             <CTA page={PAGE} label="Optimize mine" />
           </div>
 

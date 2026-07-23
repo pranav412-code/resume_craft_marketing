@@ -24,22 +24,22 @@ const faq: QA[] = [
   {
     question: "Do ATS systems really reject resumes automatically?",
     answer:
-      "Mostly no — the common failure is quieter. The ATS parses your resume into a database; recruiters then search and rank by keywords. A resume that parses badly or lacks the posting's terms isn't 'rejected', it just never surfaces in those searches.",
+      "Mostly no - the common failure is quieter. The ATS parses your resume into a database; recruiters then search and rank by keywords. A resume that parses badly or lacks the posting's terms isn't 'rejected', it just never surfaces in those searches.",
   },
   {
     question: "Are tables and columns always fatal to ATS parsing?",
     answer:
-      "Not always — modern systems handle simple layouts better than older ones — but you can't know which system an employer runs. Single-column formatting removes the risk entirely, which is why it remains the standard advice for any ATS-screened application.",
+      "Not always - modern systems handle simple layouts better than older ones - but you can't know which system an employer runs. Single-column formatting removes the risk entirely, which is why it remains the standard advice for any ATS-screened application.",
   },
   {
     question: "Is PDF or DOCX better for ATS?",
     answer:
-      "PDF, unless the posting explicitly asks for DOCX. Modern ATS software parses text-based PDFs reliably, and PDF preserves your layout for the human reader afterward. Avoid scanned/image PDFs — there is no text layer to parse.",
+      "PDF, unless the posting explicitly asks for DOCX. Modern ATS software parses text-based PDFs reliably, and PDF preserves your layout for the human reader afterward. Avoid scanned/image PDFs - there is no text layer to parse.",
   },
   {
     question: "How do I know which keywords an ATS will look for?",
     answer:
-      "Read the job description — recruiter searches are built from its language. The repeated tools, certifications, and noun phrases are the keyword set. Mirror the ones that are true of you, in the same wording, in your skills section and bullets.",
+      "Read the job description - recruiter searches are built from its language. The repeated tools, certifications, and noun phrases are the keyword set. Mirror the ones that are true of you, in the same wording, in your skills section and bullets.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Page() {
           <h1>What is an ATS-friendly resume?</h1>
           <p className="meta">Updated {meta.datePublished}</p>
 
-          {/* Definition pattern + 40–60 words — the snippet target. */}
+          {/* Definition pattern + 40–60 words - the snippet target. */}
           <p className="answer">
             An ATS-friendly resume is one that applicant tracking system
             software can parse accurately: a single-column layout, standard
@@ -86,7 +86,7 @@ export default function Page() {
           <p>
             An applicant tracking system (ATS) is the software employers use
             to collect, parse, store, and rank job applications. When you
-            apply online, the ATS converts your resume into structured data —
+            apply online, the ATS converts your resume into structured data -
             name, titles, employers, dates, skills. Recruiters then search and
             filter that database by keywords rather than reading every file.
             Most large and mid-size employers screen this way, which is why
@@ -97,9 +97,9 @@ export default function Page() {
           <h2>Which formatting rules make a resume ATS-friendly?</h2>
           <ul>
             <li><strong>Single column.</strong> Multi-column layouts can scramble parsing order.</li>
-            <li><strong>Standard headings.</strong> &quot;Work Experience&quot;, &quot;Skills&quot;, &quot;Education&quot; — parsers key on them.</li>
+            <li><strong>Standard headings.</strong> &quot;Work Experience&quot;, &quot;Skills&quot;, &quot;Education&quot; - parsers key on them.</li>
             <li><strong>Real text only.</strong> No text boxes, graphics, icons, or skill-bar images; that content is invisible or garbled to parsers.</li>
-            <li><strong>Common fonts.</strong> Arial, Calibri, Georgia, Helvetica — and body text 10pt or larger.</li>
+            <li><strong>Common fonts.</strong> Arial, Calibri, Georgia, Helvetica - and body text 10pt or larger.</li>
             <li><strong>No header/footer content.</strong> Some parsers skip them; keep contact details in the body.</li>
             <li><strong>Conventional dates.</strong> &quot;Jan 2023 – Mar 2025&quot; style ranges parse reliably.</li>
             <li><strong>Text-based PDF.</strong> Export, don&apos;t scan; check you can select the text.</li>
@@ -109,9 +109,9 @@ export default function Page() {
           <p>
             Parsing gets your data into the database; keywords get it found.
             Recruiter searches are built from the job description&apos;s
-            language, so the resume that mirrors it — exactly, not
+            language, so the resume that mirrors it - exactly, not
             approximately (&quot;PostgreSQL&quot; when they say PostgreSQL,
-            not &quot;databases&quot;) — ranks first. The tailoring workflow
+            not &quot;databases&quot;) - ranks first. The tailoring workflow
             is covered step-by-step in{" "}
             <Link href="/tailor-resume-to-job-description">
               tailor your resume to the job description

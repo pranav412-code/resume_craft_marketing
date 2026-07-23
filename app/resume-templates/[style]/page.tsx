@@ -86,7 +86,7 @@ export default async function TemplateStylePage({
           <h2>How it behaves in ATS screening</h2>
           <p>{t.atsNotes}</p>
           <p>
-            Formatting is half the equation — wording is the other. Pair the
+            Formatting is half the equation - wording is the other. Pair the
             template with{" "}
             <Link href="/tailor-resume-to-job-description">
               tailoring to the job description

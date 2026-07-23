@@ -35,7 +35,7 @@ const steps = [
   },
   {
     name: "Build experience bullets on outcomes",
-    text: "Start each bullet with a strong verb, state what you did, and quantify the result — 'cut deploy time 40%' beats 'responsible for deployments'. Three to six bullets per recent role.",
+    text: "Start each bullet with a strong verb, state what you did, and quantify the result - 'cut deploy time 40%' beats 'responsible for deployments'. Three to six bullets per recent role.",
   },
   {
     name: "Add a targeted skills section",
@@ -65,7 +65,7 @@ const faq: QA[] = [
   {
     question: "Do I need a summary or an objective?",
     answer:
-      "A summary, in almost all cases. Objectives state what you want; summaries state what you offer — which is what the reader is screening for. The exception is a career change or first job, where a short objective can frame the transition.",
+      "A summary, in almost all cases. Objectives state what you want; summaries state what you offer - which is what the reader is screening for. The exception is a career change or first job, where a short objective can frame the transition.",
   },
   {
     question: "How far back should a resume go?",
@@ -112,12 +112,12 @@ export default function Page() {
             Updated {meta.dateModified ?? meta.datePublished}
           </p>
 
-          {/* AEO answer block — 40–60 words, extractable. */}
+          {/* AEO answer block - 40–60 words, extractable. */}
           <p className="answer">
             To write a resume: choose a reverse-chronological single-column
             format, open with a role-matched summary, prove each job with
             quantified achievement bullets, list the hard skills the posting
-            names, close with education — then tailor the wording to the
+            names, close with education - then tailor the wording to the
             specific job description and check it parses cleanly in an ATS
             before sending.
           </p>
@@ -136,8 +136,8 @@ export default function Page() {
             Five core sections, in this order for experienced candidates:
             header, summary, work experience, skills, education. Freshers and
             students flip education above experience and may add projects or
-            internships as a separate section. Optional sections —
-            certifications, publications, volunteering — earn their place only
+            internships as a separate section. Optional sections -
+            certifications, publications, volunteering - earn their place only
             when they support the target role. More on choosing skills in{" "}
             <Link href="/guides/resume-skills">skills to put on a resume</Link>.
           </p>
@@ -156,7 +156,7 @@ export default function Page() {
           <h2>What makes it pass ATS screening?</h2>
           <p>
             Structure and keywords. Single column, real text (no graphics or
-            text boxes), standard headings — and wording that mirrors the job
+            text boxes), standard headings - and wording that mirrors the job
             description where it is true of you. The complete checklist is in{" "}
             <Link href="/guides/ats-friendly-resume">
               what is an ATS-friendly resume
@@ -167,7 +167,7 @@ export default function Page() {
           <div className="cta-banner">
             <h2>Skip the blank page entirely</h2>
             <p>
-              Upload what you have — the AI rebuilds it against the job you
+              Upload what you have - the AI rebuilds it against the job you
               want, with an ATS score.
             </p>
             <CTA page={PAGE} label="Write mine with AI" />

@@ -12,7 +12,7 @@ const PAGE = "/contact";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
-  description: `Get in touch with ${siteConfig.name} — questions, support, partnership, press, or grievance requests.`,
+  description: `Get in touch with ${siteConfig.name} - questions, support, partnership, press, or grievance requests.`,
   path: PAGE,
 });
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
           <h1>Contact</h1>
           <p className="lede">
             Questions about the product, billing, partnerships, or anything
-            else — drop a note. We read every message.
+            else - drop a note. We read every message.
           </p>
 
           <NetlifyForm name="contact" submitLabel="Send message">

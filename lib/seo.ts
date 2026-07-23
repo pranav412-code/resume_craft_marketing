@@ -1,5 +1,5 @@
 /**
- * createMetadata() — per-page Metadata helper.
+ * createMetadata() - per-page Metadata helper.
  * Guarantees a self-referencing canonical + correct OG/Twitter on every page.
  */
 import type { Metadata } from "next";

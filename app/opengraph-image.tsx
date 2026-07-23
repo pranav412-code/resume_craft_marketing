@@ -2,11 +2,11 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
 /**
- * Dynamic default OG/social image — generated at build, no asset needed.
+ * Dynamic default OG/social image - generated at build, no asset needed.
  * Also used for Twitter cards when no twitter-image exists.
  * Routes can ship their own opengraph-image to override.
  */
-export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
+export const alt = `${siteConfig.name} - ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

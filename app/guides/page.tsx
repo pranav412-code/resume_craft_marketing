@@ -32,7 +32,7 @@ export default function GuidesIndexPage() {
           <h1>Resume writing guides</h1>
           <p className="lede">
             Short, specific, and written for how hiring actually works in 2026
-            — ATS first, human second, no filler.
+            - ATS first, human second, no filler.
           </p>
         </section>
 

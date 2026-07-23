@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 
 /**
- * robots.txt — served at /robots.txt.
+ * robots.txt - served at /robots.txt.
  *
  * GEO policy: EXPLICITLY welcome AI search/answer crawlers so ResumeCraft can
  * be retrieved and cited by Perplexity, ChatGPT Search, Gemini, Claude, etc.

@@ -11,7 +11,7 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/resume-builder";
 
 export const metadata: Metadata = createMetadata({
-  title: "AI Resume Builder — Tailored & ATS-Scored",
+  title: "AI Resume Builder - Tailored & ATS-Scored",
   description:
     "Build a resume with AI that tailors every bullet to the job you want, scores it for ATS compatibility, and exports to PDF or LaTeX. Free to start.",
   path: PAGE,
@@ -26,7 +26,7 @@ const faq: QA[] = [
   {
     question: "Will my resume still sound like me?",
     answer:
-      "Yes. The AI starts from your real experience — it rephrases and prioritizes; it does not invent jobs or skills. You review and edit every suggestion before exporting.",
+      "Yes. The AI starts from your real experience - it rephrases and prioritizes; it does not invent jobs or skills. You review and edit every suggestion before exporting.",
   },
   {
     question: "Do I need to start from scratch?",
@@ -53,11 +53,11 @@ export default function ResumeBuilderPage() {
         <section className="hero container">
           <p className="eyebrow">AI builder · ATS scored</p>
           <h1>
-            The AI resume builder that targets <em>the job, not the page</em>
+            The AI resume builder that targets the job, not the page
           </h1>
           <p className="lede">
             Generic resumes get filtered. ResumeCraft rewrites yours against
-            the exact job description — then proves it with an ATS score.
+            the exact job description - then proves it with an ATS score.
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Launch AI resume builder" />
@@ -81,7 +81,7 @@ export default function ResumeBuilderPage() {
               <h3>ATS compatibility score</h3>
               <p>
                 Every draft is scored the way applicant tracking systems read
-                it — structure, parseability, and keyword coverage.
+                it - structure, parseability, and keyword coverage.
               </p>
             </li>
             <li className="card">
@@ -105,7 +105,7 @@ export default function ResumeBuilderPage() {
           <div className="cta-banner">
             <h2>Stop sending the same resume everywhere</h2>
             <p>Upload once, tailor for every application.</p>
-            <CTA page={PAGE} label="Open the AI builder — free" />
+            <CTA page={PAGE} label="Open the AI builder - free" />
           </div>
           <FaqBlock items={faq} />
         </div>

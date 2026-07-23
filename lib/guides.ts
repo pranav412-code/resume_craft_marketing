@@ -1,5 +1,5 @@
 /**
- * Guide registry — one place that knows every published guide.
+ * Guide registry - one place that knows every published guide.
  * Used by the /guides index, the sitemap, and internal-link blocks.
  * Add a row here when a new guide page ships (and create its page.tsx).
  */

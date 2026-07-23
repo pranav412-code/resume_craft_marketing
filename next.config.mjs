@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Dev is browsed from LAN IPs too (e.g. http://192.168.1.6:5173) — allow
+  // Dev is browsed from LAN IPs too (e.g. http://192.168.1.6:5173) - allow
   // those origins to load /_next/* assets without the cross-origin warning.
   allowedDevOrigins: ["192.168.1.6", "localhost", "127.0.0.1"],
   // Don't advertise the framework.

@@ -14,10 +14,10 @@ import { guides, guideUrl } from "@/lib/guides";
 const PAGE = "/";
 
 export const metadata: Metadata = createMetadata({
-  title: `AI Resume Builder & ATS Optimizer — Free | ${siteConfig.name}`,
+  title: `AI Resume Builder & ATS Optimizer - Free | ${siteConfig.name}`,
   absoluteTitle: true,
   description:
-    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start — no credit card.",
+    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start - no credit card.",
   path: PAGE,
   // Reciprocal hreflang with the India page.
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
@@ -27,22 +27,22 @@ const faq: QA[] = [
   {
     question: "What does ResumeCraft do?",
     answer:
-      "ResumeCraft is an AI resume builder. You upload your existing resume, paste the job description you are applying for, and the AI rewrites and reorders your content to match it — then scores the result for ATS compatibility and exports a polished PDF or LaTeX file.",
+      "ResumeCraft is an AI resume builder. You upload your existing resume, paste the job description you are applying for, and the AI rewrites and reorders your content to match it - then scores the result for ATS compatibility and exports a polished PDF or LaTeX file.",
   },
   {
     question: "Is ResumeCraft free?",
     answer:
-      "Yes to start. You get 25 free credits on signup — enough for three Balanced optimizations or two Deep runs — and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. Paid plans start at ₹149 / $4.99 per month for Job Seeker; Career Sprint covers 3 months at ₹399 / $12.99 total.",
+      "Yes to start. You get 25 free credits on signup - enough for three Balanced optimizations or two Deep runs - and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. Paid plans start at ₹149 / $4.99 per month for Job Seeker; Career Sprint covers 3 months at ₹399 / $12.99 total.",
   },
   {
     question: "What is an ATS score?",
     answer:
-      "An ATS score estimates how well your resume will parse inside applicant tracking systems — the software most employers use to filter resumes before a human reads them. It checks structure, formatting, and how closely your keywords match the job description.",
+      "An ATS score estimates how well your resume will parse inside applicant tracking systems - the software most employers use to filter resumes before a human reads them. It checks structure, formatting, and how closely your keywords match the job description.",
   },
   {
     question: "Can I export my resume to LaTeX?",
     answer:
-      "Yes. Alongside PDF, ResumeCraft exports clean LaTeX source — a typeset-quality format popular with developers, researchers, and academics, ideal for version control and pixel-precise typography.",
+      "Yes. Alongside PDF, ResumeCraft exports clean LaTeX source - a typeset-quality format popular with developers, researchers, and academics, ideal for version control and pixel-precise typography.",
   },
 ];
 
@@ -53,21 +53,21 @@ export default function HomePage() {
       <main>
         <JsonLd data={softwareApplicationSchema()} />
 
-        {/* Hero — claim first (GEO: state the value proposition plainly, up top). */}
+        {/* Hero - claim first (GEO: state the value proposition plainly, up top). */}
         <section className="hero container">
           <p className="eyebrow">Boost interview chances</p>
           <h1>
             Build an ATS-optimized
             <br />
-            <em>resume with AI</em>
+            resume with AI
           </h1>
           <p className="lede">
-            Build an ATS-optimized resume with AI — upload your current CV,
+            Build an ATS-optimized resume with AI - upload your current CV,
             paste the job description, and get a tailored draft with an ATS
             score to prove it, plus pixel-perfect PDF or LaTeX export.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Build my resume — free" />
+            <CTA page={PAGE} label="Build my resume - free" />
             <Link href="/resume-templates" className="btn btn-ghost">
               Browse templates
             </Link>
@@ -99,7 +99,7 @@ export default function HomePage() {
               <h3>3 · Score &amp; fix</h3>
               <p>
                 See your ATS compatibility score and the keywords you are
-                missing — then apply fixes in one click.
+                missing - then apply fixes in one click.
               </p>
             </li>
             <li className="card">
@@ -112,7 +112,7 @@ export default function HomePage() {
           </ul>
         </section>
 
-        {/* Differentiators — the three GEO claims. */}
+        {/* Differentiators - the three GEO claims. */}
         <section className="section container">
           <h2>Why ResumeCraft</h2>
           <ul className="card-grid">
@@ -121,7 +121,7 @@ export default function HomePage() {
               <p>
                 ResumeCraft rewrites your resume against a specific job
                 description and scores it for ATS compatibility in the same
-                pass — no copy-pasting between a builder and a separate
+                pass - no copy-pasting between a builder and a separate
                 checker.
               </p>
             </li>
@@ -129,13 +129,13 @@ export default function HomePage() {
               <h3>LaTeX export</h3>
               <p>
                 Clean LaTeX output for developers, researchers, and academics
-                — version-control friendly and typeset-quality.
+                - version-control friendly and typeset-quality.
               </p>
             </li>
             <li className="card">
               <h3>Fair pricing for India</h3>
               <p>
-                Native INR plans via Razorpay alongside USD — no
+                Native INR plans via Razorpay alongside USD - no
                 dollar-converted markup.
               </p>
             </li>

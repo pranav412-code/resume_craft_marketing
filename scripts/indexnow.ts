@@ -1,9 +1,9 @@
 /**
- * IndexNow submitter — pings Bing/Yandex (and any IndexNow-compatible engine)
+ * IndexNow submitter - pings Bing/Yandex (and any IndexNow-compatible engine)
  * with the full live URL list so new/changed pages get crawled in minutes
  * instead of waiting days for organic discovery.
  *
- * RUN AFTER DEPLOY, never before — IndexNow verifies each URL is live and the
+ * RUN AFTER DEPLOY, never before - IndexNow verifies each URL is live and the
  * key file is reachable. Pinging a not-yet-deployed build = rejected URLs.
  *
  *   npm run indexnow                       # uses NEXT_PUBLIC_SITE_URL

@@ -34,12 +34,12 @@ const faq: QA[] = [
   {
     question: "What's the difference between hard and soft skills?",
     answer:
-      "Hard skills are teachable, testable capabilities — Python, financial modeling, Figma, a nursing certification. Soft skills are working behaviors — communication, prioritization, teamwork. ATS keyword searches run almost entirely on hard skills, which is why they anchor the skills section.",
+      "Hard skills are teachable, testable capabilities - Python, financial modeling, Figma, a nursing certification. Soft skills are working behaviors - communication, prioritization, teamwork. ATS keyword searches run almost entirely on hard skills, which is why they anchor the skills section.",
   },
   {
     question: "Should I rate my skill levels (bars, percentages)?",
     answer:
-      "No. Skill bars and percentages are graphics an ATS cannot read and recruiters cannot calibrate — '80% Python' has no agreed meaning. If proficiency matters, state it in words ('advanced', '5 years') or prove it with a bullet.",
+      "No. Skill bars and percentages are graphics an ATS cannot read and recruiters cannot calibrate - '80% Python' has no agreed meaning. If proficiency matters, state it in words ('advanced', '5 years') or prove it with a bullet.",
   },
 ];
 
@@ -73,8 +73,8 @@ export default function Page() {
           <p className="meta">Updated {meta.datePublished}</p>
 
           <p className="answer">
-            Put the hard skills the job description explicitly names — tools,
-            technologies, certifications, methods — using the posting&apos;s
+            Put the hard skills the job description explicitly names - tools,
+            technologies, certifications, methods - using the posting&apos;s
             exact wording, plus two or three differentiators you can prove.
             List eight to twelve in a dedicated skills section and demonstrate
             the rest, including soft skills, inside quantified experience
@@ -88,7 +88,7 @@ export default function Page() {
             set recruiters and ATS searches are built on (see{" "}
             <Link href="/guides/ats-friendly-resume">how ATS screening works</Link>).
             Keep the ones true of you, in the employer&apos;s wording. Then add
-            a small number of differentiators — adjacent skills that set you
+            a small number of differentiators - adjacent skills that set you
             apart for this role. Everything else is cut or moved into bullets.
           </p>
 
@@ -109,14 +109,14 @@ export default function Page() {
             <strong>experience bullets</strong> as evidence (&quot;built ETL
             pipelines in Python/Airflow&quot;), and the two or three most
             role-defining ones in the <strong>summary</strong>. This
-            redundancy is deliberate — sections get parsed, bullets get read.
+            redundancy is deliberate - sections get parsed, bullets get read.
           </p>
 
           <h2>Common skills-section mistakes</h2>
           <ul>
             <li>Listing soft-skill adjectives (&quot;motivated&quot;, &quot;team player&quot;) instead of capabilities.</li>
-            <li>Synonym drift — writing &quot;JS&quot; when the posting says &quot;JavaScript&quot;; literal matching matters.</li>
-            <li>Skill bars, star ratings, icon clouds — unreadable to parsers, meaningless to recruiters.</li>
+            <li>Synonym drift - writing &quot;JS&quot; when the posting says &quot;JavaScript&quot;; literal matching matters.</li>
+            <li>Skill bars, star ratings, icon clouds - unreadable to parsers, meaningless to recruiters.</li>
             <li>One static list for every application instead of re-tailoring per posting.</li>
           </ul>
 

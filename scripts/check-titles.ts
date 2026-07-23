@@ -5,7 +5,7 @@
  *
  * Programmatic surfaces (roles/templates) are checked through the same
  * builders the pages use, so this scales to hundreds of generated pages.
- * Guides are hand-authored — their registry titles are checked against the
+ * Guides are hand-authored - their registry titles are checked against the
  * suffix budget (tags added per page are short and shown live in dev).
  */
 import { roleTitle, templateTitle, finalTitleLength, TITLE_LIMIT, TITLE_SUFFIX } from "../lib/titles";
@@ -32,7 +32,7 @@ for (const t of templateStyles) {
 }
 for (const g of guides) {
   // Raw registry title; per-page keyword tags (e.g. "(With Examples)") add a
-  // few chars and are surfaced in dev — keep the registry title comfortably
+  // few chars and are surfaced in dev - keep the registry title comfortably
   // under budget.
   check("guide", `/guides/${g.slug}`, g.title);
 }

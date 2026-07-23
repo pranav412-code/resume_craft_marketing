@@ -5,7 +5,7 @@ import { publishedRoles } from "@/data/roles";
 import { templateStyles } from "@/data/templates";
 
 /**
- * XML sitemap — served at /sitemap.xml.
+ * XML sitemap - served at /sitemap.xml.
  * Static routes listed here; guides come from the registry so the sitemap
  * can never list a guide that doesn't exist (and vice versa).
  * When programmatic pillars ship (resume-examples/{job} etc.), generate those
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Programmatic surfaces — registries are the single source, so the sitemap
+  // Programmatic surfaces - registries are the single source, so the sitemap
   // can never list a page that doesn't build (and vice versa).
   const roleEntries = publishedRoles().map((r) => ({
     url: `${siteConfig.url}/resume-examples/${r.slug}`,

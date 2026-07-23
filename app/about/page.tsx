@@ -18,7 +18,7 @@ export const metadata: Metadata = createMetadata({
 
 /**
  * E-E-A-T surface. Replace the placeholder paragraphs with real founder
- * names, credentials, and a real contact route before launch — AI engines
+ * names, credentials, and a real contact route before launch - AI engines
  * and Google both weigh "who runs this" heavily for careers content.
  */
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
           <p>
             {siteConfig.name} exists because the modern application process is
             asymmetric: employers screen with software, while candidates write
-            for humans. We build tools that close that gap — AI that tailors a
+            for humans. We build tools that close that gap - AI that tailors a
             resume to the job description it will actually be screened
             against, with an ATS score that shows the result instead of
             asking you to trust it.
@@ -49,7 +49,7 @@ export default function AboutPage() {
             <li>
               <strong>Tailoring, not fabrication.</strong> The AI rephrases
               and prioritizes your real experience. It does not invent
-              credentials — that fails interviews and wastes everyone&apos;s
+              credentials - that fails interviews and wastes everyone&apos;s
               time.
             </li>
             <li>
@@ -62,14 +62,14 @@ export default function AboutPage() {
             </li>
             <li>
               <strong>Fair regional pricing.</strong> India pays in INR at
-              INR-market prices via Razorpay — not a dollar conversion.
+              INR-market prices via Razorpay - not a dollar conversion.
             </li>
           </ul>
 
           <h2>Who builds it</h2>
           <p>
             {/* TODO before launch: real founder bio(s), names, credentials,
-                photo, and a contact email — this is the E-E-A-T anchor page. */}
+                photo, and a contact email - this is the E-E-A-T anchor page. */}
             ResumeCraft is built by a small product team focused on the job
             search stack. Questions, feedback, or press: reach us through the
             app&apos;s feedback form.
