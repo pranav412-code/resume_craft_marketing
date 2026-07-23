@@ -17,7 +17,7 @@ const PAGE = "/pricing";
 export const metadata: Metadata = createMetadata({
   title: "Pricing - Free to Start, INR & USD Plans",
   description:
-    "ResumeCraft pricing: 25 free credits, then Job Seeker at ₹149/$4.99 per month or Career Sprint at ₹399/$12.99 for 3 months. Refill packs from ₹99/$2.99. INR via Razorpay.",
+    "ResumeCraft pricing: 25 free credits, then Job Seeker at ₹149/$4.99 monthly or Career Sprint at ₹399/$12.99 for 3 months. INR via Razorpay.",
   path: PAGE,
 });
 

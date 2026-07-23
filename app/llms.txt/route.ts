@@ -30,6 +30,9 @@ ${siteConfig.name} is an AI resume builder and optimizer. Core capabilities:
 - [Home](${u}/): product overview.
 - [AI resume builder](${u}/resume-builder): the core product page.
 - [Tailor a resume to a job description](${u}/tailor-resume-to-job-description): how AI matching works.
+- [LaTeX resume builder](${u}/latex-resume-builder): AI-tailored LaTeX export with ATS scoring.
+- [ATS resume checker (India)](${u}/ats-resume-checker-india): free ATS score for Indian job seekers, INR pricing.
+- [Best AI resume builders 2026](${u}/best-ai-resume-builder-2026): honest comparison of top tools.
 - [Resume templates](${u}/resume-templates): ATS-friendly and LaTeX templates.
 - [Resume examples](${u}/resume-examples): role-by-role examples hub.
 - [Pricing](${u}/pricing): plans in USD and INR.

@@ -11,9 +11,9 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/ats-resume-checker-india";
 
 export const metadata: Metadata = createMetadata({
-  title: "ATS Resume Checker India - Free Score, INR Pricing | ResumeCraft",
+  title: "ATS Resume Checker India - Free Score, INR Pricing",
   description:
-    "Free ATS resume checker for Indian job seekers. Score your resume against Naukri, LinkedIn, and Workday parsers. INR pricing via Razorpay. Start free.",
+    "Free ATS resume checker for Indian job seekers. Score against Naukri, LinkedIn, and Workday parsers. INR via Razorpay. Start free.",
   path: PAGE,
   languages: { "en-IN": PAGE, en: PAGE, "x-default": PAGE },
 });

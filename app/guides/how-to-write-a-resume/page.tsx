@@ -87,6 +87,7 @@ export default function Page() {
               url: absoluteUrl(PAGE),
               datePublished: meta.datePublished,
               dateModified: meta.dateModified,
+              image: absoluteUrl("/opengraph-image"),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

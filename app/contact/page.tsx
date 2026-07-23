@@ -12,7 +12,7 @@ const PAGE = "/contact";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
-  description: `Get in touch with ${siteConfig.name} - questions, support, partnership, press, or grievance requests.`,
+  description: `Contact ${siteConfig.name} for product questions, support, partnerships, press, or grievance requests.`,
   path: PAGE,
 });
 

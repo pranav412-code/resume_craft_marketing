@@ -19,6 +19,9 @@ export function SiteFooter() {
           <p className="footer-head">Product</p>
           <Link href="/resume-builder">AI resume builder</Link>
           <Link href="/tailor-resume-to-job-description">Tailor to a job description</Link>
+          <Link href="/latex-resume-builder">LaTeX resume builder</Link>
+          <Link href="/ats-resume-checker-india">ATS resume checker (India)</Link>
+          <Link href="/best-ai-resume-builder-2026">Best AI resume builders 2026</Link>
           <Link href="/resume-templates">Resume templates</Link>
           <Link href="/resume-examples">Resume examples</Link>
           <Link href="/pricing">Pricing</Link>

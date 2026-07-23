@@ -104,7 +104,14 @@ export default function ResumeBuilderPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>Stop sending the same resume everywhere</h2>
-            <p>Upload once, tailor for every application.</p>
+            <p>
+              Upload once, tailor for every application. See how we compare in
+              our{" "}
+              <Link href="/best-ai-resume-builder-2026">
+                2026 AI resume builder comparison
+              </Link>
+              .
+            </p>
             <CTA page={PAGE} label="Open the AI builder - free" />
           </div>
           <FaqBlock items={faq} />

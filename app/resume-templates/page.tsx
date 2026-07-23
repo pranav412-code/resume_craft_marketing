@@ -27,7 +27,7 @@ const faq: QA[] = [
   {
     question: "Why would I want a LaTeX resume template?",
     answer:
-      "LaTeX produces precise, consistent typography that ordinary editors can't match, and the source file is plain text you can version-control. It is the standard in academia and popular with software engineers. ResumeCraft exports LaTeX directly - no manual typesetting needed.",
+      "LaTeX produces precise, consistent typography that ordinary editors can't match, and the source file is plain text you can version-control. It is the standard in academia and popular with software engineers. ResumeCraft exports LaTeX directly - no manual typesetting needed. See the LaTeX resume builder for the full flow.",
   },
   {
     question: "Are creative templates bad for ATS?",
@@ -58,7 +58,8 @@ export default function TemplatesPage() {
           <p className="lede">
             Every ResumeCraft template parses cleanly in applicant tracking
             systems. Pick a style; the AI fills it with content tailored to
-            your target job.
+            your target job. Prefer typeset output? Use the{" "}
+            <Link href="/latex-resume-builder">LaTeX resume builder</Link>.
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Start with a template" template="ats" />

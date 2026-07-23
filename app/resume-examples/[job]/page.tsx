@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!role) return {};
   return createMetadata({
     title: roleTitle(role.title),
-    description: `A recruiter-aware ${role.title.toLowerCase()} resume example: the skills, ATS keywords, and quantified bullet points that pass screening - plus what recruiters actually scan for.`,
+    description: `${role.title} resume example with skills, ATS keywords, and quantified bullets that pass screening.`,
     path: `/resume-examples/${role.slug}`,
     type: "article",
   });
@@ -64,6 +64,7 @@ export default async function RoleExamplePage({
               description: role.answer,
               url: absoluteUrl(PAGE),
               datePublished: today,
+              image: absoluteUrl("/opengraph-image"),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

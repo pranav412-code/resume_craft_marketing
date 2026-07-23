@@ -19,7 +19,7 @@ const PAGE = "/in";
 export const metadata: Metadata = createMetadata({
   title: "Resume Format for India - Freshers & Professionals",
   description:
-    "The resume format Indian employers and campus placements expect: education-first fresher layouts, ATS-safe structure, biodata vs resume explained - with INR pricing via Razorpay.",
+    "Resume format for India: education-first fresher layouts, ATS-safe structure, biodata vs resume, and INR pricing via Razorpay.",
   path: PAGE,
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
 });
@@ -89,6 +89,11 @@ export default function IndiaPage() {
               <p>
                 Naukri-era keyword screening and global ATS portals both rank
                 on job-description match - tailoring applies fully in India.
+                Try the{" "}
+                <Link href="/ats-resume-checker-india">
+                  ATS resume checker for India
+                </Link>
+                .
               </p>
             </li>
             <li className="card">

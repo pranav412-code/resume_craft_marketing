@@ -14,10 +14,10 @@ import { guides, guideUrl } from "@/lib/guides";
 const PAGE = "/";
 
 export const metadata: Metadata = createMetadata({
-  title: `AI Resume Builder & ATS Optimizer - Free | ${siteConfig.name}`,
+  title: `AI Resume Optimizer & ATS Resume Checker | ${siteConfig.name}`,
   absoluteTitle: true,
   description:
-    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start - no credit card.",
+    "Optimize your resume for ATS and tailor it to any job description using AI. Improve keyword matching, ATS score, and interview chances in minutes.",
   path: PAGE,
   // Reciprocal hreflang with the India page.
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
@@ -126,17 +126,25 @@ export default function HomePage() {
               </p>
             </li>
             <li className="card">
-              <h3>LaTeX export</h3>
+              <h3>
+                <Link href="/latex-resume-builder">LaTeX export</Link>
+              </h3>
               <p>
                 Clean LaTeX output for developers, researchers, and academics
                 - version-control friendly and typeset-quality.
               </p>
             </li>
             <li className="card">
-              <h3>Fair pricing for India</h3>
+              <h3>
+                <Link href="/in">Fair pricing for India</Link>
+              </h3>
               <p>
                 Native INR plans via Razorpay alongside USD - no
-                dollar-converted markup.
+                dollar-converted markup.{" "}
+                <Link href="/ats-resume-checker-india">
+                  Free ATS resume checker for India
+                </Link>
+                .
               </p>
             </li>
           </ul>

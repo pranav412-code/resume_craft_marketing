@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!t) return {};
   return createMetadata({
     title: templateTitle(t.name),
-    description: `${t.description} Who it fits, why it parses cleanly in ATS, and how to start free.`,
+    description: `${t.description} ATS-safe layout - start free.`,
     path: `/resume-templates/${t.slug}`,
     type: "article",
   });
@@ -56,6 +56,7 @@ export default async function TemplateStylePage({
               description: t.description,
               url: absoluteUrl(PAGE),
               datePublished: "2026-06-11",
+              image: absoluteUrl("/opengraph-image"),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

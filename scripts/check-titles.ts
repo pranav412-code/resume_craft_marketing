@@ -7,7 +7,12 @@
  * builders the pages use, so this scales to hundreds of generated pages.
  * Guides are hand-authored - their registry titles are checked against the
  * suffix budget (tags added per page are short and shown live in dev).
+ *
+ * Also fails if a hand-authored createMetadata title already embeds
+ * "| ResumeCraft" without absoluteTitle (layout would double the brand).
  */
+import fs from "node:fs";
+import path from "node:path";
 import { roleTitle, templateTitle, finalTitleLength, TITLE_LIMIT, TITLE_SUFFIX } from "../lib/titles";
 import { publishedRoles } from "../data/roles";
 import { templateStyles } from "../data/templates";
@@ -46,4 +51,36 @@ if (offenders.length) {
   process.exit(1);
 }
 
-console.log(`✓ titles: all ${publishedRoles().length + templateStyles.length + guides.length} checked titles ≤ ${TITLE_LIMIT} chars (incl. "${TITLE_SUFFIX}").`);
+/** Scan page.tsx files for duplicate brand in non-absolute titles. */
+const brandInTitle = /title:\s*(?:`[^`]*\|\s*ResumeCraft[^`]*`|"[^"]*\|\s*ResumeCraft[^"]*")/;
+const absoluteFlag = /absoluteTitle:\s*true/;
+const appDir = path.join(__dirname, "..", "app");
+const dupBrand: string[] = [];
+
+function walk(dir: string) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, ent.name);
+    if (ent.isDirectory()) walk(full);
+    else if (ent.name === "page.tsx") {
+      const src = fs.readFileSync(full, "utf8");
+      if (!src.includes("createMetadata")) continue;
+      if (brandInTitle.test(src) && !absoluteFlag.test(src)) {
+        dupBrand.push(path.relative(path.join(__dirname, ".."), full).replace(/\\/g, "/"));
+      }
+    }
+  }
+}
+walk(appDir);
+
+if (dupBrand.length) {
+  console.error(`\n✗ ${dupBrand.length} page(s) hardcode "| ResumeCraft" in title without absoluteTitle:\n`);
+  for (const p of dupBrand) console.error(`  ${p}`);
+  console.error(
+    `\nDrop the brand from the title string (layout appends "${TITLE_SUFFIX}") or set absoluteTitle: true.\n`,
+  );
+  process.exit(1);
+}
+
+console.log(
+  `✓ titles: all ${publishedRoles().length + templateStyles.length + guides.length} checked titles ≤ ${TITLE_LIMIT} chars (incl. "${TITLE_SUFFIX}"); no duplicate-brand titles.`,
+);

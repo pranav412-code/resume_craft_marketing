@@ -32,7 +32,7 @@ const PAGE = "/terms";
 
 export const metadata: Metadata = createMetadata({
   title: "Terms of Service",
-  description: `Terms governing your use of ${siteConfig.name} - accounts, credits, payments, refunds, acceptable use, AI output, and liability, drafted under Indian law.`,
+  description: `Terms for using ${siteConfig.name}: accounts, credits, payments, refunds, acceptable use, AI output, and liability under Indian law.`,
   path: PAGE,
 });
 

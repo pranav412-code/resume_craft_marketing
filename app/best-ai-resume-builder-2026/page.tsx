@@ -13,7 +13,7 @@ const PAGE = "/best-ai-resume-builder-2026";
 export const metadata: Metadata = createMetadata({
   title: "Best AI Resume Builder 2026 - Honest Comparison (Top 7)",
   description:
-    "Independent 2026 comparison of the top AI resume builders. ResumeCraft, Teal, Rezi, Jobscan, Enhancv, Kickresume, Resume Worded - features, pricing, ATS scoring.",
+    "2026 comparison of top AI resume builders: ResumeCraft, Teal, Rezi, Jobscan, and more - features, pricing, and ATS scoring.",
   path: PAGE,
 });
 

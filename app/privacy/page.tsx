@@ -30,7 +30,7 @@ const PAGE = "/privacy";
 
 export const metadata: Metadata = createMetadata({
   title: "Privacy Policy",
-  description: `How ${siteConfig.name} collects, uses, shares, and protects your personal data - drafted to comply with India's DPDP Act 2023, the IT Act 2000, and applicable global privacy law.`,
+  description: `How ${siteConfig.name} collects, uses, and protects your personal data under India's DPDP Act 2023, the IT Act 2000, and applicable privacy law.`,
   path: PAGE,
 });
 

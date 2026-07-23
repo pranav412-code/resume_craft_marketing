@@ -12,8 +12,9 @@ const PAGE = "/feedback";
 
 export const metadata: Metadata = createMetadata({
   title: "Feedback",
-  description: `Share product feedback with ${siteConfig.name} - bug reports, feature requests, or general impressions. We read every submission.`,
+  description: `Share feedback with ${siteConfig.name}: bug reports, feature requests, or general impressions. We read every submission.`,
   path: PAGE,
+  noindex: true,
 });
 
 export default function FeedbackPage() {

@@ -33,7 +33,14 @@ export function absoluteUrl(path: string): string {
 export function createMetadata(meta: PageMeta): Metadata {
   const url = absoluteUrl(meta.path);
   const description = meta.description ?? siteConfig.description;
-  const images = meta.image ? [{ url: meta.image }] : undefined;
+  const images = [
+    {
+      url: meta.image ?? "/opengraph-image",
+      width: 1200,
+      height: 630,
+      alt: `${siteConfig.name} - ${siteConfig.tagline}`,
+    },
+  ];
 
   return {
     title: meta.absoluteTitle ? { absolute: meta.title } : meta.title,
@@ -61,14 +68,14 @@ export function createMetadata(meta: PageMeta): Metadata {
       description,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
-      ...(images ? { images } : {}),
+      images,
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description,
       site: siteConfig.twitter,
-      ...(images ? { images } : {}),
+      images: images.map((i) => i.url),
     },
   };
 }

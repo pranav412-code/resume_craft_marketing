@@ -12,7 +12,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  // Baseline security headers, applied to every route (served via `next start`).
+  // Baseline security + CDN cache headers (SSG marketing; cuts hub TTFB).
   async headers() {
     return [
       {
@@ -28,6 +28,28 @@ const nextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/opengraph-image",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=86400, stale-while-revalidate=604800",
           },
         ],
       },

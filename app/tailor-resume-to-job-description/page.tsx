@@ -13,7 +13,7 @@ const PAGE = "/tailor-resume-to-job-description";
 export const metadata: Metadata = createMetadata({
   title: "Tailor Your Resume to a Job Description",
   description:
-    "How to tailor a resume to a job description - what to change, which keywords matter, and how ResumeCraft's AI does it for you in minutes with an ATS score.",
+    "How to tailor a resume to a job description: keywords that matter, what to change, and how AI does it in minutes with an ATS score.",
   path: PAGE,
 });
 

@@ -56,6 +56,7 @@ function buildOffers() {
       name: o.name,
       price: o.priceUSD.toFixed(2),
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
       category: categoryFor(o.planType),
     });
     // INR offer (skip the duplicate Free row to avoid noise - Free is global)
@@ -65,6 +66,7 @@ function buildOffers() {
         name: `${o.name} (India)`,
         price: o.priceINR.toString(),
         priceCurrency: "INR",
+        availability: "https://schema.org/InStock",
         category: categoryFor(o.planType),
         eligibleRegion: { "@type": "Country", name: "IN" },
       });
@@ -105,6 +107,7 @@ export function productSchema() {
     "@type": "Product",
     name: `${siteConfig.name} - AI Resume Builder`,
     description: siteConfig.description,
+    image: `${siteConfig.url}/opengraph-image`,
     brand: { "@id": ORG_ID },
     offers: {
       "@type": "AggregateOffer",
@@ -112,6 +115,7 @@ export function productSchema() {
       lowPrice: "0",
       highPrice: HIGH_PRICE_USD,
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
       offers: buildOffers(),
     },
   };

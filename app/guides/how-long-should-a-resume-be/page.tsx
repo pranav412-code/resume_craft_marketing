@@ -55,6 +55,7 @@ export default function Page() {
               description: meta.description,
               url: absoluteUrl(PAGE),
               datePublished: meta.datePublished,
+              image: absoluteUrl("/opengraph-image"),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

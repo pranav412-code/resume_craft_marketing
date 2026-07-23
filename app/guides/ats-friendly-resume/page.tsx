@@ -55,6 +55,7 @@ export default function Page() {
               description: meta.description,
               url: absoluteUrl(PAGE),
               datePublished: meta.datePublished,
+              image: absoluteUrl("/opengraph-image"),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },
@@ -126,6 +127,11 @@ export default function Page() {
             keyword set does your content cover?). ResumeCraft scores every
             draft against the specific job description you paste and lists the
             missing keywords, so the fix is concrete rather than guesswork.
+            Job seekers in India can also use the{" "}
+            <Link href="/ats-resume-checker-india">
+              free ATS resume checker for India
+            </Link>{" "}
+            with INR pricing and Naukri-aware context.
           </p>
 
           <div className="cta-banner">
