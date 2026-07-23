@@ -82,6 +82,18 @@ export default function ContactPage() {
 
           <h2 style={{ marginTop: "2rem" }}>Other channels</h2>
           <ul>
+            <li>
+              General:{" "}
+              <a href={`mailto:${siteConfig.emails.contact}`}>
+                {siteConfig.emails.contact}
+              </a>
+            </li>
+            <li>
+              Support / billing:{" "}
+              <a href={`mailto:${siteConfig.emails.support}`}>
+                {siteConfig.emails.support}
+              </a>
+            </li>
             <li>Grievance / data-protection: see <Link href="/privacy">Privacy Policy §10</Link></li>
             <li>Refund requests: see <Link href="/terms">Terms §6</Link></li>
           </ul>

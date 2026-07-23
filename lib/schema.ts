@@ -22,6 +22,12 @@ export function organizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     description: siteConfig.description,
+    email: siteConfig.emails.contact,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: siteConfig.emails.contact,
+    },
     sameAs: [...siteConfig.sameAs],
   };
 }

@@ -20,10 +20,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 const PROPRIETOR = "[[FILL: your full legal name as proprietor]]";
 const ENTITY = "ResumeCraft"; // SaaS brand name
 const REGISTERED_ADDRESS = "[[FILL: operating address (city, state, India)]]";
-const PRIVACY_EMAIL = "privacy@resumecraft.app"; // [[FILL: real inbox]]
-const GRIEVANCE_EMAIL = "grievance@resumecraft.app"; // [[FILL: real inbox]]
+const PRIVACY_EMAIL = siteConfig.emails.support;
+const GRIEVANCE_EMAIL = siteConfig.emails.support;
 const GRIEVANCE_PHONE = "[[FILL: India phone with country code]]";
-const DPO_EMAIL = "dpo@resumecraft.app"; // [[FILL: same as PRIVACY_EMAIL is fine for a solo SaaS]]
+const DPO_EMAIL = siteConfig.emails.support;
 const EFFECTIVE = "June 15, 2026";
 
 const PAGE = "/privacy";

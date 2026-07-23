@@ -68,11 +68,12 @@ export default function AboutPage() {
 
           <h2>Who builds it</h2>
           <p>
-            {/* TODO before launch: real founder bio(s), names, credentials,
-                photo, and a contact email - this is the E-E-A-T anchor page. */}
             ResumeCraft is built by a small product team focused on the job
-            search stack. Questions, feedback, or press: reach us through the
-            app&apos;s feedback form.
+            search stack. Questions, feedback, or press:{" "}
+            <a href={`mailto:${siteConfig.emails.founder}`}>
+              {siteConfig.emails.founder}
+            </a>
+            .
           </p>
 
           <div className="cta-banner">

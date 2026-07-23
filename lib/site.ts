@@ -30,6 +30,11 @@ export const siteConfig = {
   description:
     "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start - no credit card.",
   tagline: "AI Resume Builder & ATS Optimizer",
+  emails: {
+    support: "support@resumecraft.site",
+    contact: "contact@resumecraft.site",
+    founder: "founder@resumecraft.site",
+  },
   twitter: "@resumecraft",
   // Brand entity links - strengthens the GEO entity graph (schema sameAs).
   // Replace with real profiles; remove any that don't exist.
