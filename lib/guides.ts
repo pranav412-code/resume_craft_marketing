@@ -18,6 +18,7 @@ export const guides: GuideMeta[] = [
     description:
       "Step-by-step guide to an ATS-friendly resume: sections, format, keywords, and examples recruiters expect in 2026.",
     datePublished: "2026-06-11",
+    dateModified: "2026-07-25",
   },
   {
     slug: "ats-friendly-resume",
@@ -46,6 +47,20 @@ export const guides: GuideMeta[] = [
     description:
       "One page or two? Evidence by experience level, what recruiters read, and how to cut without losing impact.",
     datePublished: "2026-06-11",
+  },
+  {
+    slug: "ats-optimized-resume",
+    title: "How to Create an ATS Optimized Resume",
+    description:
+      "How to optimize a resume for ATS: parseable structure, keyword coverage from the job description, and a score loop that shows what to fix.",
+    datePublished: "2026-07-25",
+  },
+  {
+    slug: "resume-tips",
+    title: "Resume Tips That Get Interviews",
+    description:
+      "Practical resume tips: common mistakes to avoid, stronger bullets, keyword tactics, and a pre-submit checklist before you apply.",
+    datePublished: "2026-07-25",
   },
 ];
 

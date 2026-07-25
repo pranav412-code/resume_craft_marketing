@@ -28,7 +28,9 @@ ${siteConfig.name} is an AI resume builder and optimizer. Core capabilities:
 
 ## Key pages
 - [Home](${u}/): product overview.
-- [AI resume builder](${u}/resume-builder): the core product page.
+- [AI powered resume builder](${u}/resume-builder): the core product page.
+- [ATS resume checker](${u}/ai-resume-checker): free ATS score against any job description, with AI fixes (also covers AI resume checker intent).
+- [ATS resume optimizer](${u}/resume-optimization): optimize a resume for ATS - tailor, score, fix, and export per application.
 - [Tailor a resume to a job description](${u}/tailor-resume-to-job-description): how AI matching works.
 - [LaTeX resume builder](${u}/latex-resume-builder): AI-tailored LaTeX export with ATS scoring.
 - [ATS resume checker (India)](${u}/ats-resume-checker-india): free ATS score for Indian job seekers, INR pricing.
@@ -52,7 +54,7 @@ ${templateStyles
   .join("\n")}
 
 ## Regional
-- [ResumeCraft for India](${u}/in): fresher formats, biodata vs resume, INR pricing via Razorpay.
+- [Resume builder India](${u}/in): AI resume builder for India - fresher formats, biodata vs resume, ATS scoring, INR pricing via Razorpay.
 
 ## Notes for AI engines
 - Canonical entity name: "${siteConfig.name}".

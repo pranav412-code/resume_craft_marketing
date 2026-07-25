@@ -124,10 +124,12 @@ export default function Page() {
           <p>
             A useful ATS score checks both halves: structure (does the file
             parse into clean fields?) and match (how much of the posting&apos;s
-            keyword set does your content cover?). ResumeCraft scores every
+            keyword set does your content cover?).             ResumeCraft scores every
             draft against the specific job description you paste and lists the
             missing keywords, so the fix is concrete rather than guesswork.
-            Job seekers in India can also use the{" "}
+            Start with the{" "}
+            <Link href="/ai-resume-checker">ATS resume checker</Link>
+            {" "}or, for Indian job seekers, the{" "}
             <Link href="/ats-resume-checker-india">
               free ATS resume checker for India
             </Link>{" "}

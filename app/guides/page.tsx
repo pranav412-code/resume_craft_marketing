@@ -12,7 +12,7 @@ const PAGE = "/guides";
 export const metadata: Metadata = createMetadata({
   title: "Resume Writing Guides",
   description:
-    "Practical, ATS-aware resume guides: how to write a resume, pass applicant tracking systems, choose skills, pick the right length, and more.",
+    "Practical, ATS-aware resume guides: how to write a resume, resume tips, pass applicant tracking systems, choose skills, pick the right length, and more.",
   path: PAGE,
 });
 

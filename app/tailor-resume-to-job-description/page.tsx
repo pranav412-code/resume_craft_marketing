@@ -79,7 +79,7 @@ export default function TailorPage() {
         />
 
         <article className="prose">
-          <h1>Tailor your resume to the job description</h1>
+          <h1>How to tailor your resume to a job description</h1>
 
           {/* AEO answer block: 40–60 words, directly under the H1. */}
           <p className="answer">
@@ -115,7 +115,9 @@ export default function TailorPage() {
             <Link href="/guides/ats-friendly-resume">
               what makes a resume ATS-friendly
             </Link>{" "}
-            for the formatting half of the equation.
+            for the formatting half of the equation, and run the{" "}
+            <Link href="/ai-resume-checker">ATS resume checker</Link> to
+            measure the result against the posting.
           </p>
 
           <div className="cta-banner">

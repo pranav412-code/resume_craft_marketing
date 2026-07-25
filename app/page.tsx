@@ -99,7 +99,9 @@ export default function HomePage() {
               <h3>3 · Score &amp; fix</h3>
               <p>
                 See your ATS compatibility score and the keywords you are
-                missing - then apply fixes in one click.
+                missing with the{" "}
+                <Link href="/ai-resume-checker">ATS resume checker</Link> -
+                then apply fixes in one click.
               </p>
             </li>
             <li className="card">
@@ -117,12 +119,15 @@ export default function HomePage() {
           <h2>Why ResumeCraft</h2>
           <ul className="card-grid">
             <li className="card">
-              <h3>Tailoring + scoring in one flow</h3>
+              <h3>
+                <Link href="/resume-optimization">ATS resume optimizer</Link>
+              </h3>
               <p>
                 ResumeCraft rewrites your resume against a specific job
                 description and scores it for ATS compatibility in the same
                 pass - no copy-pasting between a builder and a separate
-                checker.
+                checker. Start with the{" "}
+                <Link href="/resume-builder">AI powered resume builder</Link>.
               </p>
             </li>
             <li className="card">
@@ -136,7 +141,7 @@ export default function HomePage() {
             </li>
             <li className="card">
               <h3>
-                <Link href="/in">Fair pricing for India</Link>
+                <Link href="/in">Resume builder for India</Link>
               </h3>
               <p>
                 Native INR plans via Razorpay alongside USD - no

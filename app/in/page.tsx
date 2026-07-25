@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CTA } from "@/components/CTA";
@@ -17,14 +17,19 @@ const PAGE = "/in";
  * hreflang map is reciprocal with the home page.
  */
 export const metadata: Metadata = createMetadata({
-  title: "Resume Format for India - Freshers & Professionals",
+  title: "Resume Builder India - Free ATS & INR Plans",
   description:
-    "Resume format for India: education-first fresher layouts, ATS-safe structure, biodata vs resume, and INR pricing via Razorpay.",
+    "AI resume builder for India: fresher formats, ATS-safe structure, biodata vs resume, Naukri-aware scoring, and INR pricing via Razorpay. Free to start.",
   path: PAGE,
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
 });
 
 const faq: QA[] = [
+  {
+    question: "What is the best resume builder for India?",
+    answer:
+      "Look for ATS-safe templates, fresher-friendly education-first layouts, job-description tailoring, and native INR billing. ResumeCraft is built for that stack: AI rewrite against any posting, ATS scoring, PDF or LaTeX export, and Razorpay checkout in rupees.",
+  },
   {
     question: "What resume format do Indian companies expect?",
     answer:
@@ -43,7 +48,7 @@ const faq: QA[] = [
   {
     question: "Why does INR pricing matter?",
     answer:
-      "ResumeCraft bills natively in INR through Razorpay - UPI, cards, netbanking - at prices set for the Indian market, with GST handled per Indian tax rules.",
+      "ResumeCraft bills natively in INR through Razorpay - UPI, cards, netbanking - at prices set for the Indian market, with GST handled per Indian tax rules. Job Seeker ₹149/month or Career Sprint ₹399 for 3 months.",
   },
 ];
 
@@ -53,18 +58,25 @@ export default function IndiaPage() {
       <SiteHeader page={PAGE} />
       <main>
         <JsonLd
-          data={breadcrumbSchema([
-            { name: "Home", url: absoluteUrl("/") },
-            { name: "India", url: absoluteUrl(PAGE) },
-          ])}
+          data={[
+            softwareApplicationSchema(),
+            breadcrumbSchema([
+              { name: "Home", url: absoluteUrl("/") },
+              { name: "Resume Builder India", url: absoluteUrl(PAGE) },
+            ]),
+          ]}
         />
 
         <section className="hero container">
-          <h1>The resume format Indian employers actually screen for</h1>
+          <p className="eyebrow">India · Fresher formats · INR via Razorpay</p>
+          <h1>
+            AI resume builder for India - ATS-ready and priced in rupees
+          </h1>
           <p className="lede">
             Education-first fresher layouts, ATS-safe structure, and AI
             tailoring to the job description - with pricing in rupees, not
-            converted dollars.
+            converted dollars. Built for campus placements and corporate
+            hiring alike.
           </p>
           <div className="actions">
             <CTA page={PAGE} template="fresher" label="Build my resume - free" />
@@ -92,8 +104,9 @@ export default function IndiaPage() {
                 Try the{" "}
                 <Link href="/ats-resume-checker-india">
                   ATS resume checker for India
-                </Link>
-                .
+                </Link>{" "}
+                or the global{" "}
+                <Link href="/ai-resume-checker">ATS resume checker</Link>.
               </p>
             </li>
             <li className="card">
@@ -108,7 +121,9 @@ export default function IndiaPage() {
               <h3>Same AI engine</h3>
               <p>
                 Upload, paste the posting, get a tailored draft with an ATS
-                score - in minutes, in your context.
+                score - in minutes, in your context. Same{" "}
+                <Link href="/resume-builder">AI powered resume builder</Link>{" "}
+                used worldwide.
               </p>
             </li>
           </ul>
@@ -117,7 +132,7 @@ export default function IndiaPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>From campus to offer letter</h2>
-            <p>25 free credits to start - no card needed.</p>
+            <p>25 free credits to start - no card needed. Build in INR.</p>
             <CTA page={PAGE} template="fresher" label="Build fresher resume - free" />
           </div>
           <FaqBlock items={faq} />

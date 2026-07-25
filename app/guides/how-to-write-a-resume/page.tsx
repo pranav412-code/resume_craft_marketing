@@ -162,14 +162,48 @@ export default function Page() {
             <Link href="/guides/ats-friendly-resume">
               what is an ATS-friendly resume
             </Link>
+            . When you are ready to measure a draft, run the{" "}
+            <Link href="/ai-resume-checker">ATS resume checker</Link> against
+            the posting, or follow{" "}
+            <Link href="/guides/ats-optimized-resume">
+              how to create an ATS optimized resume
+            </Link>
+            .
+          </p>
+
+          <h2>Example: weak vs strong experience bullet</h2>
+          <p>
+            Weak: &quot;Responsible for managing social media accounts and
+            posting content.&quot; Strong: &quot;Grew LinkedIn engagement 48%
+            in six months by shipping a weekly content calendar across three
+            product lines.&quot; The second names the channel, the metric, the
+            timeframe, and the method - all signals both ATS keyword search
+            and a recruiter skim reward.
+          </p>
+
+          <h2>Where to start if you already have a draft</h2>
+          <p>
+            Skip the blank page. Browse{" "}
+            <Link href="/resume-templates">ATS-friendly resume templates</Link>{" "}
+            or a{" "}
+            <Link href="/resume-examples">resume example for your job title</Link>
+            , then{" "}
+            <Link href="/tailor-resume-to-job-description">
+              tailor the draft to the job description
+            </Link>
+            . For tactics that polish an existing resume - mistakes, checklists,
+            bullet upgrades - see{" "}
+            <Link href="/guides/resume-tips">resume tips that get interviews</Link>
             .
           </p>
 
           <div className="cta-banner">
             <h2>Skip the blank page entirely</h2>
             <p>
-              Upload what you have - the AI rebuilds it against the job you
-              want, with an ATS score.
+              Upload what you have - the{" "}
+              <Link href="/resume-builder">AI powered resume builder</Link>{" "}
+              rebuilds it against the job you want, with an ATS score from the{" "}
+              <Link href="/resume-optimization">ATS resume optimizer</Link>.
             </p>
             <CTA page={PAGE} label="Write mine with AI" />
           </div>

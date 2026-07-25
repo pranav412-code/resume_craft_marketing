@@ -11,17 +11,17 @@ import { FaqBlock, type QA } from "@/components/FaqBlock";
 const PAGE = "/resume-builder";
 
 export const metadata: Metadata = createMetadata({
-  title: "AI Resume Builder - Tailored & ATS-Scored",
+  title: "AI Powered Resume Builder - ATS Scored & Free",
   description:
-    "Build a resume with AI that tailors every bullet to the job you want, scores it for ATS compatibility, and exports to PDF or LaTeX. Free to start.",
+    "AI powered resume builder that tailors every bullet to the job you want, scores it for ATS compatibility, and exports to PDF or LaTeX. Free to start.",
   path: PAGE,
 });
 
 const faq: QA[] = [
   {
-    question: "How is an AI resume builder different from a template editor?",
+    question: "How is an AI powered resume builder different from a template editor?",
     answer:
-      "A template editor formats what you type. An AI resume builder rewrites the content itself: it compares your experience against a target job description, surfaces missing keywords, rewrites bullets in stronger language, and orders sections so the most relevant material appears first.",
+      "A template editor formats what you type. An AI powered resume builder rewrites the content itself: it compares your experience against a target job description, surfaces missing keywords, rewrites bullets in stronger language, and orders sections so the most relevant material appears first.",
   },
   {
     question: "Will my resume still sound like me?",
@@ -51,16 +51,17 @@ export default function ResumeBuilderPage() {
         />
 
         <section className="hero container">
-          <p className="eyebrow">AI builder · ATS scored</p>
+          <p className="eyebrow">AI powered builder · ATS scored</p>
           <h1>
-            The AI resume builder that targets the job, not the page
+            The AI powered resume builder that targets the job, not the page
           </h1>
           <p className="lede">
-            Generic resumes get filtered. ResumeCraft rewrites yours against
-            the exact job description - then proves it with an ATS score.
+            Generic resumes get filtered. ResumeCraft&apos;s AI powered
+            builder rewrites yours against the exact job description - then
+            proves it with an ATS score.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Launch AI resume builder" />
+            <CTA page={PAGE} label="Launch the AI powered builder" />
             <Link href="/tailor-resume-to-job-description" className="btn btn-ghost">
               See how tailoring works
             </Link>
@@ -81,7 +82,9 @@ export default function ResumeBuilderPage() {
               <h3>ATS compatibility score</h3>
               <p>
                 Every draft is scored the way applicant tracking systems read
-                it - structure, parseability, and keyword coverage.
+                it - structure, parseability, and keyword coverage. Run the{" "}
+                <Link href="/ai-resume-checker">ATS resume checker</Link> on
+                any version.
               </p>
             </li>
             <li className="card">

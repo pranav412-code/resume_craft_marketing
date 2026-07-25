@@ -155,7 +155,12 @@ export default function AtsCheckerIndiaPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>Don't get filtered before a human sees you</h2>
-            <p>Free ATS score. INR pricing. Tailor per application.</p>
+            <p>
+              Free ATS score. INR pricing. Tailor per application. Applying
+              outside India too? The{" "}
+              <Link href="/ai-resume-checker">ATS resume checker</Link>{" "}
+              covers Workday, Greenhouse, and the rest.
+            </p>
             <CTA page={PAGE} label="Score my resume now" />
           </div>
           <FaqBlock items={faq} />

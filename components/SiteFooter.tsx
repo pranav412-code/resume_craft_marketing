@@ -17,7 +17,9 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Product">
           <p className="footer-head">Product</p>
-          <Link href="/resume-builder">AI resume builder</Link>
+          <Link href="/resume-builder">AI powered resume builder</Link>
+          <Link href="/ai-resume-checker">ATS resume checker</Link>
+          <Link href="/resume-optimization">ATS resume optimizer</Link>
           <Link href="/tailor-resume-to-job-description">Tailor to a job description</Link>
           <Link href="/latex-resume-builder">LaTeX resume builder</Link>
           <Link href="/ats-resume-checker-india">ATS resume checker (India)</Link>
@@ -37,7 +39,7 @@ export function SiteFooter() {
         <nav aria-label="Company">
           <p className="footer-head">Company</p>
           <Link href="/about">About</Link>
-          <Link href="/in">ResumeCraft for India</Link>
+          <Link href="/in">Resume builder India</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/feedback">Feedback</Link>
           <p className="footer-head" style={{ marginTop: "0.8rem" }}>

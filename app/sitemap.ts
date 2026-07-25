@@ -21,6 +21,8 @@ type Entry = {
 const staticRoutes: Entry[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
   { path: "/resume-builder", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/ai-resume-checker", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/resume-optimization", priority: 0.8, changeFrequency: "monthly" },
   { path: "/resume-templates", priority: 0.8, changeFrequency: "weekly" },
   { path: "/resume-examples", priority: 0.8, changeFrequency: "weekly" },
   { path: "/tailor-resume-to-job-description", priority: 0.8, changeFrequency: "monthly" },
