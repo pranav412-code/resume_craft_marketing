@@ -1,6 +1,9 @@
 # Krafiter marketing site (Next.js) — https://krafiter.com
 # Primary domain on Netlify: krafiter.com
-# Old hosts (resumecraft.*) 301 to krafiter.com below.
+# Old hosts must remain as domain aliases on this same site for redirects to fire.
+#
+# NOTE: Netlify does NOT support Host= conditions on redirects.
+# Use absolute-URL "from" patterns (domain-level redirects) instead.
 
 [build]
   command = "npm run build"
@@ -17,38 +20,63 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Legacy ResumeCraft hosts → Krafiter canonical.
+# Legacy ResumeCraft hosts → Krafiter canonical (force=true shadows Next.js pages).
 [[redirects]]
-  from = "/*"
+  from = "https://resumecraft.site/*"
   to = "https://krafiter.com/:splat"
   status = 301
   force = true
-  conditions = {Host = ["resumecraft.site"]}
 
 [[redirects]]
-  from = "/*"
-  to = "https://krafiter.com/:splat"
+  from = "https://resumecraft.site"
+  to = "https://krafiter.com/"
   status = 301
   force = true
-  conditions = {Host = ["www.resumecraft.site"]}
 
 [[redirects]]
-  from = "/*"
+  from = "https://www.resumecraft.site/*"
   to = "https://krafiter.com/:splat"
   status = 301
   force = true
-  conditions = {Host = ["resumecraft.app"]}
 
 [[redirects]]
-  from = "/*"
-  to = "https://krafiter.com/:splat"
+  from = "https://www.resumecraft.site"
+  to = "https://krafiter.com/"
   status = 301
   force = true
-  conditions = {Host = ["www.resumecraft.app"]}
 
 [[redirects]]
-  from = "/*"
+  from = "https://resumecraft.app/*"
   to = "https://krafiter.com/:splat"
   status = 301
   force = true
-  conditions = {Host = ["www.krafiter.com"]}
+
+[[redirects]]
+  from = "https://resumecraft.app"
+  to = "https://krafiter.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.resumecraft.app/*"
+  to = "https://krafiter.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.resumecraft.app"
+  to = "https://krafiter.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.krafiter.com/*"
+  to = "https://krafiter.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.krafiter.com"
+  to = "https://krafiter.com/"
+  status = 301
+  force = true
