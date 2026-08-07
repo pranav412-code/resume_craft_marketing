@@ -3,14 +3,14 @@
  * sitemap, llms.txt, and the CTA component so everything stays consistent.
  *
  * IMPORTANT: set NEXT_PUBLIC_SITE_URL / NEXT_PUBLIC_APP_URL in the env before
- * deploy. Primary marketing domain: https://resumecraft.site (live host; brand is Krafiter).
+ * deploy. Primary marketing domain: https://krafiter.com
  */
 function stripTrailingSlash(u: string): string {
   return u.replace(/\/+$/, "");
 }
 
 const SITE_URL = stripTrailingSlash(
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://resumecraft.site",
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://krafiter.com",
 );
 const APP_URL = stripTrailingSlash(
   process.env.NEXT_PUBLIC_APP_URL ?? "https://app.krafiter.com",

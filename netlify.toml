@@ -1,5 +1,6 @@
-# Krafiter marketing site (Next.js) — https://resumecraft.site
-# Set Netlify "Primary domain" to resumecraft.site; resumecraft.app aliases here.
+# Krafiter marketing site (Next.js) — https://krafiter.com
+# Primary domain on Netlify: krafiter.com
+# Old hosts (resumecraft.*) 301 to krafiter.com below.
 
 [build]
   command = "npm run build"
@@ -7,7 +8,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  NEXT_PUBLIC_SITE_URL = "https://resumecraft.site"
+  NEXT_PUBLIC_SITE_URL = "https://krafiter.com"
   NEXT_PUBLIC_APP_URL = "https://app.krafiter.com"
   NEXT_PUBLIC_API_URL = "https://resume-craft-backend-1r57.onrender.com"
   # NEXT_PUBLIC_* vars are public by design — exclude from Netlify secrets scanner.
@@ -16,21 +17,38 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Non-primary hostnames → canonical domain (fixes SEO canonical/hreflang mismatch).
+# Legacy ResumeCraft hosts → Krafiter canonical.
 [[redirects]]
-  from = "https://resumecraft.app/*"
-  to = "https://resumecraft.site/:splat"
+  from = "/*"
+  to = "https://krafiter.com/:splat"
   status = 301
   force = true
+  conditions = {Host = ["resumecraft.site"]}
 
 [[redirects]]
-  from = "https://www.resumecraft.app/*"
-  to = "https://resumecraft.site/:splat"
+  from = "/*"
+  to = "https://krafiter.com/:splat"
   status = 301
   force = true
+  conditions = {Host = ["www.resumecraft.site"]}
 
 [[redirects]]
-  from = "https://www.resumecraft.site/*"
-  to = "https://resumecraft.site/:splat"
+  from = "/*"
+  to = "https://krafiter.com/:splat"
   status = 301
   force = true
+  conditions = {Host = ["resumecraft.app"]}
+
+[[redirects]]
+  from = "/*"
+  to = "https://krafiter.com/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["www.resumecraft.app"]}
+
+[[redirects]]
+  from = "/*"
+  to = "https://krafiter.com/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["www.krafiter.com"]}
