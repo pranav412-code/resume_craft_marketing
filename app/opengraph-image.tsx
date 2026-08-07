@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 /**
  * Default OG / Twitter share card — Signal Paper brand.
- * Generated at build; routes can ship their own opengraph-image to override.
+ * Satori requires every multi-child node to set display: flex | none.
  */
 export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
@@ -16,7 +16,6 @@ const MUTED = "#5A635E";
 const BORDER = "#E4E0D8";
 const ACCENT = "#2F6B66";
 const ACCENT_TINT = "#E4EFED";
-const SCORE = 88;
 
 export default function OgImage() {
   return new ImageResponse(
@@ -33,7 +32,6 @@ export default function OgImage() {
           overflow: "hidden",
         }}
       >
-        {/* Soft teal wash — right atmosphere, not a purple/blue AI gradient */}
         <div
           style={{
             position: "absolute",
@@ -44,6 +42,7 @@ export default function OgImage() {
             borderRadius: 9999,
             background: ACCENT_TINT,
             opacity: 0.85,
+            display: "flex",
           }}
         />
         <div
@@ -56,10 +55,9 @@ export default function OgImage() {
             borderRadius: 9999,
             background: "#D8E8E5",
             opacity: 0.7,
+            display: "flex",
           }}
         />
-
-        {/* Left hairline rule — editorial Signal Paper cue */}
         <div
           style={{
             position: "absolute",
@@ -68,10 +66,10 @@ export default function OgImage() {
             bottom: 0,
             width: 10,
             background: ACCENT,
+            display: "flex",
           }}
         />
 
-        {/* Content */}
         <div
           style={{
             display: "flex",
@@ -81,10 +79,9 @@ export default function OgImage() {
             width: "100%",
             height: "100%",
             padding: "72px 80px 72px 88px",
-            gap: 48,
           }}
         >
-          {/* Copy column */}
+          {/* Copy */}
           <div
             style={{
               display: "flex",
@@ -97,8 +94,8 @@ export default function OgImage() {
             <div
               style={{
                 display: "flex",
+                flexDirection: "row",
                 alignItems: "center",
-                gap: 10,
                 marginBottom: 28,
               }}
             >
@@ -108,6 +105,8 @@ export default function OgImage() {
                   height: 10,
                   borderRadius: 9999,
                   background: ACCENT,
+                  marginRight: 10,
+                  display: "flex",
                 }}
               />
               <div
@@ -117,6 +116,7 @@ export default function OgImage() {
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
                   color: ACCENT,
+                  display: "flex",
                 }}
               >
                 krafiter.com
@@ -130,6 +130,7 @@ export default function OgImage() {
                 letterSpacing: -2.5,
                 lineHeight: 1.02,
                 color: INK,
+                display: "flex",
               }}
             >
               {siteConfig.name}
@@ -143,6 +144,7 @@ export default function OgImage() {
                 color: MUTED,
                 letterSpacing: -0.5,
                 lineHeight: 1.25,
+                display: "flex",
               }}
             >
               {siteConfig.tagline}
@@ -152,33 +154,60 @@ export default function OgImage() {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                flexWrap: "wrap",
-                gap: 12,
                 marginTop: 40,
               }}
             >
-              {["JD tailor", "ATS score", "PDF · LaTeX"].map((label) => (
-                <div
-                  key={label}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "12px 20px",
-                    borderRadius: 9999,
-                    background: SURFACE,
-                    border: `1.5px solid ${BORDER}`,
-                    color: INK,
-                    fontSize: 22,
-                    fontWeight: 600,
-                  }}
-                >
-                  {label}
-                </div>
-              ))}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "12px 20px",
+                  borderRadius: 9999,
+                  background: SURFACE,
+                  border: `1.5px solid ${BORDER}`,
+                  color: INK,
+                  fontSize: 22,
+                  fontWeight: 600,
+                  marginRight: 12,
+                }}
+              >
+                JD tailor
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "12px 20px",
+                  borderRadius: 9999,
+                  background: SURFACE,
+                  border: `1.5px solid ${BORDER}`,
+                  color: INK,
+                  fontSize: 22,
+                  fontWeight: 600,
+                  marginRight: 12,
+                }}
+              >
+                ATS score
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "12px 20px",
+                  borderRadius: 9999,
+                  background: SURFACE,
+                  border: `1.5px solid ${BORDER}`,
+                  color: INK,
+                  fontSize: 22,
+                  fontWeight: 600,
+                }}
+              >
+                PDF · LaTeX
+              </div>
             </div>
           </div>
 
-          {/* Score card — product signal */}
+          {/* Score card */}
           <div
             style={{
               display: "flex",
@@ -202,12 +231,12 @@ export default function OgImage() {
                 textTransform: "uppercase",
                 color: MUTED,
                 marginBottom: 20,
+                display: "flex",
               }}
             >
               ATS match
             </div>
 
-            {/* Ring approximation via nested circles */}
             <div
               style={{
                 display: "flex",
@@ -219,7 +248,6 @@ export default function OgImage() {
                 border: `14px solid ${ACCENT_TINT}`,
                 borderTopColor: ACCENT,
                 borderRightColor: ACCENT,
-                position: "relative",
               }}
             >
               <div
@@ -236,9 +264,10 @@ export default function OgImage() {
                     letterSpacing: -2,
                     color: INK,
                     lineHeight: 1,
+                    display: "flex",
                   }}
                 >
-                  {SCORE}
+                  88
                 </div>
                 <div
                   style={{
@@ -246,6 +275,7 @@ export default function OgImage() {
                     fontWeight: 600,
                     color: ACCENT,
                     marginTop: 4,
+                    display: "flex",
                   }}
                 >
                   / 100
@@ -260,6 +290,7 @@ export default function OgImage() {
                 fontWeight: 600,
                 color: MUTED,
                 textAlign: "center",
+                display: "flex",
               }}
             >
               Tailor · score · export
