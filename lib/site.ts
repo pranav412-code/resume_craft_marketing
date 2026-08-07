@@ -13,7 +13,7 @@ const SITE_URL = stripTrailingSlash(
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://resumecraft.site",
 );
 const APP_URL = stripTrailingSlash(
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.resumecraft.site",
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.krafiter.com",
 );
 const API_URL = stripTrailingSlash(
   process.env.NEXT_PUBLIC_API_URL ??
