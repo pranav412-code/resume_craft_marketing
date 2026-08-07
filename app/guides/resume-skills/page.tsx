@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
-import { guides } from "@/lib/guides";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
+import { guides } from "@/lib/content/guides";
 
 const SLUG = "resume-skills";
 const PAGE = `/guides/${SLUG}`;
@@ -124,7 +124,7 @@ export default function Page() {
           <div className="cta-banner">
             <h2>Let the job description choose your skills</h2>
             <p>
-              ResumeCraft extracts the posting&apos;s keyword set and shows
+              Krafiter extracts the posting&apos;s keyword set and shows
               which ones your resume is missing.
             </p>
             <CTA page={PAGE} label="Match my skills" />

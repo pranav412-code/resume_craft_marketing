@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { roleTitle } from "@/lib/titles";
-import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock } from "@/components/FaqBlock";
+import { roleTitle } from "@/lib/seo/titles";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock } from "@/components/marketing/FaqBlock";
 import { publishedRoles, getRole } from "@/data/roles";
-import { validateRoles } from "@/lib/validateRole";
+import { validateRoles } from "@/lib/content/validateRole";
 
 /**
  * Programmatic P2 engine: one statically generated page per published role.

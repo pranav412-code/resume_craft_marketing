@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/ai-resume-checker";
 
 export const metadata: Metadata = createMetadata({
   title: "ATS Resume Checker - Free Score & AI Fixes",
   description:
-    "Free ATS resume checker: score your resume against any job description, see missing keywords, and fix gaps with AI rewrites. Start free.",
+    "ATS resume checker and AI resume checker: scan my resume for ATS score, see missing keywords, then fix gaps with AI rewrites. Free to start.",
   path: PAGE,
 });
 
@@ -26,12 +26,12 @@ const faq: QA[] = [
   {
     question: "How does an AI resume checker differ from a plain ATS checker?",
     answer:
-      "A plain ATS checker diagnoses the score and stops. ResumeCraft's AI resume checker closes the loop: the same system that finds missing keywords and weak bullets rewrites them, reorders sections for relevance, and re-scores the result - so you leave with a better resume, not just a report.",
+      "A plain ATS checker diagnoses the score and stops. Krafiter's AI resume checker closes the loop: the same system that finds missing keywords and weak bullets rewrites them, reorders sections for relevance, and re-scores the result - so you leave with a better resume, not just a report.",
   },
   {
     question: "Is the ATS resume checker free?",
     answer:
-      "Yes to start. Sign-up gives 25 free credits - enough to run the full check-score-fix loop several times before paying. No card required. Paid plans start at $4.99 or ₹149 per month.",
+      "Yes to start. Sign-up gives 25 free credits - enough to run the full check-score-fix loop several times before paying. No card required. See Pricing for paid plans in your currency.",
   },
   {
     question: "What does the ATS score measure?",
@@ -73,6 +73,9 @@ export default function AiResumeCheckerPage() {
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Check my resume - free" />
+            <Link href="/ats-checker" className="btn btn-ghost">
+              Try the instant scan - no signup
+            </Link>
             <Link href="/guides/ats-optimized-resume" className="btn btn-ghost">
               How to optimize for ATS
             </Link>
@@ -151,6 +154,30 @@ export default function AiResumeCheckerPage() {
               <p>
                 Re-run the check until the score stabilizes, then export a
                 recruiter-ready PDF or LaTeX source.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section className="section container">
+          <h2>Want a score right now, without an account?</h2>
+          <ul className="card-grid">
+            <li className="card">
+              <h3>
+                <Link href="/ats-checker">Free ATS resume scan</Link>
+              </h3>
+              <p>
+                Upload your resume and get an instant ATS score, strengths, and
+                weaknesses - no signup, no email, nothing stored.
+              </p>
+            </li>
+            <li className="card">
+              <h3>
+                <Link href="/tools/jd-match-checker">JD match checker</Link>
+              </h3>
+              <p>
+                Checking against a specific posting? See matched and missing
+                keywords with a coverage percentage in seconds.
               </p>
             </li>
           </ul>

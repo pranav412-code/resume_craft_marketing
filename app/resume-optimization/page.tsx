@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/resume-optimization";
 
 export const metadata: Metadata = createMetadata({
-  title: "ATS Resume Optimizer - Score & Fix Gaps",
+  title: "ATS Resume Optimizer - Optimize Resume for ATS",
   description:
-    "ATS resume optimizer that tunes your resume to any job description: match keywords, fix parse issues, score for ATS, and export PDF or LaTeX.",
+    "ATS resume optimizer that helps you optimize a resume for ATS: match keywords to the job description, fix parse issues, score the draft, and export PDF or LaTeX.",
   path: PAGE,
 });
 
@@ -26,10 +26,10 @@ const faq: QA[] = [
   {
     question: "How do I optimize a resume for ATS?",
     answer:
-      "Start from a parseable single-column layout, extract the job description's required skills and phrases, mirror those terms where they are true of you, lead with the most relevant experience, then score the draft against the same posting and fix what the score surfaces. ResumeCraft runs that loop with AI in minutes.",
+      "Start from a parseable single-column layout, extract the job description's required skills and phrases, mirror those terms where they are true of you, lead with the most relevant experience, then score the draft against the same posting and fix what the score surfaces. Krafiter runs that loop with AI in minutes.",
   },
   {
-    question: "How does ResumeCraft's ATS resume optimizer work?",
+    question: "How does Krafiter's ATS resume optimizer work?",
     answer:
       "You upload your resume and paste the job description. The AI extracts the posting's requirements, maps them to your parsed experience, rewrites and reorders bullets to close the gaps, and shows an ATS score plus the keywords still missing. You review every change before exporting.",
   },
@@ -41,7 +41,7 @@ const faq: QA[] = [
   {
     question: "Is the ATS resume optimizer free to try?",
     answer:
-      "Yes. Sign-up gives 25 free credits - enough to run the full optimize-score-export flow several times. Paid plans start at $4.99 or ₹149 per month.",
+      "Yes. Sign-up gives 25 free credits - enough to run the full optimize-score-export flow several times. See Pricing for paid plans in your currency.",
   },
 ];
 
@@ -63,18 +63,18 @@ export default function ResumeOptimizationPage() {
         <section className="hero container">
           <p className="eyebrow">Optimize for ATS · Tailor · Score · Export</p>
           <h1>
-            The ATS resume optimizer that targets one job at a time
+            ATS resume optimizer — optimize your resume for ATS, one job at a time
           </h1>
           <p className="lede">
             A resume optimized for everything is optimized for nothing.
-            ResumeCraft&apos;s ATS resume optimizer tunes yours to the exact
+            Krafiter&apos;s ATS resume optimizer tunes yours to the exact
             job description - keywords, order, and bullets - then proves it
             with an ATS score.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Optimize my resume - free" />
-            <Link href="/ai-resume-checker" className="btn btn-ghost">
-              Run the ATS resume checker first
+            <CTA page={PAGE} />
+            <Link href="/ats-checker" className="btn btn-ghost">
+              Free ATS check first
             </Link>
           </div>
         </section>
@@ -102,9 +102,10 @@ export default function ResumeOptimizationPage() {
               <h3>Bullet strength</h3>
               <p>
                 Weak, generic bullets get rewritten against the requirements
-                with action verbs and quantified outcomes - built by the same
-                engine as the{" "}
-                <Link href="/resume-builder">AI powered resume builder</Link>.
+                with action verbs and quantified outcomes - the same engine
+                behind the{" "}
+                <Link href="/resume-builder">AI resume builder</Link> entry
+                flow.
               </p>
             </li>
             <li className="card">
@@ -122,7 +123,7 @@ export default function ResumeOptimizationPage() {
           <h2>Optimization is a loop, not an edit</h2>
           <p>
             Every change is measured: optimize for ATS, score with the{" "}
-            <Link href="/ai-resume-checker">ATS resume checker</Link>, fix
+            <Link href="/ats-checker">free ATS resume checker</Link>, fix
             what the score surfaces, and export once it stabilizes. The
             manual version of this workflow is documented in{" "}
             <Link href="/tailor-resume-to-job-description">
@@ -132,7 +133,7 @@ export default function ResumeOptimizationPage() {
             <Link href="/guides/ats-optimized-resume">
               how to create an ATS optimized resume
             </Link>{" "}
-            - ResumeCraft runs it for you in minutes.
+            - Krafiter runs it for you in minutes.
           </p>
         </section>
 
@@ -143,7 +144,7 @@ export default function ResumeOptimizationPage() {
               Upload once. Optimize for every job you actually want - without
               an hour of editing each time.
             </p>
-            <CTA page={PAGE} label="Start optimizing - free" />
+            <CTA page={PAGE} />
           </div>
           <FaqBlock items={faq} />
         </div>

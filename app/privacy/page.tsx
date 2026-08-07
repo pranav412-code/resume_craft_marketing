@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 /**
  * ⚠️ TEMPLATE - not legal advice. Drafted to align with:
@@ -18,7 +18,7 @@ import { SiteFooter } from "@/components/SiteFooter";
  * Counsel MUST review before launch. Replace every [[FILL]] marker.
  */
 const PROPRIETOR = "[[FILL: your full legal name as proprietor]]";
-const ENTITY = "ResumeCraft"; // SaaS brand name
+const ENTITY = "Krafiter"; // SaaS brand name
 const REGISTERED_ADDRESS = "[[FILL: operating address (city, state, India)]]";
 const PRIVACY_EMAIL = siteConfig.emails.support;
 const GRIEVANCE_EMAIL = siteConfig.emails.support;

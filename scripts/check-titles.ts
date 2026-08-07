@@ -1,7 +1,7 @@
 /**
  * Build-time guard: no page <title> may exceed TITLE_LIMIT once the brand
  * suffix is appended. Catches the "title looks fine but truncates in the SERP
- * after ' | ResumeCraft'" mistake. Runs before `next build`.
+ * after ' | Krafiter'" mistake. Runs before `next build`.
  *
  * Programmatic surfaces (roles/templates) are checked through the same
  * builders the pages use, so this scales to hundreds of generated pages.
@@ -9,14 +9,13 @@
  * suffix budget (tags added per page are short and shown live in dev).
  *
  * Also fails if a hand-authored createMetadata title already embeds
- * "| ResumeCraft" without absoluteTitle (layout would double the brand).
+ * "| Krafiter" without absoluteTitle (layout would double the brand).
  */
 import fs from "node:fs";
 import path from "node:path";
-import { roleTitle, templateTitle, finalTitleLength, TITLE_LIMIT, TITLE_SUFFIX } from "../lib/titles";
+import { roleTitle, finalTitleLength, TITLE_LIMIT, TITLE_SUFFIX } from "../lib/seo/titles";
 import { publishedRoles } from "../data/roles";
-import { templateStyles } from "../data/templates";
-import { guides } from "../lib/guides";
+import { guides } from "../lib/content/guides";
 
 type Offender = { surface: string; path: string; title: string; len: number };
 
@@ -32,9 +31,6 @@ function check(surface: string, path: string, inner: string) {
 for (const r of publishedRoles()) {
   check("role", `/resume-examples/${r.slug}`, roleTitle(r.title));
 }
-for (const t of templateStyles) {
-  check("template", `/resume-templates/${t.slug}`, templateTitle(t.name));
-}
 for (const g of guides) {
   // Raw registry title; per-page keyword tags (e.g. "(With Examples)") add a
   // few chars and are surfaced in dev - keep the registry title comfortably
@@ -47,12 +43,12 @@ if (offenders.length) {
   for (const o of offenders) {
     console.error(`  [${o.surface}] ${o.path}\n    ${o.len} chars: "${o.title}"`);
   }
-  console.error(`\nShorten the title builder in lib/titles.ts or the source data.\n`);
+  console.error(`\nShorten the title builder in lib/seo/titles.ts or the source data.\n`);
   process.exit(1);
 }
 
 /** Scan page.tsx files for duplicate brand in non-absolute titles. */
-const brandInTitle = /title:\s*(?:`[^`]*\|\s*ResumeCraft[^`]*`|"[^"]*\|\s*ResumeCraft[^"]*")/;
+const brandInTitle = /title:\s*(?:`[^`]*\|\s*Krafiter[^`]*`|"[^"]*\|\s*Krafiter[^"]*")/;
 const absoluteFlag = /absoluteTitle:\s*true/;
 const appDir = path.join(__dirname, "..", "app");
 const dupBrand: string[] = [];
@@ -73,7 +69,7 @@ function walk(dir: string) {
 walk(appDir);
 
 if (dupBrand.length) {
-  console.error(`\n✗ ${dupBrand.length} page(s) hardcode "| ResumeCraft" in title without absoluteTitle:\n`);
+  console.error(`\n✗ ${dupBrand.length} page(s) hardcode "| Krafiter" in title without absoluteTitle:\n`);
   for (const p of dupBrand) console.error(`  ${p}`);
   console.error(
     `\nDrop the brand from the title string (layout appends "${TITLE_SUFFIX}") or set absoluteTitle: true.\n`,
@@ -82,5 +78,5 @@ if (dupBrand.length) {
 }
 
 console.log(
-  `✓ titles: all ${publishedRoles().length + templateStyles.length + guides.length} checked titles ≤ ${TITLE_LIMIT} chars (incl. "${TITLE_SUFFIX}"); no duplicate-brand titles.`,
+  `✓ titles: all ${publishedRoles().length + guides.length} checked titles ≤ ${TITLE_LIMIT} chars (incl. "${TITLE_SUFFIX}"); no duplicate-brand titles.`,
 );

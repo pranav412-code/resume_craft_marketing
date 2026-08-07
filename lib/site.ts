@@ -3,7 +3,7 @@
  * sitemap, llms.txt, and the CTA component so everything stays consistent.
  *
  * IMPORTANT: set NEXT_PUBLIC_SITE_URL / NEXT_PUBLIC_APP_URL in the env before
- * deploy. Primary marketing domain: https://resumecraft.site
+ * deploy. Primary marketing domain: https://resumecraft.site (live host; brand is Krafiter).
  */
 function stripTrailingSlash(u: string): string {
   return u.replace(/\/+$/, "");
@@ -21,31 +21,31 @@ const API_URL = stripTrailingSlash(
 );
 
 export const siteConfig = {
-  name: "ResumeCraft",
-  legalName: "ResumeCraft",
+  name: "Krafiter",
+  legalName: "Krafiter",
   url: SITE_URL,
   appUrl: APP_URL,
   apiUrl: API_URL,
   locale: "en_US",
   description:
-    "Build an ATS-ready resume with AI. Upload, tailor to any job description, score it, export PDF or LaTeX. Free to start - no credit card.",
-  tagline: "AI Resume Builder & ATS Optimizer",
+    "AI ATS resume optimizer: upload your resume, tailor it to any job description, get an ATS score, then export PDF or LaTeX. Free to start — no credit card.",
+  tagline: "AI ATS Resume Optimizer",
   emails: {
     support: "support@resumecraft.site",
     contact: "contact@resumecraft.site",
     founder: "founder@resumecraft.site",
   },
-  twitter: "@resumecraft",
+  twitter: "@krafiter",
   // Brand entity links - strengthens the GEO entity graph (schema sameAs).
   // Replace with real profiles; remove any that don't exist.
   sameAs: [
-    "https://twitter.com/resumecraft",
-    "https://www.linkedin.com/company/resumecraft",
-    "https://www.producthunt.com/products/resumecraft",
-    "https://github.com/resumecraft",
+    "https://twitter.com/krafiter",
+    "https://www.linkedin.com/company/krafiter",
+    "https://github.com/krafiter",
   ],
   // Plans surfaced in SoftwareApplication/Product schema AND on /pricing.
-  // Source of truth: backend/app/api/credits.py packs endpoint.
+  // Source of truth: backend/app/api/credits.py (paise/cents → major units here).
+  // Backend ids: monthly → job_seeker, career_sprint, starter → refill_starter, pro → refill_pro.
   offers: [
     {
       id: "free",
@@ -53,16 +53,16 @@ export const siteConfig = {
       planType: "free",
       priceINR: 0,
       priceUSD: 0,
-      credits: 25,
-      slots: 1,
+      credits: 25, // settings.INITIAL_CREDITS
+      slots: 3, // settings.FREE_RESUME_SLOTS
       blurb: "25 credits to try the full flow",
     },
     {
-      id: "job_seeker",
+      id: "job_seeker", // backend: monthly
       name: "Job Seeker",
       planType: "recurring",
-      priceINR: 149,
-      priceUSD: 4.99,
+      priceINR: 149, // 14900 paise
+      priceUSD: 4.99, // 499 cents
       credits: 60,
       slots: 8,
       blurb: "60 credits/month + priority processing",
@@ -71,8 +71,8 @@ export const siteConfig = {
       id: "career_sprint",
       name: "Career Sprint",
       planType: "commitment",
-      priceINR: 399,
-      priceUSD: 12.99,
+      priceINR: 399, // 39900 paise · 3-month total
+      priceUSD: 12.99, // 1299 cents · 3-month total
       credits: 60,
       slots: 10,
       cyclesIfCommitment: 3,
@@ -80,28 +80,28 @@ export const siteConfig = {
       blurb: "3-month sprint · 60 credits/month · best value",
     },
     {
-      id: "refill_starter",
+      id: "refill_starter", // backend: starter
       name: "Refill Starter",
       planType: "one_time",
-      priceINR: 99,
-      priceUSD: 2.99,
+      priceINR: 99, // 9900 paise
+      priceUSD: 2.99, // 299 cents
       credits: 20,
       slots: 0,
       blurb: "20 credits, top up anytime",
     },
     {
-      id: "refill_pro",
+      id: "refill_pro", // backend: pro
       name: "Refill Pro",
       planType: "one_time",
-      priceINR: 249,
-      priceUSD: 7.99,
+      priceINR: 249, // 24900 paise
+      priceUSD: 7.99, // 799 cents
       credits: 60,
       slots: 0,
       blurb: "60 credits, top up anytime",
     },
   ],
-  // Credit cost per optimization mode (source: backend/app/api/optimize.py).
-  modeCredits: { quick: 5, balanced: 8, deep: 12 } as const,
+  // Credit cost per optimization mode (settings.CREDIT_COST_*).
+  modeCredits: { quick: 2, balanced: 5, deep: 8 } as const,
   modeExplainer: {
     quick: "Fast pass - keyword + heading fixes.",
     balanced: "Default - rewrites bullets + reorders for the JD.",

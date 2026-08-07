@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/ats-resume-checker-india";
 
@@ -22,17 +22,17 @@ const faq: QA[] = [
   {
     question: "Is the ATS checker really free?",
     answer:
-      "Yes. Sign up gives 25 free credits - enough to run three Balanced ATS checks end-to-end (upload, score, export). No card required. Paid plans start at ₹149/month for Job Seeker and ₹399 for a 3-month Career Sprint.",
+      "Yes. Sign up gives 25 free credits - enough for 12 Quick, 5 Balanced, or 3 Deep runs end-to-end (upload, score, export). No card required. Paid plans start at ₹149/month for Job Seeker and ₹399 for a 3-month Career Sprint.",
   },
   {
     question: "Which ATS systems does it test against?",
     answer:
-      "ResumeCraft tests parsing logic similar to Workday, Greenhouse, Lever, iCIMS, Taleo, and Naukri's internal screener. Indian recruiters most commonly use Naukri RMS, LinkedIn Recruiter, and Workday - all simulated.",
+      "Krafiter tests parsing logic similar to Workday, Greenhouse, Lever, iCIMS, Taleo, and Naukri's internal screener. Indian recruiters most commonly use Naukri RMS, LinkedIn Recruiter, and Workday - all simulated.",
   },
   {
     question: "Why do Indian resumes need a different checker?",
     answer:
-      "Indian-format resumes often include photos, marital status, date of birth, and university percentages - fields that confuse Western ATS systems and waste header space. ResumeCraft flags these and rewrites the structure to score well on both Indian and global ATS pipelines.",
+      "Indian-format resumes often include photos, marital status, date of birth, and university percentages - fields that confuse Western ATS systems and waste header space. Krafiter flags these and rewrites the structure to score well on both Indian and global ATS pipelines.",
   },
   {
     question: "Do you support INR payment?",
@@ -42,7 +42,7 @@ const faq: QA[] = [
   {
     question: "Will my resume work for both Indian and overseas jobs?",
     answer:
-      "Yes. ResumeCraft tailors per job description, so the same source resume produces an India-format version for Naukri/LinkedIn-India searches and a global-format version for Workday/Greenhouse pipelines used by FAANG and overseas employers.",
+      "Yes. Krafiter tailors per job description, so the same source resume produces an India-format version for Naukri/LinkedIn-India searches and a global-format version for Workday/Greenhouse pipelines used by FAANG and overseas employers.",
   },
 ];
 
@@ -73,6 +73,9 @@ export default function AtsCheckerIndiaPage() {
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Check my resume - free" />
+            <Link href="/ats-checker" className="btn btn-ghost">
+              Instant scan - no signup
+            </Link>
             <Link href="/in" className="btn btn-ghost">
               India-specific plans
             </Link>
@@ -109,8 +112,10 @@ export default function AtsCheckerIndiaPage() {
               <h3>Tailored per JD</h3>
               <p>
                 Paste any job post - TCS, Infosys, Razorpay, Flipkart,
-                Google India, Microsoft IDC - and ResumeCraft rewrites to
-                fit it. Same source, every application.
+                Google India, Microsoft IDC - and Krafiter rewrites to
+                fit it. Want to see your keyword gaps first? Try the free{" "}
+                <Link href="/tools/jd-match-checker">JD match checker</Link> -
+                no signup needed.
               </p>
             </li>
           </ul>

@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { createMetadata } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { softwareApplicationSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { softwareApplicationSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { ProductHuntBadge } from "@/components/ProductHuntBadge";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
-import { guides, guideUrl } from "@/lib/guides";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/";
 
 export const metadata: Metadata = createMetadata({
-  title: `AI Resume Optimizer & ATS Resume Checker | ${siteConfig.name}`,
+  title: `AI ATS Resume Optimizer | Tailor to Job Description | ${siteConfig.name}`,
   absoluteTitle: true,
   description:
-    "Optimize your resume for ATS and tailor it to any job description using AI. Improve keyword matching, ATS score, and interview chances in minutes.",
+    "AI ATS resume optimizer: upload your resume, tailor it to any job description, get an ATS score, then export PDF or LaTeX. Free to start.",
   path: PAGE,
   // Reciprocal hreflang with the India page.
   languages: { en: "/", "en-IN": "/in", "x-default": "/" },
@@ -25,24 +24,24 @@ export const metadata: Metadata = createMetadata({
 
 const faq: QA[] = [
   {
-    question: "What does ResumeCraft do?",
+    question: "What does Krafiter do?",
     answer:
-      "ResumeCraft is an AI resume builder. You upload your existing resume, paste the job description you are applying for, and the AI rewrites and reorders your content to match it - then scores the result for ATS compatibility and exports a polished PDF or LaTeX file.",
+      "Krafiter is an AI ATS resume optimizer. You upload your existing resume, paste the job description you are applying for, and the AI rewrites and reorders your content to match it — then scores the result for ATS compatibility and exports a polished PDF or LaTeX file.",
   },
   {
-    question: "Is ResumeCraft free?",
+    question: "Is Krafiter free?",
     answer:
-      "Yes to start. You get 25 free credits on signup - enough for three Balanced optimizations or two Deep runs - and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. Paid plans start at ₹149 / $4.99 per month for Job Seeker; Career Sprint covers 3 months at ₹399 / $12.99 total.",
+      "Yes to start. You get 25 free credits on signup — enough for 12 Quick, 5 Balanced, or 3 Deep runs — and run the full flow (upload, AI tailoring, ATS score, PDF export) before paying. See Pricing for paid plans in your currency.",
   },
   {
     question: "What is an ATS score?",
     answer:
-      "An ATS score estimates how well your resume will parse inside applicant tracking systems - the software most employers use to filter resumes before a human reads them. It checks structure, formatting, and how closely your keywords match the job description.",
+      "An ATS score estimates how well your resume will parse inside applicant tracking systems — the software most employers use to filter resumes before a human reads them. It checks structure, formatting, and how closely your keywords match the job description.",
   },
   {
     question: "Can I export my resume to LaTeX?",
     answer:
-      "Yes. Alongside PDF, ResumeCraft exports clean LaTeX source - a typeset-quality format popular with developers, researchers, and academics, ideal for version control and pixel-precise typography.",
+      "Yes. Alongside PDF, Krafiter exports clean LaTeX source — a typeset-quality format popular with developers, researchers, and academics. LaTeX is an export format after you optimize, not a separate builder product.",
   },
 ];
 
@@ -53,130 +52,259 @@ export default function HomePage() {
       <main>
         <JsonLd data={softwareApplicationSchema()} />
 
-        {/* Hero - claim first (GEO: state the value proposition plainly, up top). */}
-        <section className="hero container">
-          <p className="eyebrow">Boost interview chances</p>
+        {/* 1. Hero — brand + optimizer promise + CTAs + cockpit (SSR; CSS tilt) */}
+        <section className="hero container hero-creative">
+          <p className="hero-brand">{siteConfig.name}</p>
           <h1>
-            Build an ATS-optimized
+            See your ATS match,
             <br />
-            resume with AI
+            <em>then fix it for this job</em>
           </h1>
           <p className="lede">
-            Build an ATS-optimized resume with AI - upload your current CV,
-            paste the job description, and get a tailored draft with an ATS
-            score to prove it, plus pixel-perfect PDF or LaTeX export.
+            Upload your resume, paste a job description, get a score, rewrite
+            weak bullets, and export PDF or LaTeX — free to start.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Build my resume - free" />
-            <Link href="/resume-templates" className="btn btn-ghost">
-              Browse templates
+            <CTA page={PAGE} label="Optimize my resume — free" />
+            <Link href="/ats-checker" className="btn btn-ghost">
+              Free ATS check
+            </Link>
+            <Link href="/tools/jd-match-checker" className="btn btn-ghost">
+              JD Match
             </Link>
           </div>
-          <div className="hero-badge">
-            <ProductHuntBadge />
+
+          <div className="hero-stage">
+            <div className="hero-product">
+              <div className="hero-cockpit">
+                <div className="cockpit-score">
+                  <p className="cockpit-kicker">Live Match Snapshot</p>
+                  <div className="score-orbit">
+                    <span className="score-value">92</span>
+                    <span className="score-caption">ATS Match</span>
+                  </div>
+                  <ul className="signal-pills">
+                    <li>+17 keyword coverage</li>
+                    <li>+22 format reliability</li>
+                    <li>+14 recruiter readability</li>
+                  </ul>
+                </div>
+                <div className="cockpit-diff">
+                  <p className="cockpit-kicker">Bullet transformation</p>
+                  <div className="diff-card before">
+                    <span className="diff-label">Before</span>
+                    <p>Managed projects and worked with team on deliverables.</p>
+                  </div>
+                  <div className="diff-arrow" aria-hidden="true">
+                    →
+                  </div>
+                  <div className="diff-card after">
+                    <span className="diff-label">After</span>
+                    <p>
+                      Led 6 cross-functional launches, delivering 98% on-time
+                      milestones across product and engineering.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* How it works */}
-        <section className="section container" id="how-it-works">
-          <h2>How it works</h2>
-          <ul className="card-grid">
-            <li className="card">
-              <h3>1 · Upload</h3>
+        <section className="container">
+          <div className="signal-ticker" aria-label="Product flow">
+            <p>
+              <span>UPLOAD</span>
+              <span>PASTE JD</span>
+              <span>ATS SCORE</span>
+              <span>REWRITE</span>
+              <span>PDF / LATEX EXPORT</span>
+              <span>UPLOAD</span>
+              <span>PASTE JD</span>
+              <span>ATS SCORE</span>
+              <span>REWRITE</span>
+              <span>PDF / LATEX EXPORT</span>
+            </p>
+          </div>
+        </section>
+
+        <section className="section container resume-gallery-section">
+          <h2 className="section-title-motion">Resume in motion</h2>
+          <p className="section-lede">
+            From raw document to ATS match to rewritten bullets — the loop
+            recruiters never see.
+          </p>
+          <ul className="resume-gallery reveal-stagger">
+            <li className="resume-shot">
+              <Image
+                src="/marketing/resume-paper.png"
+                alt="Clean ATS-friendly resume document on warm paper"
+                width={640}
+                height={640}
+                className="resume-shot-img"
+              />
+              <p className="resume-shot-caption">Upload a structured resume</p>
+            </li>
+            <li className="resume-shot">
+              <Image
+                src="/marketing/resume-ats-score.png"
+                alt="Resume beside a teal ATS match score ring showing 92"
+                width={640}
+                height={640}
+                className="resume-shot-img"
+              />
+              <p className="resume-shot-caption">See your ATS match score</p>
+            </li>
+            <li className="resume-shot">
+              <Image
+                src="/marketing/resume-rewrite.png"
+                alt="Before and after resume bullet rewrite with stronger impact lines"
+                width={640}
+                height={640}
+                className="resume-shot-img"
+              />
+              <p className="resume-shot-caption">Rewrite for the job</p>
+            </li>
+          </ul>
+        </section>
+
+        {/* 2. How it works */}
+        <section className="section container">
+          <h2 className="section-title-motion">How it works</h2>
+          <p className="section-lede">
+            Five steps from upload to recruiter-ready export. No guesswork.
+          </p>
+          <ul className="bento-grid reveal-stagger">
+            <li className="card motion-card">
+              <span className="step-number">01 Upload</span>
+              <h3>Drop your resume</h3>
               <p>
-                Drop in your current resume (PDF or DOCX). The parser extracts
-                your experience, skills, and education.
+                PDF or DOCX — the parser extracts your experience, skills, and
+                education automatically.
               </p>
             </li>
-            <li className="card">
-              <h3>2 · Paste the job description</h3>
+            <li className="card motion-card">
+              <span className="step-number">02 Paste JD</span>
+              <h3>Add the job description</h3>
               <p>
-                The AI compares your resume against the exact role you want and
-                rewrites bullets to match what the employer asks for.
+                Paste the posting you are applying for so keyword match and
+                rewrite stay grounded in that role.
               </p>
             </li>
-            <li className="card">
-              <h3>3 · Score &amp; fix</h3>
+            <li className="card motion-card">
+              <span className="step-number">03 Score</span>
+              <h3>See your ATS score</h3>
               <p>
-                See your ATS compatibility score and the keywords you are
-                missing with the{" "}
-                <Link href="/ai-resume-checker">ATS resume checker</Link> -
-                then apply fixes in one click.
+                Parallel analyzers score compatibility. Spot gaps with the{" "}
+                <Link href="/ats-checker">ATS resume checker</Link> before you
+                rewrite.
               </p>
             </li>
-            <li className="card">
-              <h3>4 · Export</h3>
+            <li className="card motion-card">
+              <span className="step-number">04 Rewrite</span>
+              <h3>Optimize bullets</h3>
               <p>
-                Download a recruiter-ready PDF, or LaTeX source if you want
-                full typographic control.
+                AI rewrites and reorders content for the JD — stronger verbs,
+                clearer impact, better keyword coverage.
+              </p>
+            </li>
+            <li className="card motion-card">
+              <span className="step-number">05 Export</span>
+              <h3>Download and apply</h3>
+              <p>
+                Recruiter-ready PDF, or LaTeX source for full typographic
+                control.
               </p>
             </li>
           </ul>
         </section>
 
-        {/* Differentiators - the three GEO claims. */}
+        {/* 3. Problems we solve */}
         <section className="section container">
-          <h2>Why ResumeCraft</h2>
-          <ul className="card-grid">
-            <li className="card">
+          <h2 className="section-title-motion">Problems we solve</h2>
+          <p className="section-lede">
+            Real job-seeker blockers — mapped to the product loop, not generic
+            resume advice.
+          </p>
+          <ul className="card-grid reveal-stagger">
+            <li className="card motion-card">
               <h3>
-                <Link href="/resume-optimization">ATS resume optimizer</Link>
+                <Link href="/ats-checker">ATS rejected or unknown score</Link>
               </h3>
               <p>
-                ResumeCraft rewrites your resume against a specific job
-                description and scores it for ATS compatibility in the same
-                pass - no copy-pasting between a builder and a separate
-                checker. Start with the{" "}
-                <Link href="/resume-builder">AI powered resume builder</Link>.
+                See how applicant tracking systems read your resume — score,
+                structure, and keyword gaps — before you apply again.
               </p>
             </li>
-            <li className="card">
+            <li className="card motion-card">
               <h3>
-                <Link href="/latex-resume-builder">LaTeX export</Link>
-              </h3>
-              <p>
-                Clean LaTeX output for developers, researchers, and academics
-                - version-control friendly and typeset-quality.
-              </p>
-            </li>
-            <li className="card">
-              <h3>
-                <Link href="/in">Resume builder for India</Link>
-              </h3>
-              <p>
-                Native INR plans via Razorpay alongside USD - no
-                dollar-converted markup.{" "}
-                <Link href="/ats-resume-checker-india">
-                  Free ATS resume checker for India
+                <Link href="/tailor-resume-to-job-description">
+                  One resume for every job
                 </Link>
-                .
+              </h3>
+              <p>
+                Tailor your resume to each job description so keywords and
+                bullets match what this employer asked for.
+              </p>
+            </li>
+            <li className="card motion-card">
+              <h3>
+                <Link href="/resume-optimization">Weak bullets, low match</Link>
+              </h3>
+              <p>
+                Optimize vague experience lines into ATS-friendly, role-specific
+                bullets with a measurable match lift.
+              </p>
+            </li>
+            <li className="card motion-card">
+              <h3>
+                <Link href="/latex-resume-builder">Need PDF or LaTeX export</Link>
+              </h3>
+              <p>
+                Ship a clean PDF for recruiters, or LaTeX source for engineers
+                and academics who want typeset control.
               </p>
             </li>
           </ul>
         </section>
 
-        {/* Internal-link mesh into the guide hub (pillar → spokes). */}
+        {/* 4. Free tools */}
         <section className="section container">
-          <h2>Resume guides</h2>
-          <ul className="card-grid">
-            {guides.map((g) => (
-              <li className="card" key={g.slug}>
-                <h3>
-                  <Link href={guideUrl(g.slug)}>{g.title}</Link>
-                </h3>
-                <p>{g.description}</p>
-              </li>
-            ))}
+          <h2 className="section-title-motion">Free tools — no signup</h2>
+          <p className="section-lede">
+            Check your ATS score with no signup, then compare your resume
+            against a job description before you optimize in the app.
+          </p>
+          <ul className="card-grid reveal-stagger">
+            <li className="card motion-card">
+              <h3>
+                <Link href="/ats-checker">ATS score checker — no signup</Link>
+              </h3>
+              <p>
+                Upload your resume for a full ATS score, performance heatmap,
+                and actionable issues — no account, no email required.
+              </p>
+            </li>
+            <li className="card motion-card">
+              <h3>
+                <Link href="/tools/jd-match-checker">JD match with resume</Link>
+              </h3>
+              <p>
+                Upload your resume and paste a job description to see which
+                keywords match and which are still missing.
+              </p>
+            </li>
           </ul>
         </section>
 
         <div className="container">
-          <div className="cta-banner">
-            <h2>Your next application deserves a better resume</h2>
-            <p>Free to start. No credit card.</p>
-            <CTA page={PAGE} label="Start building now" />
-          </div>
           <FaqBlock items={faq} />
+
+          <div className="cta-banner">
+            <h2>Ready to optimize for this job?</h2>
+            <p>Upload, paste a JD, score, rewrite, export. Free to start.</p>
+            <CTA page={PAGE} label="Optimize my resume — free" />
+          </div>
         </div>
       </main>
       <SiteFooter />

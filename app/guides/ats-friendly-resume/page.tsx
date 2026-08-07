@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
-import { guides } from "@/lib/guides";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
+import { guides } from "@/lib/content/guides";
 
 const SLUG = "ats-friendly-resume";
 const PAGE = `/guides/${SLUG}`;
@@ -124,7 +124,7 @@ export default function Page() {
           <p>
             A useful ATS score checks both halves: structure (does the file
             parse into clean fields?) and match (how much of the posting&apos;s
-            keyword set does your content cover?).             ResumeCraft scores every
+            keyword set does your content cover?).             Krafiter scores every
             draft against the specific job description you paste and lists the
             missing keywords, so the fix is concrete rather than guesswork.
             Start with the{" "}

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, howToSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema, howToSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/tailor-resume-to-job-description";
 
 export const metadata: Metadata = createMetadata({
-  title: "Tailor Your Resume to a Job Description",
+  title: "Tailor Resume to a Job Description",
   description:
-    "How to tailor a resume to a job description: keywords that matter, what to change, and how AI does it in minutes with an ATS score.",
+    "Tailor your resume to a job description with a resume keyword optimizer: mirror the posting, close keyword gaps, score for ATS, and export in minutes.",
   path: PAGE,
 });
 
@@ -52,7 +52,7 @@ const faq: QA[] = [
       "No. Mirroring means describing your real experience in the employer's vocabulary. Stuffing means inserting keywords you cannot back up - which fails the moment a human reads the resume or asks about it in an interview.",
   },
   {
-    question: "How does ResumeCraft tailor a resume automatically?",
+    question: "How does Krafiter tailor a resume automatically?",
     answer:
       "You upload your resume and paste the job description. The AI extracts the posting's requirements, maps them to your parsed experience, rewrites and reorders bullets to close the gaps, and shows an ATS score plus the keywords still missing - all before you export.",
   },
@@ -79,7 +79,7 @@ export default function TailorPage() {
         />
 
         <article className="prose">
-          <h1>How to tailor your resume to a job description</h1>
+          <h1>Tailor your resume to a job description</h1>
 
           {/* AEO answer block: 40–60 words, directly under the H1. */}
           <p className="answer">
@@ -87,7 +87,8 @@ export default function TailorPage() {
             match one specific job posting - mirroring its keywords where they
             are true of you, leading with the most relevant experience, and
             proving each major requirement with a quantified bullet. It is the
-            single highest-impact edit before applying.
+            single highest-impact edit before applying — a resume keyword
+            optimizer automates that loop.
           </p>
 
           <h2>How do you tailor a resume to a job description?</h2>
@@ -120,8 +121,18 @@ export default function TailorPage() {
             measure the result against the posting.
           </p>
 
+          <h2>Check your match before you rewrite anything</h2>
+          <p>
+            Not sure how far off your current resume is? The free{" "}
+            <Link href="/tools/jd-match-checker">JD match checker</Link> shows
+            your keyword coverage against any posting - matched terms, missing
+            terms, and a coverage percentage - with no signup. It turns step
+            one of this guide into a thirty-second check, and the missing-keyword
+            list becomes your tailoring checklist.
+          </p>
+
           <div className="cta-banner">
-            <h2>ResumeCraft does these five steps for you</h2>
+            <h2>Krafiter does these five steps for you</h2>
             <p>Upload resume → paste job description → tailored draft + ATS score.</p>
             <CTA page={PAGE} label="Tailor mine now" />
           </div>

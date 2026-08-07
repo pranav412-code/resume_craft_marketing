@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 /**
  * robots.txt - served at /robots.txt.
  *
- * GEO policy: EXPLICITLY welcome AI search/answer crawlers so ResumeCraft can
+ * GEO policy: EXPLICITLY welcome AI search/answer crawlers so Krafiter can
  * be retrieved and cited by Perplexity, ChatGPT Search, Gemini, Claude, etc.
  * Blocking them (a common default) = silent GEO invisibility.
  * To later opt out of model TRAINING while keeping AI search: move the

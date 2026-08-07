@@ -1,8 +1,8 @@
 {
-  "name": "resumecraft-marketing",
-  "version": "0.2.0",
+  "name": "krafiter-marketing",
+  "version": "1.0.0",
   "private": true,
-  "description": "ResumeCraft marketing + SEO/GEO site (Next.js App Router, SSG). Strategy v2 — content-led, no free tools.",
+  "description": "Krafiter marketing + SEO/GEO site (Next.js App Router, SSG). Strategy v3 — optimizer-first, free tools + programmatic + guides.",
   "scripts": {
     "dev": "next dev -p 5173",
     "prebuild": "tsx scripts/check-titles.ts",
@@ -13,9 +13,9 @@
     "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
-    "next": "^15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "^15.5.22",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",

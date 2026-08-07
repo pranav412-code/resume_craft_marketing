@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-07-29T19:21:16.783Z",
+  "projectRoot": "D:\\Products\\aut_v1\\marketing_site",
+  "structure": {
+    "hasPackageJson": true,
+    "hasTsConfig": true,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1785352876783
+}

@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { softwareApplicationSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/latex-resume-builder";
 
 export const metadata: Metadata = createMetadata({
-  title: "LaTeX Resume Builder - AI Tailored, ATS Scored, Clean .tex Export",
+  title: "LaTeX Resume Export - ATS Scored .tex Template",
   description:
-    "Generate a typeset-quality LaTeX resume with AI. Tailored to any job description, ATS-scored, exports clean .tex source and PDF. Free to start.",
+    "LaTeX resume export and template: tailor with AI, score for ATS, then download clean .tex source and PDF. Free to start — export, not a separate builder product.",
   path: PAGE,
 });
 
 const faq: QA[] = [
+  {
+    question: "Is Krafiter a LaTeX resume builder?",
+    answer:
+      "LaTeX is an export format, not a separate product. You optimize and tailor in Krafiter as usual, then export clean .tex source plus a compiled PDF — the same ATS-scored loop as PDF export.",
+  },
   {
     question: "Why use LaTeX for a resume?",
     answer:
@@ -26,17 +31,12 @@ const faq: QA[] = [
   {
     question: "Do I need to know LaTeX to use this?",
     answer:
-      "No. Upload your resume in PDF or DOCX, paste the job description, and ResumeCraft generates the .tex source for you. You can compile it on Overleaf, locally with TeX Live or MiKTeX, or just download the PDF directly.",
+      "No. Upload your resume in PDF or DOCX, paste the job description, and Krafiter generates the .tex source for you. You can compile it on Overleaf, locally with TeX Live or MiKTeX, or just download the PDF directly.",
   },
   {
     question: "Will ATS systems read a LaTeX-built PDF?",
     answer:
-      "Yes when generated correctly. ResumeCraft's LaTeX templates use selectable text, standard fonts, single-column flows, and ATS-safe section headings. Every export is run through the same ATS score check as our standard PDFs.",
-  },
-  {
-    question: "Which LaTeX classes do you use?",
-    answer:
-      "ResumeCraft templates are built on lightweight custom classes derived from moderncv and altacv principles - minimal package dependencies, fast compile, and parseable by every major ATS we have tested.",
+      "Yes when generated correctly. Krafiter's LaTeX export uses selectable text, standard fonts, single-column flows, and ATS-safe section headings. Every export is run through the same ATS score check as our standard PDFs.",
   },
   {
     question: "Can I edit the .tex after export?",
@@ -55,25 +55,25 @@ export default function LatexResumeBuilderPage() {
             softwareApplicationSchema(),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },
-              { name: "LaTeX Resume Builder", url: absoluteUrl(PAGE) },
+              { name: "LaTeX Resume Export", url: absoluteUrl(PAGE) },
             ]),
           ]}
         />
 
         <section className="hero container">
-          <p className="eyebrow">LaTeX · AI tailored · ATS scored</p>
+          <p className="eyebrow">LaTeX export · AI tailored · ATS scored</p>
           <h1>
-            LaTeX resume builder: typeset quality, AI-tailored
+            LaTeX resume export: typeset quality after you optimize
           </h1>
           <p className="lede">
-            Generate a clean .tex source and recruiter-ready PDF in one pass.
-            Tailored to the job description, scored for ATS, edited in
-            Overleaf or any editor.
+            Tailor to the job description, score for ATS, then download clean
+            .tex source and a recruiter-ready PDF. LaTeX is an export format —
+            not a separate builder product.
           </p>
           <div className="actions">
-            <CTA page={PAGE} label="Build my LaTeX resume - free" />
-            <Link href="/resume-templates" className="btn btn-ghost">
-              Browse templates
+            <CTA page={PAGE} template="latex" label="Export LaTeX resume — free" />
+            <Link href="/resume-examples" className="btn btn-ghost">
+              Browse resume examples
             </Link>
           </div>
         </section>
@@ -147,13 +147,13 @@ export default function LatexResumeBuilderPage() {
         </section>
 
         <section className="section container">
-          <h2>LaTeX vs PDF builders</h2>
+          <h2>LaTeX export vs PDF builders</h2>
           <ul className="card-grid">
             <li className="card">
               <h3>Drag-and-drop builders</h3>
               <p>
                 Fast to start. Output drifts between fonts and renderers.
-                Hard to diff. Tied to the vendor's editor forever.
+                Hard to diff. Tied to the vendor&apos;s editor forever.
               </p>
             </li>
             <li className="card">
@@ -164,10 +164,11 @@ export default function LatexResumeBuilderPage() {
               </p>
             </li>
             <li className="card">
-              <h3>ResumeCraft LaTeX builder</h3>
+              <h3>Krafiter LaTeX export</h3>
               <p>
                 AI does the tailoring and scoring. You get clean .tex you
-                can keep editing. Best of both.
+                can keep editing. Same optimizer loop as PDF — different
+                export.
               </p>
             </li>
           </ul>
@@ -177,7 +178,7 @@ export default function LatexResumeBuilderPage() {
           <div className="cta-banner">
             <h2>Ship a LaTeX resume in under ten minutes</h2>
             <p>Free to start. Clean .tex source. ATS-scored.</p>
-            <CTA page={PAGE} label="Export LaTeX resume - free" />
+            <CTA page={PAGE} template="latex" label="Export LaTeX resume — free" />
           </div>
           <FaqBlock items={faq} />
         </div>

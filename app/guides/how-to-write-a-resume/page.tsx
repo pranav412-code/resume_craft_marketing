@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema, howToSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
-import { guides } from "@/lib/guides";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema, howToSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
+import { guides } from "@/lib/content/guides";
 
 const SLUG = "how-to-write-a-resume";
 const PAGE = `/guides/${SLUG}`;
@@ -184,8 +184,6 @@ export default function Page() {
           <h2>Where to start if you already have a draft</h2>
           <p>
             Skip the blank page. Browse{" "}
-            <Link href="/resume-templates">ATS-friendly resume templates</Link>{" "}
-            or a{" "}
             <Link href="/resume-examples">resume example for your job title</Link>
             , then{" "}
             <Link href="/tailor-resume-to-job-description">

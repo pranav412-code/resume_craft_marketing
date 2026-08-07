@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
-import { JsonLd } from "@/components/JsonLd";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Analytics } from "@/components/seo/Analytics";
+import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-plus-jakarta",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 /**
@@ -51,10 +60,11 @@ export const metadata: Metadata = {
     : undefined,
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -64,10 +74,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${plusJakarta.variable} ${jetbrainsMono.variable}`}>
       <body>
         {/* Sitewide brand entity + website node - every page, zero JS. */}
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <Analytics />
         {children}
       </body>
     </html>

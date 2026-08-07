@@ -13,9 +13,8 @@
  * Endpoint fans out to all participating engines, so one POST is enough.
  */
 import { siteConfig } from "../lib/site";
-import { guides } from "../lib/guides";
+import { guides } from "../lib/content/guides";
 import { publishedRoles } from "../data/roles";
-import { templateStyles } from "../data/templates";
 
 const KEY = process.env.INDEXNOW_KEY ?? "ac6d2a52ebfd33cb75367c527e0fc4a9";
 const ENDPOINT = "https://api.indexnow.org/indexnow";
@@ -24,13 +23,16 @@ const STATIC_PATHS = [
   "/",
   "/resume-builder",
   "/ai-resume-checker",
+  "/ats-checker",
+  "/tools/jd-match-checker",
   "/resume-optimization",
-  "/resume-templates",
   "/resume-examples",
   "/tailor-resume-to-job-description",
   "/latex-resume-builder",
   "/ats-resume-checker-india",
   "/best-ai-resume-builder-2026",
+  "/how-ats-score-works",
+  "/reports/ats-resume-insights-2026",
   "/in",
   "/pricing",
   "/guides",
@@ -43,7 +45,6 @@ function buildUrlList(): string[] {
     ...STATIC_PATHS.map((p) => `${u}${p}`),
     ...guides.map((g) => `${u}/guides/${g.slug}`),
     ...publishedRoles().map((r) => `${u}/resume-examples/${r.slug}`),
-    ...templateStyles.map((t) => `${u}/resume-templates/${t.slug}`),
   ];
 }
 

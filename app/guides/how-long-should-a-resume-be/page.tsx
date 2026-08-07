@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
-import { guides } from "@/lib/guides";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
+import { guides } from "@/lib/content/guides";
 
 const SLUG = "how-long-should-a-resume-be";
 const PAGE = `/guides/${SLUG}`;
@@ -112,7 +112,7 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Let relevance decide the length</h2>
-            <p>ResumeCraft trims to what the job description rewards - and shows the score.</p>
+            <p>Krafiter trims to what the job description rewards - and shows the score.</p>
             <CTA page={PAGE} label="Optimize mine" />
           </div>
 

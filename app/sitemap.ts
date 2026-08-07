@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
-import { guides } from "@/lib/guides";
+import { guides } from "@/lib/content/guides";
 import { publishedRoles } from "@/data/roles";
-import { templateStyles } from "@/data/templates";
 
 /**
  * XML sitemap - served at /sitemap.xml.
@@ -22,13 +21,17 @@ const staticRoutes: Entry[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
   { path: "/resume-builder", priority: 0.9, changeFrequency: "weekly" },
   { path: "/ai-resume-checker", priority: 0.9, changeFrequency: "weekly" },
+  { path: "/ats-checker", priority: 0.9, changeFrequency: "weekly" },
+  // /tools/ats-resume-scan permanently redirects to /ats-checker — keep out of sitemap.
+  { path: "/tools/jd-match-checker", priority: 0.8, changeFrequency: "weekly" },
   { path: "/resume-optimization", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/resume-templates", priority: 0.8, changeFrequency: "weekly" },
   { path: "/resume-examples", priority: 0.8, changeFrequency: "weekly" },
   { path: "/tailor-resume-to-job-description", priority: 0.8, changeFrequency: "monthly" },
   { path: "/latex-resume-builder", priority: 0.8, changeFrequency: "monthly" },
   { path: "/ats-resume-checker-india", priority: 0.8, changeFrequency: "monthly" },
   { path: "/best-ai-resume-builder-2026", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/how-ats-score-works", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/reports/ats-resume-insights-2026", priority: 0.7, changeFrequency: "monthly" },
   { path: "/in", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pricing", priority: 0.7, changeFrequency: "monthly" },
   { path: "/guides", priority: 0.7, changeFrequency: "weekly" },
@@ -63,17 +66,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const templateEntries = templateStyles.map((t) => ({
-    url: `${siteConfig.url}/resume-templates/${t.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
   return [
     ...statics,
     ...guideEntries,
     ...roleEntries,
-    ...templateEntries,
   ];
 }

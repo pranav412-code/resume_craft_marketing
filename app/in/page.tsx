@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
-import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import { CTA } from "@/components/CTA";
-import { FaqBlock, type QA } from "@/components/FaqBlock";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/seo/schema";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CTA } from "@/components/marketing/CTA";
+import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 
 const PAGE = "/in";
 
@@ -28,7 +28,7 @@ const faq: QA[] = [
   {
     question: "What is the best resume builder for India?",
     answer:
-      "Look for ATS-safe templates, fresher-friendly education-first layouts, job-description tailoring, and native INR billing. ResumeCraft is built for that stack: AI rewrite against any posting, ATS scoring, PDF or LaTeX export, and Razorpay checkout in rupees.",
+      "Look for ATS-safe single-column layouts, fresher-friendly education-first ordering, job-description tailoring, and native INR billing. Krafiter is built for that stack: AI rewrite against any posting, ATS scoring, PDF or LaTeX export, and Razorpay checkout in rupees.",
   },
   {
     question: "What resume format do Indian companies expect?",
@@ -43,12 +43,12 @@ const faq: QA[] = [
   {
     question: "Should freshers put education before experience?",
     answer:
-      "Yes. With limited work history, education, projects, and internships are the evidence - they lead the page. CGPA goes in when it clears stated cutoffs. ResumeCraft's Fresher template handles this ordering automatically.",
+      "Yes. With limited work history, education, projects, and internships are the evidence - they lead the page. CGPA goes in when it clears stated cutoffs. In Krafiter, keep a single-column ATS-safe layout and put education and projects above experience when you are early-career.",
   },
   {
     question: "Why does INR pricing matter?",
     answer:
-      "ResumeCraft bills natively in INR through Razorpay - UPI, cards, netbanking - at prices set for the Indian market, with GST handled per Indian tax rules. Job Seeker ₹149/month or Career Sprint ₹399 for 3 months.",
+      "Krafiter bills natively in INR through Razorpay - UPI, cards, netbanking - at prices set for the Indian market, with GST handled per Indian tax rules. Job Seeker ₹149/month or Career Sprint ₹399 for 3 months.",
   },
 ];
 
@@ -73,15 +73,15 @@ export default function IndiaPage() {
             AI resume builder for India - ATS-ready and priced in rupees
           </h1>
           <p className="lede">
-            Education-first fresher layouts, ATS-safe structure, and AI
+            Education-first ordering for freshers, ATS-safe structure, and AI
             tailoring to the job description - with pricing in rupees, not
             converted dollars. Built for campus placements and corporate
             hiring alike.
           </p>
           <div className="actions">
-            <CTA page={PAGE} template="fresher" label="Build my resume - free" />
-            <Link href="/resume-templates/fresher" className="btn btn-ghost">
-              See the fresher template
+            <CTA page={PAGE} label="Optimize my resume - free" />
+            <Link href="/ats-checker" className="btn btn-ghost">
+              Free ATS check
             </Link>
           </div>
         </section>
@@ -92,8 +92,13 @@ export default function IndiaPage() {
             <li className="card">
               <h3>Fresher format, done right</h3>
               <p>
-                Education, projects, and internships lead; one page; no photo,
-                no biodata fields. Matches campus-placement expectations.
+                Lead with education, projects, and internships; keep one page;
+                no photo, no biodata fields. Matches campus-placement
+                expectations inside an ATS-parseable layout. See{" "}
+                <Link href="/guides/fresher-resume-format">
+                  fresher resume format
+                </Link>
+                .
               </p>
             </li>
             <li className="card">
@@ -133,7 +138,7 @@ export default function IndiaPage() {
           <div className="cta-banner">
             <h2>From campus to offer letter</h2>
             <p>25 free credits to start - no card needed. Build in INR.</p>
-            <CTA page={PAGE} template="fresher" label="Build fresher resume - free" />
+            <CTA page={PAGE} label="Optimize fresher resume - free" />
           </div>
           <FaqBlock items={faq} />
         </div>

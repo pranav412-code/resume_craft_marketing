@@ -12,8 +12,47 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/tools/ats-resume-scan",
+        destination: "/ats-checker",
+        permanent: true,
+      },
+      {
+        source: "/resume-templates",
+        destination: "/resume-examples",
+        permanent: true,
+      },
+      {
+        source: "/resume-templates/:style",
+        destination: "/resume-examples",
+        permanent: true,
+      },
+    ];
+  },
   // Baseline security + CDN cache headers (SSG marketing; cuts hub TTFB).
+  // Skip long-lived Cache-Control in dev — immutable /_next/static headers
+  // leave browsers on stale webpack chunks (__webpack_require__.n errors).
   async headers() {
+    if (process.env.NODE_ENV !== "production") {
+      return [
+        {
+          source: "/:path*",
+          headers: [
+            { key: "X-Content-Type-Options", value: "nosniff" },
+            { key: "X-Frame-Options", value: "SAMEORIGIN" },
+            { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+            {
+              key: "Permissions-Policy",
+              value: "camera=(), microphone=(), geolocation=()",
+            },
+            { key: "Cache-Control", value: "no-store" },
+          ],
+        },
+      ];
+    }
+
     return [
       {
         source: "/:path*",

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "task-roles-guides-part-c",
+    "key": "roles-guides-part-c",
+    "content": "Task completed: roles-guides-part-c",
+    "namespace": "tasks",
+    "type": "task-outcome",
+    "metadata": {
+      "success": true,
+      "quality": 0.85
+    },
+    "createdAt": 1785324656189
+  },
+  {
+    "id": "task-p1-marketing-content",
+    "key": "p1-marketing-content",
+    "content": "Task completed: p1-marketing-content",
+    "namespace": "tasks",
+    "type": "task-outcome",
+    "metadata": {
+      "success": true,
+      "quality": 0.85
+    },
+    "createdAt": 1785345302462
+  },
+  {
+    "id": "task-content-seo-strategy",
+    "key": "content-seo-strategy",
+    "content": "Task completed: content-seo-strategy",
+    "namespace": "tasks",
+    "type": "task-outcome",
+    "metadata": {
+      "success": true,
+      "quality": 0.85
+    },
+    "createdAt": 1785345739004
+  }
+]
