@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CTA } from "@/components/marketing/CTA";
 import { FaqBlock } from "@/components/marketing/FaqBlock";
-import { publishedRoles, getRole } from "@/data/roles";
+import { publishedRoles, getRole, relatedRoles } from "@/data/roles";
 import { validateRoles } from "@/lib/content/validateRole";
 
 /**
@@ -52,6 +52,7 @@ export default async function RoleExamplePage({
 
   const PAGE = `/resume-examples/${role.slug}`;
   const today = "2026-06-11";
+  const siblings = relatedRoles(role.slug, 3);
 
   return (
     <>
@@ -125,7 +126,12 @@ export default async function RoleExamplePage({
           <h2>Example resume bullet points</h2>
           <p>
             Quantified patterns to adapt to your own numbers - never copy
-            claims that aren&apos;t yours:
+            claims that aren&apos;t yours. When you have a specific posting,
+            <Link href="/tailor-resume-to-job-description">
+              {" "}
+              tailor your resume to the job description
+            </Link>{" "}
+            so keywords and bullets match what that employer asks for:
           </p>
           <ul>
             {role.bullets.map((b) => (
@@ -144,6 +150,25 @@ export default async function RoleExamplePage({
           </ul>
 
           <p className="muted">{role.salaryNote}</p>
+
+          {siblings.length > 0 && (
+            <section>
+              <h2>More {role.category.toLowerCase()} resume examples</h2>
+              <ul>
+                {siblings.map((r) => (
+                  <li key={r.slug}>
+                    <Link href={`/resume-examples/${r.slug}`}>
+                      {r.title} resume example
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p>
+                Browse all titles on the{" "}
+                <Link href="/resume-examples">resume examples hub</Link>.
+              </p>
+            </section>
+          )}
 
           <div className="cta-banner">
             <h2>Build your {role.title.toLowerCase()} resume from this blueprint</h2>

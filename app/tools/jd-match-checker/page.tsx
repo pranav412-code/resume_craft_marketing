@@ -12,7 +12,7 @@ import { ScanWidget } from "@/components/tools/ScanWidget";
 const PAGE = "/tools/jd-match-checker";
 
 export const metadata: Metadata = createMetadata({
-  title: "JD Match Checker - Free Resume vs Job Description Match",
+  title: "JD Match Checker - Free Resume vs Job Match",
   description:
     "Check how well your resume matches a job description - free, no signup. See matched and missing keywords, coverage percent, and an ATS score in seconds.",
   path: PAGE,

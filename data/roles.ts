@@ -2895,3 +2895,13 @@ export function publishedRoles(): Role[] {
 export function getRole(slug: string): Role | undefined {
   return roles.find((r) => r.slug === slug && r.status === "published");
 }
+
+/** Same-category siblings first, then fill from other categories. */
+export function relatedRoles(slug: string, limit = 3): Role[] {
+  const current = getRole(slug);
+  if (!current) return [];
+  const published = publishedRoles().filter((r) => r.slug !== slug);
+  const sameCategory = published.filter((r) => r.category === current.category);
+  const rest = published.filter((r) => r.category !== current.category);
+  return [...sameCategory, ...rest].slice(0, limit);
+}

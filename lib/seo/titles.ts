@@ -31,3 +31,14 @@ export function roleTitle(title: string): string {
   return withOptionalYear(`${title} Resume Example`);
 }
 
+/** Pages with absoluteTitle: true — final SERP title, no layout suffix. */
+export const HOME_ABSOLUTE_TITLE = `AI ATS Resume Optimizer | Tailor to Job | ${siteConfig.name}`;
+export const ATS_CHECKER_ABSOLUTE_TITLE = `Free ATS Resume Checker | ${siteConfig.name}`;
+
+export function absoluteTitles(): { path: string; title: string }[] {
+  return [
+    { path: "/", title: HOME_ABSOLUTE_TITLE },
+    { path: "/ats-checker", title: ATS_CHECKER_ABSOLUTE_TITLE },
+  ];
+}
+

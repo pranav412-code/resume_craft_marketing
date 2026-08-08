@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { createMetadata } from "@/lib/seo";
+import { HOME_ABSOLUTE_TITLE } from "@/lib/seo/titles";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { softwareApplicationSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site";
@@ -13,7 +14,7 @@ import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
 const PAGE = "/";
 
 export const metadata: Metadata = createMetadata({
-  title: `AI ATS Resume Optimizer | Tailor to Job Description | ${siteConfig.name}`,
+  title: HOME_ABSOLUTE_TITLE,
   absoluteTitle: true,
   description:
     "AI ATS resume optimizer: upload your resume, tailor it to any job description, get an ATS score, then export PDF or LaTeX. Free to start.",

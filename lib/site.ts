@@ -30,19 +30,15 @@ export const siteConfig = {
   description:
     "AI ATS resume optimizer: upload your resume, tailor it to any job description, get an ATS score, then export PDF or LaTeX. Free to start — no credit card.",
   tagline: "AI ATS Resume Optimizer",
+  // Single live mailbox — contact, support, and founder all route here.
   emails: {
-    support: "support@resumecraft.site",
-    contact: "contact@resumecraft.site",
-    founder: "founder@resumecraft.site",
+    support: "admin@krafiter.com",
+    contact: "admin@krafiter.com",
+    founder: "admin@krafiter.com",
   },
   twitter: "@krafiter",
-  // Brand entity links - strengthens the GEO entity graph (schema sameAs).
-  // Replace with real profiles; remove any that don't exist.
-  sameAs: [
-    "https://twitter.com/krafiter",
-    "https://www.linkedin.com/company/krafiter",
-    "https://github.com/krafiter",
-  ],
+  // Brand entity links for schema sameAs — add only live profile URLs.
+  sameAs: [] as string[],
   // Plans surfaced in SoftwareApplication/Product schema AND on /pricing.
   // Source of truth: backend/app/api/credits.py (paise/cents → major units here).
   // Backend ids: monthly → job_seeker, career_sprint, starter → refill_starter, pro → refill_pro.

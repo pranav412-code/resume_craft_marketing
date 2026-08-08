@@ -13,7 +13,13 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { roleTitle, finalTitleLength, TITLE_LIMIT, TITLE_SUFFIX } from "../lib/seo/titles";
+import {
+  roleTitle,
+  finalTitleLength,
+  TITLE_LIMIT,
+  TITLE_SUFFIX,
+  absoluteTitles,
+} from "../lib/seo/titles";
 import { publishedRoles } from "../data/roles";
 import { guides } from "../lib/content/guides";
 
@@ -21,10 +27,16 @@ type Offender = { surface: string; path: string; title: string; len: number };
 
 const offenders: Offender[] = [];
 
-function check(surface: string, path: string, inner: string) {
+function check(surface: string, pagePath: string, inner: string) {
   const len = finalTitleLength(inner);
   if (len > TITLE_LIMIT) {
-    offenders.push({ surface, path, title: inner + TITLE_SUFFIX, len });
+    offenders.push({ surface, path: pagePath, title: inner + TITLE_SUFFIX, len });
+  }
+}
+
+function checkAbsolute(surface: string, pagePath: string, title: string) {
+  if (title.length > TITLE_LIMIT) {
+    offenders.push({ surface, path: pagePath, title, len: title.length });
   }
 }
 
@@ -32,19 +44,10 @@ for (const r of publishedRoles()) {
   check("role", `/resume-examples/${r.slug}`, roleTitle(r.title));
 }
 for (const g of guides) {
-  // Raw registry title; per-page keyword tags (e.g. "(With Examples)") add a
-  // few chars and are surfaced in dev - keep the registry title comfortably
-  // under budget.
   check("guide", `/guides/${g.slug}`, g.title);
 }
-
-if (offenders.length) {
-  console.error(`\n✗ ${offenders.length} page title(s) exceed ${TITLE_LIMIT} chars after the "${TITLE_SUFFIX}" suffix:\n`);
-  for (const o of offenders) {
-    console.error(`  [${o.surface}] ${o.path}\n    ${o.len} chars: "${o.title}"`);
-  }
-  console.error(`\nShorten the title builder in lib/seo/titles.ts or the source data.\n`);
-  process.exit(1);
+for (const t of absoluteTitles()) {
+  checkAbsolute("absolute", t.path, t.title);
 }
 
 /** Scan page.tsx files for duplicate brand in non-absolute titles. */
@@ -60,13 +63,23 @@ function walk(dir: string) {
     else if (ent.name === "page.tsx") {
       const src = fs.readFileSync(full, "utf8");
       if (!src.includes("createMetadata")) continue;
+      const rel = path.relative(path.join(__dirname, ".."), full).replace(/\\/g, "/");
       if (brandInTitle.test(src) && !absoluteFlag.test(src)) {
-        dupBrand.push(path.relative(path.join(__dirname, ".."), full).replace(/\\/g, "/"));
+        dupBrand.push(rel);
       }
     }
   }
 }
 walk(appDir);
+
+if (offenders.length) {
+  console.error(`\n✗ ${offenders.length} page title(s) exceed ${TITLE_LIMIT} chars:\n`);
+  for (const o of offenders) {
+    console.error(`  [${o.surface}] ${o.path}\n    ${o.len} chars: "${o.title}"`);
+  }
+  console.error(`\nShorten titles in lib/seo/titles.ts or the source data.\n`);
+  process.exit(1);
+}
 
 if (dupBrand.length) {
   console.error(`\n✗ ${dupBrand.length} page(s) hardcode "| Krafiter" in title without absoluteTitle:\n`);
@@ -78,5 +91,5 @@ if (dupBrand.length) {
 }
 
 console.log(
-  `✓ titles: all ${publishedRoles().length + guides.length} checked titles ≤ ${TITLE_LIMIT} chars (incl. "${TITLE_SUFFIX}"); no duplicate-brand titles.`,
+  `✓ titles: all ${publishedRoles().length + guides.length + absoluteTitles().length} checked titles ≤ ${TITLE_LIMIT} chars; no duplicate-brand titles.`,
 );
