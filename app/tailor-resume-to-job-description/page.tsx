@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { breadcrumbSchema, howToSchema } from "@/lib/seo/schema";
+import { breadcrumbSchema } from "@/lib/seo/schema";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CTA } from "@/components/marketing/CTA";
@@ -69,12 +69,6 @@ export default function TailorPage() {
               { name: "Home", url: absoluteUrl("/") },
               { name: "Tailor Resume to Job Description", url: absoluteUrl(PAGE) },
             ]),
-            howToSchema({
-              name: "How to tailor a resume to a job description",
-              description:
-                "Five steps to align a resume with a specific job posting so it passes ATS screening and reads as relevant to recruiters.",
-              steps,
-            }),
           ]}
         />
 

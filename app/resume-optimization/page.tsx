@@ -13,7 +13,7 @@ const PAGE = "/resume-optimization";
 export const metadata: Metadata = createMetadata({
   title: "ATS Resume Optimizer - Optimize Resume for ATS",
   description:
-    "ATS resume optimizer that helps you optimize a resume for ATS: match keywords to the job description, fix parse issues, score the draft, and export PDF or LaTeX.",
+    "ATS resume optimizer: match keywords to the job description, fix parse issues, score the draft, and export PDF or LaTeX.",
   path: PAGE,
 });
 

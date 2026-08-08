@@ -25,7 +25,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = createMetadata({
   title: "Pricing - Free Credits & ATS Checker",
   description:
-    "Krafiter pricing: 25 free credits to try the ATS optimizer, then paid plans for more runs, resume slots, and priority processing. Free ATS checker on the marketing site.",
+    "Krafiter pricing: 25 free credits to try the ATS optimizer, then paid plans for more runs, resume slots, and priority processing.",
   path: PAGE,
 });
 

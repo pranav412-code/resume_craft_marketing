@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata, absoluteUrl } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { articleSchema, breadcrumbSchema, howToSchema } from "@/lib/seo/schema";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CTA } from "@/components/marketing/CTA";
@@ -94,12 +94,6 @@ export default function Page() {
               { name: "Guides", url: absoluteUrl("/guides") },
               { name: meta.title, url: absoluteUrl(PAGE) },
             ]),
-            howToSchema({
-              name: "How to write a resume",
-              description:
-                "Seven steps from blank page to an ATS-ready, tailored resume.",
-              steps,
-            }),
           ]}
         />
 

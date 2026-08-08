@@ -13,7 +13,7 @@ const PAGE = "/latex-resume-builder";
 export const metadata: Metadata = createMetadata({
   title: "LaTeX Resume Export - ATS Scored .tex Template",
   description:
-    "LaTeX resume export and template: tailor with AI, score for ATS, then download clean .tex source and PDF. Free to start — export, not a separate builder product.",
+    "LaTeX resume export: tailor with AI, score for ATS, then download clean .tex source and PDF. Free to start — export, not a separate builder.",
   path: PAGE,
 });
 

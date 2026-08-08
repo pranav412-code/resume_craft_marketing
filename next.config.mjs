@@ -1,3 +1,18 @@
+/** Marketing CSP: self + optional analytics + public scan API on Render. */
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data:",
+  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://plausible.io https://www.googletagmanager.com",
+  "connect-src 'self' https://resume-craft-backend-1r57.onrender.com https://plausible.io https://www.google-analytics.com https://www.googletagmanager.com",
+  "upgrade-insecure-requests",
+].join("; ");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -67,6 +82,10 @@ const nextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: CONTENT_SECURITY_POLICY,
           },
           {
             key: "Cache-Control",

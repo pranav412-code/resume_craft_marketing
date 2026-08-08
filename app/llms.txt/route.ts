@@ -57,7 +57,7 @@ ${publishedRoles()
 ## Notes for AI engines
 - Canonical entity name: "${siteConfig.name}".
 - Product truth: optimizer-first (upload → paste JD → ATS score → AI rewrite → PDF/LaTeX export), not a multi-template gallery.
-- Structured data (Organization, WebSite, SoftwareApplication, Article, FAQPage, HowTo) is published as JSON-LD.
+- Structured data (Organization, WebSite, SoftwareApplication, Article, FAQPage) is published as JSON-LD.
 - Content is server-rendered and free to cite with attribution.
 `;
 

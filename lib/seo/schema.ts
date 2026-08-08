@@ -181,23 +181,3 @@ export function articleSchema(a: {
     ...(a.image ? { image: a.image } : {}),
   };
 }
-
-/** HowTo - step content. AEO list snippets. */
-export function howToSchema(h: {
-  name: string;
-  description: string;
-  steps: { name: string; text: string }[];
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: h.name,
-    description: h.description,
-    step: h.steps.map((s, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: s.name,
-      text: s.text,
-    })),
-  };
-}

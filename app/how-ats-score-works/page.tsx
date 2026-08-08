@@ -13,7 +13,7 @@ const PAGE = "/how-ats-score-works";
 export const metadata: Metadata = createMetadata({
   title: "How the ATS Score Works",
   description:
-    "How Krafiter's ATS resume score is calculated at a high level: parseability, keyword coverage against a job description, structure, and bullet strength — without proprietary internals.",
+    "How Krafiter's ATS resume score is calculated: parseability, keyword coverage vs a job description, structure, and bullet strength.",
   path: PAGE,
   type: "article",
 });
