@@ -10,6 +10,7 @@
     "start": "next start -p 5173",
     "lint": "next lint",
     "check:titles": "tsx scripts/check-titles.ts",
+    "check:origin": "node scripts/check-origin.mjs",
     "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
