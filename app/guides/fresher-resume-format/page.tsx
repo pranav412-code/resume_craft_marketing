@@ -77,7 +77,12 @@ export default function Page() {
             A fresher resume format for India and campus hiring is
             education-first, one page, and ATS-safe: no biodata clutter, clear
             projects with tools named, and keywords from the job or drive
-            posting. Score the match before you upload to portals.
+            posting. For how ATS treats campus uploads and the full build
+            order, start with{" "}
+            <Link href="/guides/college-fresher-resume-ats">
+              college fresher resume and how ATS works
+            </Link>
+            . Score the match before you upload to portals.
           </p>
 
           <h2>Step 1: Education-first, biodata last (or never)</h2>

@@ -50,6 +50,7 @@ const JOURNEY_BANDS = [
     slugs: [
       "resume-for-career-change",
       "resume-after-career-gap",
+      "college-fresher-resume-ats",
       "resume-with-no-experience",
       "resume-for-internship",
       "resume-after-layoff",
@@ -261,8 +262,9 @@ export default function GuidesIndexPage() {
           <p className="gu-browse-foot">
             Guides teach the craft;{" "}
             <Link href="/resume-examples">resume examples</Link> show role
-            patterns. The builder applies both to your job description — start
-            from either, finish with a tailored export.
+            patterns. Score a draft in the{" "}
+            <Link href="/ats-checker">free ATS resume checker</Link>, then
+            tailor in the builder.
           </p>
         </section>
 

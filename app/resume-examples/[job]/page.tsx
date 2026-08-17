@@ -173,8 +173,9 @@ export default async function RoleExamplePage({
           <div className="cta-banner">
             <h2>Build your {role.title.toLowerCase()} resume from this blueprint</h2>
             <p>
-              Upload what you have - the AI tailors it to the exact posting and
-              scores it.
+              Check parseability in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>, then
+              upload — the AI tailors it to the exact posting and scores it.
             </p>
             <CTA
               page={PAGE}

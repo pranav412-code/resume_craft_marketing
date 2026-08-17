@@ -124,8 +124,9 @@ export default function Page() {
           <div className="cta-banner">
             <h2>Let the job description choose your skills</h2>
             <p>
-              Krafiter extracts the posting&apos;s keyword set and shows
-              which ones your resume is missing.
+              Start with the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link> to see
+              which posting keywords are missing, then optimize in the app.
             </p>
             <CTA page={PAGE} label="Match my skills" />
           </div>

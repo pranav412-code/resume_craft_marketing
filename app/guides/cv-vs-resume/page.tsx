@@ -137,7 +137,12 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Need the concise kind?</h2>
-            <p>Build a tailored, ATS-scored resume in minutes - LaTeX export included for academics.</p>
+            <p>
+              Score a draft in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>, then
+              build a tailored resume in the app — LaTeX export included for
+              academics.
+            </p>
             <CTA page={PAGE} label="Build it free" />
           </div>
 

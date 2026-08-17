@@ -119,6 +119,13 @@ export const guides: GuideMeta[] = [
     datePublished: "2026-07-29",
   },
   {
+    slug: "college-fresher-resume-ats",
+    title: "College Fresher Resume and How ATS Works",
+    description:
+      "How college freshers build a resume and how ATS works: education-first structure, projects as proof, campus-drive keywords, and a score check before you apply.",
+    datePublished: "2026-08-18",
+  },
+  {
     slug: "fresher-resume-format",
     title: "Fresher Resume Format",
     description:

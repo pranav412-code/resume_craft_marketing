@@ -177,7 +177,11 @@ export default function LatexResumeBuilderPage() {
         <div className="container">
           <div className="cta-banner">
             <h2>Ship a LaTeX resume in under ten minutes</h2>
-            <p>Free to start. Clean .tex source. ATS-scored.</p>
+            <p>
+              Score first with the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>. Then
+              export clean .tex — free to start.
+            </p>
             <CTA page={PAGE} template="latex" label="Export LaTeX resume — free" />
           </div>
           <FaqBlock items={faq} />

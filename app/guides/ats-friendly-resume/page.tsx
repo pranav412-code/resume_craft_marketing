@@ -128,7 +128,7 @@ export default function Page() {
             draft against the specific job description you paste and lists the
             missing keywords, so the fix is concrete rather than guesswork.
             Start with the{" "}
-            <Link href="/ai-resume-checker">ATS resume checker</Link>
+            <Link href="/ats-checker">free ATS resume checker</Link>
             {" "}or, for Indian job seekers, the{" "}
             <Link href="/ats-resume-checker-india">
               free ATS resume checker for India
@@ -138,7 +138,11 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Check yours instead of wondering</h2>
-            <p>Upload, paste the posting, see the score and the gaps.</p>
+            <p>
+              Upload and paste the posting in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link> — see
+              the score and the gaps.
+            </p>
             <CTA page={PAGE} label="Score my resume" />
           </div>
 

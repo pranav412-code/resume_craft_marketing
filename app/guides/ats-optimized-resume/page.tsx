@@ -120,7 +120,7 @@ export default function Page() {
           <p>
             Optimization is a loop, not a one-off edit. Run the resume
             through the{" "}
-            <Link href="/ai-resume-checker">ATS resume checker</Link> against
+            <Link href="/ats-checker">free ATS resume checker</Link> against
             the same posting: it measures parseability and keyword coverage,
             lists what is missing, and rewrites weak bullets with AI. Apply
             the fixes, re-run the check, and export once the score
@@ -138,7 +138,11 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Optimize against the job, not a guess</h2>
-            <p>Upload, paste the posting, see the score and fix the gaps.</p>
+            <p>
+              Upload and paste the posting in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>, then
+              fix gaps in the app.
+            </p>
             <CTA page={PAGE} label="Check my resume - free" />
           </div>
 

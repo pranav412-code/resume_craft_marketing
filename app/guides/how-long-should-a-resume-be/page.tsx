@@ -112,7 +112,11 @@ export default function Page() {
 
           <div className="cta-banner">
             <h2>Let relevance decide the length</h2>
-            <p>Krafiter trims to what the job description rewards - and shows the score.</p>
+            <p>
+              Score a draft in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>, then
+              let the app trim to what the job description rewards.
+            </p>
             <CTA page={PAGE} label="Optimize mine" />
           </div>
 

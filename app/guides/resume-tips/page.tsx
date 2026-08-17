@@ -171,7 +171,7 @@ export default function Page() {
             <li>Layout is single-column; text is selectable in the PDF.</li>
             <li>
               Draft scored with the{" "}
-              <Link href="/ai-resume-checker">ATS resume checker</Link> against
+              <Link href="/ats-checker">free ATS resume checker</Link> against
               the same posting - gaps fixed once.
             </li>
           </ol>

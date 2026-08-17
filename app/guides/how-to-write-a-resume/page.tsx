@@ -194,7 +194,10 @@ export default function Page() {
             <p>
               Upload what you have - the{" "}
               <Link href="/resume-builder">AI powered resume builder</Link>{" "}
-              rebuilds it against the job you want, with an ATS score from the{" "}
+              rebuilds it against the job you want. Score the draft first with
+              the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link>, then
+              finish in the{" "}
               <Link href="/resume-optimization">ATS resume optimizer</Link>.
             </p>
             <CTA page={PAGE} label="Write mine with AI" />

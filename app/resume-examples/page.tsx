@@ -220,8 +220,9 @@ export default function ExamplesPage() {
           <div className="cta-banner cta-banner--mid">
             <h2>An example is a start. Your JD is the win.</h2>
             <p>
-              Copy the structure, then upload and tailor every bullet to the
-              posting you&apos;re applying for.{" "}
+              Copy the structure, then score it in the{" "}
+              <Link href="/ats-checker">free ATS resume checker</Link> and
+              tailor every bullet to the posting.{" "}
               <Link href="/tailor-resume-to-job-description">
                 See how tailoring works
               </Link>

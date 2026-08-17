@@ -117,7 +117,8 @@ export default function TailorPage() {
 
           <h2>Check your match before you rewrite anything</h2>
           <p>
-            Not sure how far off your current resume is? The free{" "}
+            Not sure how far off your current resume is? The{" "}
+            <Link href="/ats-checker">free ATS resume checker</Link> or{" "}
             <Link href="/tools/jd-match-checker">JD match checker</Link> shows
             your keyword coverage against any posting - matched terms, missing
             terms, and a coverage percentage - with no signup. It turns step
