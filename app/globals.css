@@ -2219,7 +2219,7 @@ i {
   margin-top: 1rem;
 }
 
-.ats-checker .ac-header h1 {
+.ats-checker .ac-header h2 {
   font-size: clamp(1.85rem, 5vw, 3rem);
   letter-spacing: -0.03em;
   margin: 0 0 0.5rem;

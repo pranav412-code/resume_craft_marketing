@@ -85,7 +85,7 @@ export function AtsCheckerApp() {
                 <span> / </span>
                 <span>001 / Scan</span>
               </div>
-              <h1 className="ac-enter-2">Free ATS Resume Checker</h1>
+              <h2 className="ac-enter-2">Free ATS Resume Checker</h2>
               <p className="muted ac-enter-3">
                 Scan my resume for an ATS score against any job description —
                 same engine as Krafiter. Free, no signup.

@@ -13,23 +13,26 @@ const SITE_ID = `${siteConfig.url}/#website`;
 
 /** Brand entity. Emitted once, sitewide (root layout). GEO entity clarity. */
 export function organizationSchema() {
-  return {
+  const org: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORG_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
+    alternateName: siteConfig.alternateName,
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     description: siteConfig.description,
+    disambiguatingDescription: siteConfig.disambiguatingDescription,
     email: siteConfig.emails.contact,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: siteConfig.emails.contact,
     },
-    sameAs: [...siteConfig.sameAs],
   };
+  if (siteConfig.sameAs.length) org.sameAs = [...siteConfig.sameAs];
+  return org;
 }
 
 /** WebSite node (+SearchAction for sitelinks-searchbox eligibility). */

@@ -147,7 +147,7 @@ export default function HomePage() {
             <li className="resume-shot">
               <Image
                 src="/marketing/resume-ats-score.png"
-                alt="Resume beside a teal ATS match score ring showing 92"
+                alt="Resume beside a teal ATS match score ring showing 89"
                 width={640}
                 height={640}
                 className="resume-shot-img"

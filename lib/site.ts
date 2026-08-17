@@ -39,6 +39,9 @@ export const siteConfig = {
   twitter: "@krafiter",
   // Brand entity links for schema sameAs — add only live profile URLs.
   sameAs: [] as string[],
+  alternateName: "Krafiter ATS optimizer",
+  disambiguatingDescription:
+    "Krafiter is the AI ATS resume optimizer at krafiter.com. It is not Krafter, getkrafter, or KraftCV.",
   // Plans surfaced in SoftwareApplication/Product schema AND on /pricing.
   // Source of truth: backend/app/api/credits.py (paise/cents → major units here).
   // Backend ids: monthly → job_seeker, career_sprint, starter → refill_starter, pro → refill_pro.

@@ -38,6 +38,7 @@ export default function AboutPage() {
             paste the job description, see an ATS score, rewrite for that
             posting, and export PDF or LaTeX.
           </p>
+          <p>{siteConfig.disambiguatingDescription}</p>
 
           <h2>Our methodology (plain language)</h2>
           <p>
