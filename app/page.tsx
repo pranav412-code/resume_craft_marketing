@@ -37,7 +37,7 @@ const faq: QA[] = [
   {
     question: "What is an ATS score?",
     answer:
-      "An ATS score estimates how well your resume will parse inside applicant tracking systems — the software most employers use to filter resumes before a human reads them. It checks structure, formatting, and how closely your keywords match the job description.",
+      "An ATS score estimates how well your resume will parse and how closely it matches this job description — structure, formatting, and keywords. It does not guarantee an interview; humans still decide. Use it to find and fix gaps before you apply.",
   },
   {
     question: "Can I export my resume to LaTeX?",
@@ -62,34 +62,31 @@ export default function HomePage() {
             <em>then fix it for this job</em>
           </h1>
           <p className="lede">
-            Upload your resume, paste a job description, score it via 12
-            parallel analyzers, rewrite weak bullets, then export PDF or LaTeX
-            — free to start.
+            Upload your resume, paste this job description, see what’s
+            missing, and rewrite for that posting — free to start.
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Optimize my resume — free" />
-            <Link href="/ats-checker" className="btn btn-ghost">
-              Free ATS check
-            </Link>
-            <Link href="/tools/jd-match-checker" className="btn btn-ghost">
-              JD Match
-            </Link>
           </div>
 
           <div className="hero-stage">
             <div className="hero-product">
               <div className="hero-cockpit">
                 <div className="cockpit-score">
-                  <p className="cockpit-kicker">Live Match Snapshot</p>
+                  <p className="cockpit-kicker">Match for this job</p>
                   <div className="score-orbit">
-                    <span className="score-value">92</span>
-                    <span className="score-caption">ATS Match</span>
+                    <span className="score-value">89</span>
+                    <span className="score-caption">62 → 89</span>
                   </div>
                   <ul className="signal-pills">
-                    <li>+17 keyword coverage</li>
-                    <li>+22 format reliability</li>
-                    <li>+14 recruiter readability</li>
+                    <li>JD keywords covered</li>
+                    <li>Parseable structure</li>
+                    <li>Bullets match the posting</li>
                   </ul>
+                  <p className="muted">
+                    Alignment with this job description — not a promise of an
+                    interview.
+                  </p>
                 </div>
                 <div className="cockpit-diff">
                   <p className="cockpit-kicker">Bullet transformation</p>
@@ -197,7 +194,8 @@ export default function HomePage() {
               <span className="step-number">03 Score</span>
               <h3>See your ATS score</h3>
               <p>
-                Parallel analyzers score compatibility. Spot gaps with the{" "}
+                12 parallel analyzers score compatibility with this posting.
+                Spot gaps with the{" "}
                 <Link href="/ats-checker">ATS resume checker</Link> before you
                 rewrite.
               </p>
