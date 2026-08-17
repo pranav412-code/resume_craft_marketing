@@ -74,8 +74,8 @@ export default function Page() {
           <p className="meta">Updated {meta.datePublished}</p>
 
           <p className="answer">
-            Improving an ATS resume score means fixing what the checker
-            measures against a real job description: clean structure that
+            How to improve the ATS score of a resume: fix what the checker
+            measures against a real job description — clean structure that
             parses, keyword coverage you can prove, and stronger bullets. Run
             a score, close the listed gaps, re-score, and export once the match
             stabilizes - do not chase 100 with fake keywords.

@@ -45,7 +45,7 @@ export function websiteSchema() {
   };
 }
 
-/** Build the cross-currency Offer list once; reused by SoftwareApplication + Product. */
+/** USD vs INR Offer lists; reused by SoftwareApplication + Product. */
 function buildOffers() {
   const categoryFor = (planType: string) =>
     planType === "free"
@@ -54,10 +54,10 @@ function buildOffers() {
       ? "one-time"
       : "subscription";
 
-  const offers: Array<Record<string, unknown>> = [];
+  const usd: Array<Record<string, unknown>> = [];
+  const inr: Array<Record<string, unknown>> = [];
   for (const o of siteConfig.offers) {
-    // USD offer
-    offers.push({
+    usd.push({
       "@type": "Offer",
       name: o.name,
       price: o.priceUSD.toFixed(2),
@@ -65,9 +65,9 @@ function buildOffers() {
       availability: "https://schema.org/InStock",
       category: categoryFor(o.planType),
     });
-    // INR offer (skip the duplicate Free row to avoid noise - Free is global)
+    // Skip Free INR — Free is global; paid INR rows keep eligibleRegion: IN.
     if (o.priceINR > 0) {
-      offers.push({
+      inr.push({
         "@type": "Offer",
         name: `${o.name} (India)`,
         price: o.priceINR.toString(),
@@ -78,14 +78,38 @@ function buildOffers() {
       });
     }
   }
-  return offers;
+  return { usd, inr };
 }
 
 const HIGH_PRICE_USD = "12.99";
+const HIGH_PRICE_INR = "399";
+
+function aggregateOffers(extra?: Record<string, unknown>) {
+  const { usd, inr } = buildOffers();
+  return [
+    {
+      "@type": "AggregateOffer",
+      offerCount: usd.length,
+      lowPrice: "0",
+      highPrice: HIGH_PRICE_USD,
+      priceCurrency: "USD",
+      ...extra,
+      offers: usd,
+    },
+    {
+      "@type": "AggregateOffer",
+      offerCount: inr.length,
+      lowPrice: "0",
+      highPrice: HIGH_PRICE_INR,
+      priceCurrency: "INR",
+      ...extra,
+      offers: inr,
+    },
+  ];
+}
 
 /** The product. Home + product pages. */
 export function softwareApplicationSchema() {
-  const offerList = buildOffers();
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -95,14 +119,7 @@ export function softwareApplicationSchema() {
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: { "@id": ORG_ID },
-    offers: {
-      "@type": "AggregateOffer",
-      offerCount: offerList.length,
-      lowPrice: "0",
-      highPrice: HIGH_PRICE_USD,
-      priceCurrency: "USD",
-      offers: offerList,
-    },
+    offers: aggregateOffers(),
   };
 }
 
@@ -115,15 +132,9 @@ export function productSchema() {
     description: siteConfig.description,
     image: `${siteConfig.url}/opengraph-image`,
     brand: { "@id": ORG_ID },
-    offers: {
-      "@type": "AggregateOffer",
-      offerCount: buildOffers().length,
-      lowPrice: "0",
-      highPrice: HIGH_PRICE_USD,
-      priceCurrency: "USD",
+    offers: aggregateOffers({
       availability: "https://schema.org/InStock",
-      offers: buildOffers(),
-    },
+    }),
   };
 }
 

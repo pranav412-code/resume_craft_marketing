@@ -42,11 +42,8 @@ const staticRoutes: Entry[] = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const statics = staticRoutes.map((r) => ({
     url: `${siteConfig.url}${r.path}`,
-    lastModified: now,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
@@ -62,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // can never list a page that doesn't build (and vice versa).
   const roleEntries = publishedRoles().map((r) => ({
     url: `${siteConfig.url}/resume-examples/${r.slug}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

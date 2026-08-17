@@ -71,6 +71,21 @@ export const metadata: Metadata = {
   },
 };
 
+const SPECULATION_RULES = JSON.stringify({
+  prerender: [
+    {
+      urls: ["/ats-checker", "/tools/jd-match-checker"],
+      eagerness: "moderate",
+    },
+  ],
+  prefetch: [
+    {
+      urls: ["/ats-checker", "/tools/jd-match-checker"],
+      eagerness: "moderate",
+    },
+  ],
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -81,6 +96,10 @@ export default function RootLayout({
       <body>
         {/* Sitewide brand entity + website node - every page, zero JS. */}
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{ __html: SPECULATION_RULES }}
+        />
         <Analytics />
         {children}
       </body>

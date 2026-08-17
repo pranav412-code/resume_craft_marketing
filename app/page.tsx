@@ -57,13 +57,14 @@ export default function HomePage() {
         <section className="hero container hero-creative">
           <p className="hero-brand">{siteConfig.name}</p>
           <h1>
-            See your ATS match,
+            See your ATS match,{" "}
             <br />
             <em>then fix it for this job</em>
           </h1>
           <p className="lede">
-            Upload your resume, paste a job description, get a score, rewrite
-            weak bullets, and export PDF or LaTeX — free to start.
+            Upload your resume, paste a job description, score it via 12
+            parallel analyzers, rewrite weak bullets, then export PDF or LaTeX
+            — free to start.
           </p>
           <div className="actions">
             <CTA page={PAGE} label="Optimize my resume — free" />

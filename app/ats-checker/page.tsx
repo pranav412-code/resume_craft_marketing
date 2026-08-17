@@ -86,8 +86,8 @@ export default function AtsCheckerPage() {
           <h1>Free ATS resume checker</h1>
           <p className="lede">
             Scan my resume for an ATS score — formatting, keywords, and
-            parseability against any job description. Same engine as Krafiter,
-            no account required.
+            parseability against any job description. Same 12-analyzer engine
+            as Krafiter, no account required.
           </p>
         </section>
 
