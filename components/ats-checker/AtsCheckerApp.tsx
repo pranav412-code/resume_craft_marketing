@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { trackEvent } from "@/lib/seo/analytics";
 import { LoadingStages } from "./LoadingStages";
 import { ResultView } from "./ResultView";
 import type { AnalysisResult } from "./types";
@@ -33,6 +34,11 @@ export function AtsCheckerApp() {
     const started = Date.now();
     const gen = ++scanGen.current;
 
+    trackEvent("scan_submitted", {
+      tool: "ats_checker",
+      with_jd: !!jdText.trim(),
+    });
+
     try {
       const response = await fetch(`${siteConfig.apiUrl}/api/v1/public/scan`, {
         method: "POST",
@@ -58,9 +64,18 @@ export function AtsCheckerApp() {
       }
       if (gen !== scanGen.current) return;
       setResult(data);
+      // Bucket the score — the distribution is the useful signal, and it
+      // keeps us from sending a per-visitor value that reads as personal.
+      trackEvent("scan_completed", {
+        tool: "ats_checker",
+        with_jd: !!jdText.trim(),
+        score_bucket: `${Math.floor(Math.min(99, Math.max(0, data.score)) / 10) * 10}s`,
+      });
     } catch (err) {
       if (gen !== scanGen.current) return;
-      setError(err instanceof Error ? err.message : "Failed to analyze");
+      const message = err instanceof Error ? err.message : "Failed to analyze";
+      setError(message);
+      trackEvent("scan_failed", { tool: "ats_checker", reason: message });
     } finally {
       if (gen === scanGen.current) setIsUploading(false);
     }

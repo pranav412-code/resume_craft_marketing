@@ -29,6 +29,12 @@ export function CTA({
       className={variant === "primary" ? "btn btn-primary" : "btn btn-ghost"}
       href={ctaHref({ page, role, template })}
       rel="noopener"
+      // Read by the delegated listener in components/seo/Analytics.tsx.
+      // Server-rendered attributes — no client boundary, no runtime cost.
+      data-cta="1"
+      data-cta-page={page}
+      data-cta-role={role}
+      data-cta-template={template}
     >
       {label}
     </a>

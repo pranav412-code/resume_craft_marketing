@@ -12,6 +12,17 @@ import { siteConfig } from "@/lib/site";
  * disallow rule and keep OAI-SearchBot / PerplexityBot / ClaudeBot allowed.
  */
 export default function robots(): MetadataRoute.Robots {
+  // Netlify sets CONTEXT on every build. Deploy previews and branch deploys
+  // live on crawlable *.netlify.app hosts, so keep them out of the index —
+  // robots.ts is static and cannot inspect the request host at serve time.
+  // Unset CONTEXT means a local build, which should behave like production.
+  const isProduction =
+    !process.env.CONTEXT || process.env.CONTEXT === "production";
+
+  if (!isProduction) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   const aiCrawlers = [
     "GPTBot",
     "OAI-SearchBot",

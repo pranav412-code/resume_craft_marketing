@@ -1,8 +1,7 @@
 "use client";
 /**
- * ScanWidget - the interactive free-tool widget shared by
- * /tools/ats-resume-scan (JD optional) and /tools/jd-match-checker
- * (JD required, keyword-coverage-first).
+ * ScanWidget - the interactive free-tool widget behind
+ * /tools/jd-match-checker (JD required, keyword-coverage-first).
  *
  * POSTs multipart form-data to the anonymous public scan endpoint
  * (`POST {apiUrl}/api/v1/public/scan`, fields: file + optional jd_text) and
@@ -18,6 +17,7 @@ import {
 } from "react";
 import { siteConfig } from "@/lib/site";
 import { ctaHref } from "@/lib/cta";
+import { trackEvent } from "@/lib/seo/analytics";
 
 type KeywordCoverage = {
   matched: string[];
@@ -112,6 +112,8 @@ export function ScanWidget({ page, jdRequired = false, coverageFirst = false }: 
     setError(null);
     setResult(null);
 
+    trackEvent("scan_submitted", { tool: "jd_match", with_jd: !!jd.trim() });
+
     try {
       const body = new FormData();
       body.append("file", file);
@@ -129,6 +131,7 @@ export function ScanWidget({ page, jdRequired = false, coverageFirst = false }: 
             "You've used your free scans for now. Sign up free for 25 credits and unlimited access to your results.",
         });
         setStatus("idle");
+        trackEvent("scan_failed", { tool: "jd_match", reason: "rate_limit" });
         return;
       }
 
@@ -147,6 +150,7 @@ export function ScanWidget({ page, jdRequired = false, coverageFirst = false }: 
             "We couldn't read that file. Make sure it's a text-based PDF (not a scan or image) or a DOCX and try again.",
         });
         setStatus("idle");
+        trackEvent("scan_failed", { tool: "jd_match", reason: "parse" });
         return;
       }
 
@@ -157,12 +161,19 @@ export function ScanWidget({ page, jdRequired = false, coverageFirst = false }: 
       const data = (await res.json()) as ScanResult;
       setResult(data);
       setStatus("done");
+      // Bucketed, not raw — the distribution is the signal we act on.
+      trackEvent("scan_completed", {
+        tool: "jd_match",
+        with_jd: !!jd.trim(),
+        score_bucket: `${Math.floor(Math.min(99, Math.max(0, data.score)) / 10) * 10}s`,
+      });
     } catch {
       setError({
         kind: "generic",
         message: "Something went wrong reaching the scanner. Please try again in a moment.",
       });
       setStatus("idle");
+      trackEvent("scan_failed", { tool: "jd_match", reason: "network" });
     }
   }
 

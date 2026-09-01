@@ -22,7 +22,7 @@ const staticRoutes: Entry[] = [
   { path: "/resume-builder", priority: 0.9, changeFrequency: "weekly" },
   { path: "/ai-resume-checker", priority: 0.9, changeFrequency: "weekly" },
   { path: "/ats-checker", priority: 0.9, changeFrequency: "weekly" },
-  // /tools/ats-resume-scan permanently redirects to /ats-checker — keep out of sitemap.
+  // /tools/ats-resume-scan is a retired URL (301 → /ats-checker) — never list it.
   { path: "/tools/jd-match-checker", priority: 0.8, changeFrequency: "weekly" },
   { path: "/resume-optimization", priority: 0.8, changeFrequency: "monthly" },
   { path: "/resume-examples", priority: 0.8, changeFrequency: "weekly" },

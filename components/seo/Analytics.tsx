@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { CTA_CLICK_LISTENER } from "@/lib/seo/analytics";
 
 const PLAUSIBLE_DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID;
@@ -32,6 +33,10 @@ export function Analytics() {
           </Script>
         </>
       ) : null}
+      {/* One delegated listener for every [data-cta] anchor sitewide. */}
+      <Script id="cta-events" strategy="afterInteractive">
+        {CTA_CLICK_LISTENER}
+      </Script>
     </>
   );
 }

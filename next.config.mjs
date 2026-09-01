@@ -111,6 +111,23 @@ const nextConfig = {
           },
         ],
       },
+      // /pricing renders a single regional currency from middleware's
+      // x-visitor-country, so the blanket s-maxage=3600 above would let one
+      // visitor's currency be served to every other region (and to Googlebot)
+      // for an hour. Later, more specific rules win — same mechanism as
+      // /_next/static above. `Netlify-Vary` is the only primitive that keys
+      // the CDN by geo; `Vary: x-nf-country` does nothing because that header
+      // is server-injected, not client-sent.
+      {
+        source: "/pricing",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "private, no-store, max-age=0, must-revalidate",
+          },
+          { key: "Netlify-Vary", value: "country=IN" },
+        ],
+      },
     ];
   },
 };

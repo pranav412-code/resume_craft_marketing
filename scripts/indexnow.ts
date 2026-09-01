@@ -13,39 +13,19 @@
  * Endpoint fans out to all participating engines, so one POST is enough.
  */
 import { siteConfig } from "../lib/site";
-import { guides } from "../lib/content/guides";
-import { publishedRoles } from "../data/roles";
+import sitemap from "../app/sitemap";
 
 const KEY = process.env.INDEXNOW_KEY ?? "ac6d2a52ebfd33cb75367c527e0fc4a9";
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 
-const STATIC_PATHS = [
-  "/",
-  "/resume-builder",
-  "/ai-resume-checker",
-  "/ats-checker",
-  "/tools/jd-match-checker",
-  "/resume-optimization",
-  "/resume-examples",
-  "/tailor-resume-to-job-description",
-  "/latex-resume-builder",
-  "/ats-resume-checker-india",
-  "/best-ai-resume-builder-2026",
-  "/how-ats-score-works",
-  "/reports/ats-resume-insights-2026",
-  "/in",
-  "/pricing",
-  "/guides",
-  "/about",
-];
-
+/**
+ * The sitemap is the single source of submittable URLs. A hand-kept list here
+ * silently drifts (it had already lost /contact, /privacy and /terms), so
+ * derive instead — a page can never be in one and missing from the other.
+ * Safe under tsx: app/sitemap.ts imports only `import type` from next.
+ */
 function buildUrlList(): string[] {
-  const u = siteConfig.url;
-  return [
-    ...STATIC_PATHS.map((p) => `${u}${p}`),
-    ...guides.map((g) => `${u}/guides/${g.slug}`),
-    ...publishedRoles().map((r) => `${u}/resume-examples/${r.slug}`),
-  ];
+  return sitemap().map((entry) => entry.url);
 }
 
 async function main() {

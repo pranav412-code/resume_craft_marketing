@@ -58,9 +58,20 @@ export function createMetadata(meta: PageMeta): Metadata {
           }
         : {}),
     },
-    robots: meta.noindex
-      ? { index: false, follow: false }
-      : { index: true, follow: true },
+    // Only emit `robots` when we actually need to suppress indexing. Next.js
+    // replaces the parent's `robots` object wholesale (no deep merge), so an
+    // `{index:true,follow:true}` here would delete the root layout's googleBot
+    // block — costing max-snippet:-1 and max-image-preview:large sitewide.
+    // `follow: true` on noindex keeps internal link equity flowing.
+    ...(meta.noindex
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+            googleBot: { index: false, follow: true },
+          },
+        }
+      : {}),
     openGraph: {
       type: meta.type ?? "website",
       url,
