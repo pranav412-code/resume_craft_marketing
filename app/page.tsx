@@ -140,6 +140,7 @@ export default function HomePage() {
                 alt="Clean ATS-friendly resume document on warm paper"
                 width={640}
                 height={640}
+                sizes="(max-width: 767px) 100vw, 360px"
                 className="resume-shot-img"
               />
               <p className="resume-shot-caption">Upload a structured resume</p>
@@ -150,6 +151,7 @@ export default function HomePage() {
                 alt="Resume beside a teal ATS match score ring showing 89"
                 width={640}
                 height={640}
+                sizes="(max-width: 767px) 100vw, 360px"
                 className="resume-shot-img"
               />
               <p className="resume-shot-caption">See your ATS match score</p>
@@ -160,6 +162,7 @@ export default function HomePage() {
                 alt="Before and after resume bullet rewrite with stronger impact lines"
                 width={640}
                 height={640}
+                sizes="(max-width: 767px) 100vw, 360px"
                 className="resume-shot-img"
               />
               <p className="resume-shot-caption">Rewrite for the job</p>

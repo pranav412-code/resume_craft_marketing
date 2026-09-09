@@ -36,7 +36,17 @@ export type Role = {
   /** Recommended export/layout deep-link: ATS-safe layout or LaTeX only. */
   template: "ats" | "latex";
   faq: RoleFaq[];
+  /** ISO date. Optional — falls back to ROLE_DEFAULT_PUBLISHED. */
+  datePublished?: string;
+  /** ISO date. Set when a specific role is genuinely revised (freshness signal). */
+  dateModified?: string;
 };
+
+/**
+ * Roles shipped as one batch; keep a single default rather than fabricating
+ * per-role history. Override datePublished/dateModified per role on real edits.
+ */
+const ROLE_DEFAULT_PUBLISHED = "2026-06-11";
 
 export const roles: Role[] = [
   {
@@ -2894,6 +2904,12 @@ export function publishedRoles(): Role[] {
 
 export function getRole(slug: string): Role | undefined {
   return roles.find((r) => r.slug === slug && r.status === "published");
+}
+
+/** Resolved publish/modified dates for a role, with the batch default applied. */
+export function roleDates(r: Role): { datePublished: string; dateModified: string } {
+  const datePublished = r.datePublished ?? ROLE_DEFAULT_PUBLISHED;
+  return { datePublished, dateModified: r.dateModified ?? datePublished };
 }
 
 /** Same-category siblings first, then fill from other categories. */

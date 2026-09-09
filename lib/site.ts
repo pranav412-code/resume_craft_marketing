@@ -38,7 +38,7 @@ export const siteConfig = {
   },
   twitter: "@krafiter",
   // Brand entity links for schema sameAs — add only live profile URLs.
-  sameAs: [] as string[],
+  sameAs: ["https://www.instagram.com/krafiter/"] as string[],
   alternateName: "Krafiter ATS optimizer",
   disambiguatingDescription:
     "Krafiter is the AI ATS resume optimizer at krafiter.com. It is not Krafter, getkrafter, or KraftCV.",
