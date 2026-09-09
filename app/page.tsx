@@ -54,7 +54,7 @@ export default function HomePage() {
         <JsonLd data={softwareApplicationSchema()} />
 
         {/* 1. Hero — brand + optimizer promise + CTAs + cockpit (SSR; CSS tilt) */}
-        <section className="hero container hero-creative">
+        <section className="hero container hero-creative" data-motion-loop>
           <p className="hero-brand">{siteConfig.name}</p>
           <h1>
             See your ATS match,{" "}
@@ -111,7 +111,7 @@ export default function HomePage() {
         </section>
 
         <section className="container">
-          <div className="signal-ticker" aria-label="Product flow">
+          <div className="signal-ticker" aria-label="Product flow" data-motion-loop>
             <p>
               <span>UPLOAD</span>
               <span>PASTE JD</span>
@@ -133,7 +133,7 @@ export default function HomePage() {
             From raw document to ATS match to rewritten bullets — the loop
             recruiters never see.
           </p>
-          <ul className="resume-gallery reveal-stagger">
+          <ul className="resume-gallery reveal-stagger" data-motion-loop>
             <li className="resume-shot">
               <Image
                 src="/marketing/resume-paper.png"

@@ -92,22 +92,15 @@ export function AtsCheckerApp() {
   return (
     <div className="ats-checker">
       <div className="ac-shell">
-        <header className="ac-header ac-header-enter">
+        <div className="ac-header ac-header-enter">
           <div className="ac-header-top">
-            <div>
-              <div className="ac-mono muted ac-crumb ac-enter-1">
-                <Link href="/">Home</Link>
-                <span> / </span>
-                <span>001 / Scan</span>
-              </div>
-              <h2 className="ac-enter-2">Free ATS Resume Checker</h2>
-              <p className="muted ac-enter-3">
-                Scan my resume for an ATS score against any job description —
-                same engine as Krafiter. Free, no signup.
-              </p>
+            <div className="ac-mono muted ac-crumb ac-enter-1">
+              <Link href="/">Home</Link>
+              <span> / </span>
+              <span>001 / Scan</span>
             </div>
           </div>
-        </header>
+        </div>
 
         {!result && !isUploading && (
           <div className="ac-upload-block ac-upload-enter">
@@ -190,7 +183,7 @@ export function AtsCheckerApp() {
 
         {result && <ResultView result={result} onReset={reset} />}
 
-        <footer className="ac-footer">
+        <div className="ac-footer">
           <div className="ac-mono muted">
             Engine · same 12-analyzer ATS as Krafiter
           </div>
@@ -199,7 +192,7 @@ export function AtsCheckerApp() {
             <Link href="/terms">Terms</Link>
             <Link href="/pricing">Pricing</Link>
           </div>
-        </footer>
+        </div>
       </div>
     </div>
   );

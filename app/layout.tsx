@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/seo/Analytics";
+import { MotionRoot } from "@/components/motion/MotionRoot";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -101,7 +102,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: SPECULATION_RULES }}
         />
         <Analytics />
-        {children}
+        <MotionRoot />
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
       </body>
     </html>
   );

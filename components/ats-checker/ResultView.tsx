@@ -16,9 +16,23 @@ function findingKey(issue: Issue, i: number): string {
     .join("-");
 }
 
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
 function useCountUp(target: number, durationMs = 1200) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(() =>
+    prefersReducedMotion() ? target : 0,
+  );
   useEffect(() => {
+    // Reduced motion: the number is the payoff — show it, don't roll to it.
+    if (prefersReducedMotion()) {
+      setValue(target);
+      return;
+    }
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
@@ -104,7 +118,7 @@ export function ResultView({ result, onReset }: Props) {
   const ringOffset = 527 - (527 * displayScore) / 100;
 
   return (
-    <div className="ac-results ac-reveal">
+    <div className="ac-results">
       {onReset && (
         <button
           type="button"
@@ -128,7 +142,7 @@ export function ResultView({ result, onReset }: Props) {
                 cx="96"
                 cy="96"
                 r="84"
-                className="ac-ring-value ac-ring-anim"
+                className="ac-ring-value"
                 style={{
                   strokeDasharray: 527,
                   strokeDashoffset: ringOffset,
@@ -140,7 +154,7 @@ export function ResultView({ result, onReset }: Props) {
               <span className="ac-mono muted">Rating</span>
             </div>
           </div>
-          <h3 className="ac-category">{result.category}</h3>
+          <h2 className="ac-category">{result.category}</h2>
           <div className="ac-meta-row">
             <span className="ac-pill">
               Level: <strong>{result.seniority || "n/a"}</strong>
@@ -173,7 +187,7 @@ export function ResultView({ result, onReset }: Props) {
           className="ac-card ac-jd ac-reveal-item"
           style={{ ["--i" as string]: 2 }}
         >
-          <div className="ac-mono muted mb-6">Target role alignment</div>
+          <h3 className="ac-mono muted mb-6">Target role alignment</h3>
           <div className="ac-jd-score">
             <div className="ac-jd-score-head">
               <span className="ac-mono">Keyword match</span>
@@ -183,7 +197,10 @@ export function ResultView({ result, onReset }: Props) {
               <div
                 className="ac-bar-fill tone-strong ac-bar-grow"
                 style={{
-                  width: `${jd.match_percent}%`,
+                  ["--fill" as string]: Math.min(
+                    1,
+                    Math.max(0, jd.match_percent / 100),
+                  ),
                   ["--grow-delay" as string]: "0.4s",
                 }}
               />
@@ -268,7 +285,7 @@ export function ResultView({ result, onReset }: Props) {
         style={{ ["--i" as string]: jd ? 4 : 3 }}
       >
         <div className="ac-mono mb-3 opacity-60">003 / Next step</div>
-        <h2>Want automatic rewrites?</h2>
+        <h3>Want automatic rewrites?</h3>
         <p>
           This scan shows where your resume is weak. Krafiter can rewrite
           those sections for ATS compatibility — measurable improvement or your

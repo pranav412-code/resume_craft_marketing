@@ -110,7 +110,7 @@ export function Heatmap({
                     <div className="ac-bar">
                       <div
                         className={`ac-bar-fill ${t.cls}`}
-                        style={{ width: `${v}%` }}
+                        style={{ ["--fill" as string]: Math.min(1, Math.max(0, v / 100)) }}
                       />
                     </div>
                   </div>
@@ -144,7 +144,7 @@ export function Heatmap({
                   <div className="ac-bar">
                     <div
                       className={`ac-bar-fill ${t.cls}`}
-                      style={{ width: `${v}%` }}
+                      style={{ ["--fill" as string]: Math.min(1, Math.max(0, v / 100)) }}
                     />
                   </div>
                 </div>
