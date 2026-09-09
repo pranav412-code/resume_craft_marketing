@@ -18,6 +18,7 @@ export const metadata: Metadata = createMetadata({
   description: meta.description,
   path: PAGE,
   type: "article",
+  image: absoluteUrl(`/og/guides/${SLUG}`),
 });
 
 const faq: QA[] = [
@@ -50,7 +51,7 @@ export default function Page() {
               description: meta.description,
               url: absoluteUrl(PAGE),
               datePublished: meta.datePublished,
-              image: absoluteUrl("/opengraph-image"),
+              image: absoluteUrl(`/og/guides/${SLUG}`),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

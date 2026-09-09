@@ -18,6 +18,7 @@ export const metadata: Metadata = createMetadata({
   description: meta.description,
   path: PAGE,
   type: "article",
+  image: absoluteUrl(`/og/guides/${SLUG}`),
 });
 
 const steps = [
@@ -87,7 +88,7 @@ export default function Page() {
               url: absoluteUrl(PAGE),
               datePublished: meta.datePublished,
               dateModified: meta.dateModified,
-              image: absoluteUrl("/opengraph-image"),
+              image: absoluteUrl(`/og/guides/${SLUG}`),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },

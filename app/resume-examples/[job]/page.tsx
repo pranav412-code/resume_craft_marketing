@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CTA } from "@/components/marketing/CTA";
 import { FaqBlock } from "@/components/marketing/FaqBlock";
-import { publishedRoles, getRole, relatedRoles } from "@/data/roles";
+import { publishedRoles, getRole, relatedRoles, roleDates } from "@/data/roles";
 import { validateRoles } from "@/lib/content/validateRole";
 
 /**
@@ -38,6 +38,7 @@ export async function generateMetadata({
     description: `${role.title} resume example with skills, ATS keywords, and quantified bullets that pass screening.`,
     path: `/resume-examples/${role.slug}`,
     type: "article",
+    image: absoluteUrl(`/og/resume-examples/${role.slug}`),
   });
 }
 
@@ -51,7 +52,7 @@ export default async function RoleExamplePage({
   if (!role) notFound();
 
   const PAGE = `/resume-examples/${role.slug}`;
-  const today = "2026-06-11";
+  const { datePublished, dateModified } = roleDates(role);
   const siblings = relatedRoles(role.slug, 3);
 
   return (
@@ -64,8 +65,9 @@ export default async function RoleExamplePage({
               headline: `${role.title} Resume Example`,
               description: role.answer,
               url: absoluteUrl(PAGE),
-              datePublished: today,
-              image: absoluteUrl("/opengraph-image"),
+              datePublished,
+              dateModified,
+              image: absoluteUrl(`/og/resume-examples/${role.slug}`),
             }),
             breadcrumbSchema([
               { name: "Home", url: absoluteUrl("/") },
@@ -83,7 +85,7 @@ export default async function RoleExamplePage({
 
           <h1>{role.title} resume example &amp; keywords</h1>
           <p className="meta">
-            {role.category} · Updated {today}
+            {role.category} · Updated {dateModified}
           </p>
 
           {/* AEO answer block - validated 35–75 words by the QA gate. */}
