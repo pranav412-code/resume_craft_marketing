@@ -19,6 +19,19 @@ export function SiteFooter() {
             <span>{siteConfig.name}</span>
           </Link>
           <p className="muted">{siteConfig.tagline}</p>
+          <a
+            href="https://tools.launchllama.co/products/krafiter?utm_source=badge&utm_medium=referral"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://tools.launchllama.co/featured-badge-white.jpg?v=5"
+              alt="Featured on Launch Llama Tools"
+              width={200}
+              height={52}
+            />
+          </a>
         </div>
         <nav aria-label="Product">
           <p className="footer-head">Product</p>
