@@ -32,6 +32,21 @@ export function SiteFooter() {
               height={52}
             />
           </a>
+          <a
+            href="https://kittylaunch.com/p/krafiter?utm_source=badge"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-block", marginTop: "0.5rem" }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://kittylaunch.com/api/public/badges/launch_badge.svg?style=pill&theme=light"
+              width={296}
+              height={52}
+              alt="Krafiter — Verified by KittyLaunch"
+              data-kittylaunch-badge="1"
+            />
+          </a>
         </div>
         <nav aria-label="Product">
           <p className="footer-head">Product</p>
