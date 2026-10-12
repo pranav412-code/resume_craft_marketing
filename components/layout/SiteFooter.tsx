@@ -19,34 +19,6 @@ export function SiteFooter() {
             <span>{siteConfig.name}</span>
           </Link>
           <p className="muted">{siteConfig.tagline}</p>
-          <a
-            href="https://tools.launchllama.co/products/krafiter?utm_source=badge&utm_medium=referral"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://tools.launchllama.co/featured-badge-white.jpg?v=5"
-              alt="Featured on Launch Llama Tools"
-              width={200}
-              height={52}
-            />
-          </a>
-          <a
-            href="https://kittylaunch.com/p/krafiter?utm_source=badge"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: "inline-block", marginTop: "0.5rem" }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://kittylaunch.com/api/public/badges/launch_badge.svg?style=pill&theme=light"
-              width={296}
-              height={52}
-              alt="Krafiter — Verified by KittyLaunch"
-              data-kittylaunch-badge="1"
-            />
-          </a>
         </div>
         <nav aria-label="Product">
           <p className="footer-head">Product</p>
@@ -81,6 +53,83 @@ export function SiteFooter() {
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
         </nav>
+      </div>
+      <div className="container footer-badges" aria-label="Featured on">
+        <a
+          href="https://tools.launchllama.co/products/krafiter?utm_source=badge&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://tools.launchllama.co/featured-badge-white.jpg?v=5"
+            alt="Featured on Launch Llama Tools"
+            width={200}
+            height={52}
+          />
+        </a>
+        <a
+          href="https://kittylaunch.com/p/krafiter?utm_source=badge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://kittylaunch.com/api/public/badges/launch_badge.svg?style=pill&theme=light"
+            width={296}
+            height={52}
+            alt="Krafiter — Verified by KittyLaunch"
+            data-kittylaunch-badge="1"
+          />
+        </a>
+        <a
+          href="https://smolsaas.com/projects/krafiter?utm_source=badge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://smolsaas.com/smolsaas/images/badges/featured-on-light.svg"
+            alt="Featured on Smol Saas"
+            style={{ height: 44, width: "auto" }}
+          />
+        </a>
+        <a
+          href="https://findtop.tools/projects/krafiter?utm_source=badge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://findtop.tools/findtoptools/images/badges/featured-on-light.svg"
+            alt="Featured on Find Top Tools"
+            style={{ height: 44, width: "auto" }}
+          />
+        </a>
+        <a
+          href="https://smolrank.com/projects/krafiter?utm_source=badge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://smolrank.com/smolrank/images/badges/featured-on-light.svg"
+            alt="Featured on Smol Rank"
+            style={{ height: 44, width: "auto" }}
+          />
+        </a>
+        <a
+          href="https://smollaunchpad.com/projects/krafiter?utm_source=badge"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://smollaunchpad.com/smollaunchpad/images/badges/featured-on-light.svg"
+            alt="Featured on Smol LaunchPad"
+            style={{ height: 44, width: "auto" }}
+          />
+        </a>
       </div>
       <div className="container footer-legal muted">
         © 2026 {siteConfig.name}. All rights reserved.

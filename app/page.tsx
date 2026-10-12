@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { CTA } from "@/components/marketing/CTA";
 import { FaqBlock, type QA } from "@/components/marketing/FaqBlock";
+import { HeroSceneMount } from "@/components/motion/HeroSceneMount";
 
 const PAGE = "/";
 
@@ -70,6 +71,7 @@ export default function HomePage() {
           </div>
 
           <div className="hero-stage">
+            <HeroSceneMount />
             <div className="hero-product">
               <div className="hero-cockpit">
                 <div className="cockpit-score">
@@ -314,3 +316,4 @@ export default function HomePage() {
     </>
   );
 }
+
